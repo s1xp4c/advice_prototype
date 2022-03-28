@@ -1,31 +1,23 @@
-import { WebsiteCarbonCalculator, WebsiteCarbonCalculatorError } from 'website-carbon-calculator';
-
 const adviceAPIkey = 'AIzaSyA3T3lU6NyXFlEjJMt739iXmn-GBT_B7qk'
 const inputForm = document.getElementById("siteinput");
 
 inputForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    calcMyCarbon();
+    let URLvalue = inputForm.elements.urlname.value;
+    calcMyCarbon(URLvalue);
 })
 
-function calcMyCarbon() {
+function calcMyCarbon(URLvalue) {
+    fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URLvalue}&key=${adviceAPIkey}`, {
+            "method": "GET",
+            "headers": {}
+        })
+        .then(data => data.json())
+        .then(response => {
+            console.log(response);
+        })
+        .catch(err => {
+            console.error(err);
+        });
 
-    try {
-
-        const websiteCarbonCalculator = new WebsiteCarbonCalculator({ pagespeedApiKey: adviceAPIkey });
-        const result = websiteCarbonCalculator.calculateByURL('https://blockstarter.info');
-
-        //   {
-        //     url: 'yourwebsite.com',
-        //     bytesTransferred: 123456,
-        //     isGreenHost: true,
-        //     co2PerPageview: 0.1234567,
-        //   }
-
-        console.log(result)
-    } catch (error) {
-        if (error instanceof WebsiteCarbonCalculatorError) {
-            console.warn(error.message);
-        }
-    }
 }
