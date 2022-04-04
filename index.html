@@ -19,14 +19,36 @@
             <input type="submit" value="submit">
         </form>
 
+        <table class="siteinfo__table">
+            <thead>
+                <tr class="siteinfo__table--row">
+                    <th class="siteinfo__table--head">Timestamp</th>
+                    <th class="siteinfo__table--head">Website</th>
+                    <th class="siteinfo__table--head">Performance</th>
+                    <th class="siteinfo__table--head">Overall</th>
+                    <th class="siteinfo__table--head">Percentile</th>
+                </tr>
+            </thead>
+            <tbody class="siteinfo__table--tbody">
+                <!-- template will be copied and inserted here -->
+            </tbody>
+        </table>
+        <section id="templates">
+            <template id="aboutinfo">
+                <tr>
+                    <td data-field="timestamp"></td>
+                    <td data-field="website"></td>
+                    <td data-field="performance"></td>
+                    <td data-field="overall"></td>
+                    <td data-field="percentile"></td>
+                </tr>
+            </template>
+        </section>
         <div class="container">
-
             <div class="range-slider">
                 <span id="rs-bullet" class="rs-label">0</span>
                 <input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="100">
-
             </div>
-
             <div class="box-minmax">
                 <span>0</span><span>100</span>
             </div>
