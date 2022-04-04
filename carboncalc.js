@@ -17,16 +17,20 @@ inputForm.addEventListener("submit", (e) => {
     calcMyCarbon(URLvalue);
 })
 
-function calcMyCarbon(URLvalue) {
-    fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URLvalue}&key=${adviceAPIkey}`, {
+async function calcMyCarbon(URLvalue) {
+    await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URLvalue}&key=${adviceAPIkey}`, {
             "method": "GET",
-            "headers": {}
+            "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "cache-control": "no-cache"
+            }
         })
-        .then(data => data.json())
+        .then(response => response.json())
+        // .then(data => prepData(data))
         .then(response => {
             console.log(response);
+            prepData(response);
         })
-        .then(data => prepData(data))
         .catch(err => {
             console.error(err);
         });
@@ -40,14 +44,14 @@ function prepData(data) {
     buildInfoList()
 }
 
-function fillInfo() {
+function fillInfo(data) {
     const siteInfo = Object.create(SiteInfo)
 
-    siteInfo.myURL = data.id
-    siteInfo.timestamp = data.analysisUTCTimestamp
-    siteInfo.performance = data.performance
-    siteInfo.overall = data.overall_category
-    siteInfo.percentile = data.timing
+    siteInfo.myURL = data.lighthouseResult.finalUrl
+    siteInfo.timestamp = data.lighthouseResult.fetchTime
+    siteInfo.performance = data.lighthouseResult.categories.performance.score
+    siteInfo.overall = data.lighthouseResult.overall_category
+    siteInfo.percentile = data.lighthouseResult.timing
 
     console.log(siteInfo)
     return siteInfo
