@@ -19,29 +19,24 @@ inputForm.addEventListener("submit", (e) => {
 
 async function calcMyCarbon(URLvalue) {
     await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URLvalue}&key=${adviceAPIkey}`, {
-            "method": "GET",
-            "headers": {
+            method: "GET",
+            headers: {
                 "Content-Type": "application/json; charset=utf-8",
                 "cache-control": "no-cache"
             }
         })
         .then(response => response.json())
-        // .then(data => prepData(data))
-        .then(response => {
-            console.log(response);
-            prepData(response);
+        .then(data => {
+            console.log(data);
+            prepData(data);
         })
         .catch(err => {
             console.error(err);
         });
-
 }
 
-let infos
-
 function prepData(data) {
-    infos = data.map(fillInfo)
-    buildInfoList()
+    fillInfo(data)
 }
 
 function fillInfo(data) {
@@ -50,27 +45,19 @@ function fillInfo(data) {
     siteInfo.myURL = data.lighthouseResult.finalUrl
     siteInfo.timestamp = data.lighthouseResult.fetchTime
     siteInfo.performance = data.lighthouseResult.categories.performance.score
-    siteInfo.overall = data.lighthouseResult.overall_category
-    siteInfo.percentile = data.lighthouseResult.timing
+    siteInfo.overall = data.loadingExperience.overall_category
+    siteInfo.percentile = data.lighthouseResult.timing.total
 
     console.log(siteInfo)
-    return siteInfo
-}
-
-function buildInfoList() {
-    document.querySelector(".siteinfo tbody.siteinfo__table--tbody").innerHTML = ""
-    infos.forEach(displayInfoList)
+    displayInfoList(siteInfo)
 }
 
 function displayInfoList(siteInfo) {
 
-    const siteInfoClone = document.querySelector("template#aboutinfo").content.cloneNode(true)
+    document.querySelector("[data-field=timestamp]").textContent = siteInfo.timestamp
+    document.querySelector("[data-field=website]").textContent = siteInfo.myURL
+    document.querySelector("[data-field=performance]").textContent = siteInfo.performance
+    document.querySelector("[data-field=overall]").textContent = siteInfo.overall
+    document.querySelector("[data-field=percentile]").textContent = siteInfo.percentile
 
-    siteInfoClone.querySelector("[data-field=timestamp]").textContent = siteInfo.timestamp
-    siteInfoClone.querySelector("[data-field=website]").textContent = siteInfo.myURL
-    siteInfoClone.querySelector("[data-field=performance]").textContent = siteInfo.performance
-    siteInfoClone.querySelector("[data-field=overall]").textContent = siteInfo.overall
-    siteInfoClone.querySelector("[data-field=percentile]").textContent = siteInfo.percentile
-
-    document.querySelector(".siteinfo tbody.siteinfo__table--tbody").appendChild(siteInfoClone)
 }
