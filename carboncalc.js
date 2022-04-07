@@ -68,9 +68,9 @@ function prepData(data) {
     fillInfo(data);
 }
 
-function prepDataco2(data1) {
-    fillInfo(data1);
-}
+// function prepDataco2(data1) {
+//     fillInfo(data1);
+// }
 
 function fillInfo(data) {
     const siteInfo = Object.create(SiteInfo);
