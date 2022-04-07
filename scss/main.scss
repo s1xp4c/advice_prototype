@@ -1,4 +1,9 @@
 @import 'siteinfo';
+* {
+    margin: 0;
+    padding: 0;
+}
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -9,16 +14,22 @@
     padding: 10px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
 body {
     height: 100vh;
     background-color: #000;
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(180deg, #2ba846 0%, #62186B 100%) no-repeat;
+}
+
+#imgDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &#imgFromURL {
+        size: 2vmin;
+        width: 40vw;
+        height: 30vh;
+    }
 }
 
 .container {

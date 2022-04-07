@@ -2,6 +2,7 @@
 
 const adviceAPIkey = 'AIzaSyA3T3lU6NyXFlEjJMt739iXmn-GBT_B7qk'
 const inputForm = document.getElementById("siteinput");
+const imageFromURL = new Image();
 
 const SiteInfo = {
     myURL: "",
@@ -9,6 +10,9 @@ const SiteInfo = {
     performance: "",
     overall: "",
     percentile: "",
+    imageData: "",
+    imageWidth: "",
+    imageHeight: "",
 }
 
 inputForm.addEventListener("submit", (e) => {
@@ -47,10 +51,16 @@ function fillInfo(data) {
     siteInfo.performance = data.lighthouseResult.categories.performance.score
     siteInfo.overall = data.loadingExperience.overall_category
     siteInfo.percentile = data.lighthouseResult.timing.total
+    siteInfo.imageData = data.lighthouseResult.audits['full-page-screenshot'].details.screenshot.data
+    siteInfo.imageWidth = data.lighthouseResult.audits['full-page-screenshot'].details.screenshot.width
+    siteInfo.imageHeight = data.lighthouseResult.audits['full-page-screenshot'].details.screenshot.height
 
     console.log(siteInfo)
     displayInfoList(siteInfo)
+
 }
+let splashWidth
+let splashHeight
 
 function displayInfoList(siteInfo) {
 
@@ -59,5 +69,51 @@ function displayInfoList(siteInfo) {
     document.querySelector("[data-field=performance]").textContent = siteInfo.performance
     document.querySelector("[data-field=overall]").textContent = siteInfo.overall
     document.querySelector("[data-field=percentile]").textContent = siteInfo.percentile
-
+    imageFromURL.src = siteInfo.imageData
+    splashWidth = siteInfo.imageWidth / 3
+    splashHeight = siteInfo.imageHeight / 3
 }
+
+imageFromURL.addEventListener('load', function() {
+
+
+    const splashCanvas = document.getElementById('imgFromURL');
+    const splashCTX = splashCanvas.getContext('2d');
+
+    // splashWidth = document.getElementById('imgDiv').offsetWidth;
+    // splashHeight = document.getElementById('imgDiv').offsetHeight;
+
+    splashCanvas.width = splashWidth;
+    splashCanvas.height = splashHeight;
+
+    splashCTX.drawImage(imageFromURL, 0, 0, splashCanvas.width, splashCanvas.height);
+    const pixels = splashCTX.getImageData(0, 0, splashCanvas.width, splashCanvas.height);
+
+    let mappedImage = [];
+    let cellBrightness = [];
+
+    for (let y = 0; y < splashCanvas.height; y++) {
+        let row = [];
+        for (let x = 0; x < splashCanvas.width; x++) {
+            const red = pixels.data[(y * 4 * pixels.width) + (x * 4)];
+            const green = pixels.data[(y * 4 * pixels.width) + (x * 4 + 1)];
+            const blue = pixels.data[(y * 4 * pixels.width) + (x * 4 + 2)];
+            const brightness = calculateRelativeBrightness(red, green, blue);
+
+            const cell = [
+                cellBrightness = brightness,
+            ];
+            row.push(cell);
+        }
+        mappedImage.push(row);
+    }
+
+    function calculateRelativeBrightness(red, green, blue) {
+        return Math.sqrt(
+            (red * red) * 0.299 +
+            (green * green) * 0.587 +
+            (blue * blue) * 0.114
+        ) / 10;
+    }
+
+})
