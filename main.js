@@ -1,7 +1,7 @@
 "use strict"
 
 import './carboncalc'
-import './rangeslider'
+// import './rangeslider'
 
 
 // Make divs for lighthouse data

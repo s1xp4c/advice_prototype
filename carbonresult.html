@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/main.scss">
+    <script type="module" src="./main.js" defer></script>
+    <title>Carbon result</title>
+</head>
+
+<body>
+    <header id="result_header">
+        <h1>RESULT FOR<span data-field="webURL"></span> </h1>
+        <section id="info_section">
+            <div class="info_text">
+                <h2>PAGE SUSTAINABILITY</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam necessitatibus <span data-field="energyUsed"></span> repellat qui cupiditate ullam a provident voluptatem ipsum iusto, cumque <span data-field="co2GridGrams"></span> sed eum
+                    dolor assumenda placeat architecto ea commodi illo quia debitis perspiciatis odit. A, nobis ratione. Esse commodi tempora consequuntur in aliquam, <span data-field="co2RenewableGrams"></span> sapiente excepturi at neque, sed exercitationem
+                    tempore reiciendis!</p>
+            </div>
+            <div id="imgDiv">
+                <canvas id="imgFromURL"></canvas>
+            </div>
+        </section>
+
+    </header>
+    <section id="page_numbers">
+        <div class="original_numbers">
+            <div data-field="unminJS"></div>
+            <div data-field="unsizedIMG"></div>
+            <div data-field="lightViewport"></div>
+
+            <div data-field="unusedCSStotalBytes"></div>
+            <div data-field="unusedCSSwastedBytes"></div>
+            <div data-field="unusedCSSwastedPercent"></div>
+
+            <div data-field="unusedJStotalBytes"></div>
+            <div data-field="unusedJSwastedBytes"></div>
+            <div data-field="unusedJSwastedPercent"></div>
+
+            <div data-field="dupJSsavingBytes"></div>
+
+            <div data-field="respTimeSavingMS"></div>
+            <div data-field="respTimeTotalMS"></div>
+
+            <div data-field="unminCSSsavingMS"></div>
+            <div data-field="unminCSSsavingBytes"></div>
+
+            <div data-field="modernImageFormatSavingMS"></div>
+            <div data-field="modernImageFormatSavingBytes"></div>
+
+            <div data-field="responsiveImagesSavingMS"></div>
+            <div data-field="responsiveImagesSavingBytes"></div>
+
+            <div data-field="optimizedImagesSavingMS"></div>
+            <div data-field="optimizedImagesSavingBytes"></div>
+
+            <div data-field="legacyJSsavingMS"></div>
+            <div data-field="legacyJSsavingBytes"></div>
+        </div>
+
+        <div class="changed_numbers">
+            <div class="wrapper">
+                <div class="grams"></div>
+                <div class="seconds"></div>
+                <div class="slider"></div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
