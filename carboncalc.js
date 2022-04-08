@@ -369,4 +369,12 @@ imageFromURL.addEventListener('load', function() {
         ) / 10;
     }
 
+
+    endLoadingAnimation();
+
 })
+
+function endLoadingAnimation() {
+    let loader = document.getElementById("loader");
+    loader.classList.add("hide");
+}
