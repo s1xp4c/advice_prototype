@@ -6,20 +6,4 @@
     text-align: center;
     background-size: cover;
     padding-top: 15vh;
-    &__table {
-        display: inline-table;
-        text-align: center;
-        width: 80vw;
-        &--head {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            grid-gap: 2rem;
-            border-top: 2px solid set-text-color(white);
-            border-bottom: 2px solid set-text-color(white);
-        }
-        &--tbody td {
-            padding-top: 1.5rem;
-            grid-gap: 1.5rem;
-        }
-    }
 }

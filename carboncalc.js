@@ -62,77 +62,47 @@ fieldValue = localStorage.getItem('fieldValue')
 monthly = localStorage.getItem('monthly')
 console.log(URLvalue, fieldValue, monthly)
 
-calcMyCarbon(URLvalue)
+async function calcLighthouseAndCo2() {
+    const co2Promise = await fetch(`https://kea-alt-del.dk/websitecarbon/site/?url=${URLvalue}`, {
+        method: "GET",
+    })
 
-async function calcMyCarbon() {
+    const lighthousePromise = await fetch(
+        `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URLvalue}&key=${adviceAPIkey}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                "cache-control": "no-cache",
+            },
+        }
+    )
+    Promise.all([co2Promise, lighthousePromise]).then(valueArray => {
+        return Promise.all(valueArray.map(r => r.json()))
 
-    console.log("Calc running")
-    await fetch(
-            `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URLvalue}&key=${adviceAPIkey}`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8",
-                    "cache-control": "no-cache",
-                },
-            }
-        )
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-
-            prepData(data);
-        })
-        .catch((err) => {
-            console.error(err);
-        });
-    // calcMyCo2(URLvalue);
+    }).then(([co2Data, lighthouseData]) => {
+        console.log(co2Data)
+        console.log(lighthouseData)
+        fillInfo(co2Data, lighthouseData)
+    }).catch((e) => {
+        console.log(e);
+    });
 }
 
-// async function calcMyCo2(URLvalue) {
-//     await fetch(`https://kea-alt-del.dk/websitecarbon/site/?url=${URLvalue}`, {
-//             method: "GET",
-//         })
-//         .then((response) => response.json())
-//         .then((data1) => {
-//             console.log(data1);
-//             prepData(data1);
+calcLighthouseAndCo2();
 
-//         })
-//         .catch((err) => {
-//             console.error(err);
-//         });
-// }
-
-// async function start() {
-//   const promise1 = await calcMyCo2(URLvalue);
-//   const promise2 = await calcMyCarbon(URLvalue);
-//   Promise.all([promise1, promise2]).then((value) => {
-//     console.log(value);
-//     prepData(value);
-//   });
-// }
-// start();
-
-function prepData(data) {
-    fillInfo(data);
-}
-
-// function prepDataco2(data1) {
-//     fillInfo(data1);
-// }
-
-function fillInfo(data) {
+function fillInfo(co2Data, data) {
     const siteInfo = Object.create(SiteInfo);
 
+    // General info
     siteInfo.webURL = data.lighthouseResult.finalUrl
     siteInfo.fetchtime = data.lighthouseResult.fetchTime
     siteInfo.fieldValue = fieldValue
     siteInfo.monthly = monthly
 
-    // siteInfo.energyUsed = data1.statistics.energy
-    // siteInfo.co2GridGrams = data1.statistics.co2.grid.grams
-    // siteInfo.co2RenewableGrams = data1.statistics.co2.renewable.grams
-
+    // Energyconsumption
+    siteInfo.energyUsed = co2Data.statistics.energy
+    siteInfo.co2GridGrams = co2Data.statistics.co2.grid.grams
+    siteInfo.co2RenewableGrams = co2Data.statistics.co2.renewable.grams
 
     // Unused CSS rules
     try {
