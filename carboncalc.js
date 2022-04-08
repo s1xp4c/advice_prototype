@@ -63,9 +63,7 @@ monthly = localStorage.getItem('monthly')
 console.log(URLvalue, fieldValue, monthly)
 
 async function calcLighthouseAndCo2() {
-    const co2Promise = await fetch(`https://kea-alt-del.dk/websitecarbon/site/?url=${URLvalue}`, {
-        method: "GET",
-    })
+    const co2Promise = await fetch(`https://kea-alt-del.dk/websitecarbon/site/?url=${URLvalue}`)
 
     const lighthousePromise = await fetch(
         `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URLvalue}&key=${adviceAPIkey}`, {
