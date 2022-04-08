@@ -12,7 +12,8 @@ const imageFromURL = new Image();
 const SiteInfo = {
     webURL: "",
     fetchtime: "",
-    lightViewport: "",
+    fieldValue: "",
+    monthly: "",
 
     energyUsed: "",
 
@@ -52,18 +53,14 @@ const SiteInfo = {
     imageHeight: "",
 }
 
-// inputForm.addEventListener("submit", (e) => {
-//     // location.href = `carbonresult.html`;
-//     e.preventDefault();
-//     URLvalue = inputForm.elements.urlname.value;
-//     fieldValue = inputForm.elements.industryfield.value;
-//     calcMyCarbon(URLvalue);
-//     // calcMyCo2(URLvalue);
-// });
-
 let URLvalue
+let fieldValue
+let monthly
+
 URLvalue = localStorage.getItem('URLvalue')
-console.log(URLvalue)
+fieldValue = localStorage.getItem('fieldValue')
+monthly = localStorage.getItem('monthly')
+console.log(URLvalue, fieldValue, monthly)
 
 calcMyCarbon(URLvalue)
 
@@ -129,9 +126,8 @@ function fillInfo(data) {
 
     siteInfo.webURL = data.lighthouseResult.finalUrl
     siteInfo.fetchtime = data.lighthouseResult.fetchTime
-    siteInfo.unminJS = data.lighthouseResult.audits['unminified-javascript'].score
-    siteInfo.unsizedIMG = data.lighthouseResult.audits['unsized-images'].score
-    siteInfo.lightViewport = data.lighthouseResult.audits.viewport.score
+    siteInfo.fieldValue = fieldValue
+    siteInfo.monthly = monthly
 
     // siteInfo.energyUsed = data1.statistics.energy
     // siteInfo.co2GridGrams = data1.statistics.co2.grid.grams
@@ -265,10 +261,10 @@ function displayInfoList(siteInfo) {
 
     document.querySelector("[data-field=fetchtime]").textContent = siteInfo.fetchtime
     document.querySelector("[data-field=weburl]").textContent = siteInfo.webURL
+    document.querySelector("[data-field=fieldValue]").textContent = siteInfo.fieldValue
+    document.querySelector("[data-field=monthly]").textContent = siteInfo.monthly + " Monthly visitors"
 
-    // lightViewport: "",
-    document.querySelector("[data-field=lightViewport]").textContent = siteInfo.lightViewport
-        // energyUsed: "",
+    // energyUsed: "",
     document.querySelector("[data-field=energyUsed]").textContent = siteInfo.energyUsed
         // co2GridGrams: "",
     document.querySelector("[data-field=co2GridGrams]").textContent = siteInfo.co2GridGrams
