@@ -1,6 +1,5 @@
 "use strict"
 
-// import { calcMyCarbon } from './carboncalc'
 // import './rangeslider'
 const inputForm = document.getElementById("siteinput");
 let URLvalue
@@ -16,12 +15,8 @@ inputForm.addEventListener("submit", (e) => {
     localStorage.setItem('monthly', monthly);
 
     setTimeout(changeLocation, 1000)
-        // changeLocation();
-
-    // calcMyCo2(URLvalue);
 });
 
 function changeLocation() {
-    location.href = `carbonresult.html`;
-
+    location.href = `./carbonresult.html`;
 }
