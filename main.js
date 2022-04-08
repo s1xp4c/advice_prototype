@@ -1,12 +1,23 @@
 "use strict"
 
-import './carboncalc'
+// import { calcMyCarbon } from './carboncalc'
 // import './rangeslider'
+const inputForm = document.getElementById("siteinput");
+let URLvalue
+let fieldValue
+inputForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    URLvalue = inputForm.elements.urlname.value;
+    fieldValue = inputForm.elements.industryfield.value;
+    localStorage.setItem('URLvalue', URLvalue);
 
+    setTimeout(changeLocation, 1000)
+        // changeLocation();
 
-// Make divs for lighthouse data
-// Secondary fetch for the co2 thingy
-// Fetch and display the screenshot image
-// Set up restDB
-// Make a dropdown industry menu
-//
+    // calcMyCo2(URLvalue);
+});
+
+function changeLocation() {
+    location.href = `carbonresult.html`;
+
+}

@@ -1,11 +1,13 @@
 "use strict";
 
+
+
 const adviceAPIkey = "AIzaSyA3T3lU6NyXFlEjJMt739iXmn-GBT_B7qk";
-const inputForm = document.getElementById("siteinput");
+// const inputForm = document.getElementById("siteinput");
 
 const imageFromURL = new Image();
-let URLvalue
-let fieldValue
+//  let URLvalue = JSON.parse(localStorage.URLvalue || null) || {};
+// let fieldValue
 
 const SiteInfo = {
     webURL: "",
@@ -50,17 +52,24 @@ const SiteInfo = {
     imageHeight: "",
 }
 
-inputForm.addEventListener("submit", (e) => {
-    // location.href = `carbonresult.html`;
-    e.preventDefault();
-    URLvalue = inputForm.elements.urlname.value;
-    fieldValue = inputForm.elements.industryfield.value;
-    calcMyCarbon(URLvalue);
-    // calcMyCo2(URLvalue);
+// inputForm.addEventListener("submit", (e) => {
+//     // location.href = `carbonresult.html`;
+//     e.preventDefault();
+//     URLvalue = inputForm.elements.urlname.value;
+//     fieldValue = inputForm.elements.industryfield.value;
+//     calcMyCarbon(URLvalue);
+//     // calcMyCo2(URLvalue);
+// });
 
-});
+let URLvalue
+URLvalue = localStorage.getItem('URLvalue')
+console.log(URLvalue)
 
-async function calcMyCarbon(URLvalue) {
+calcMyCarbon(URLvalue)
+
+async function calcMyCarbon() {
+
+    console.log("Calc running")
     await fetch(
             `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URLvalue}&key=${adviceAPIkey}`, {
                 method: "GET",

@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./scss/main.scss">
-    <script type="module" src="./main.js" defer></script>
+    <script type="module" src="./carboncalc.js" defer></script>
     <title>Carbon result</title>
 </head>
 
 <body>
-    <header id="result_header">
-        <h1>RESULT FOR<span data-field="webURL"></span> </h1>
+    <section id="result_header">
+        <h1>RESULT FOR<span data-field="weburl"></span> <span data-field="fetchtime"></span> </h1>
         <section id="info_section">
             <div class="info_text">
                 <h2>PAGE SUSTAINABILITY</h2>
@@ -25,11 +25,10 @@
             </div>
         </section>
 
-    </header>
+    </section>
     <section id="page_numbers">
         <div class="original_numbers">
-            <div data-field="unminJS"></div>
-            <div data-field="unsizedIMG"></div>
+
             <div data-field="lightViewport"></div>
 
             <div data-field="unusedCSStotalBytes"></div>
@@ -40,27 +39,29 @@
             <div data-field="unusedJSwastedBytes"></div>
             <div data-field="unusedJSwastedPercent"></div>
 
-            <div data-field="dupJSsavingBytes"></div>
+            <div data-field="unminCSStotalBytes"></div>
+            <div data-field="unminCSSwastedBytes"></div>
+            <div data-field="unminCSSwastedPercent"></div>
 
-            <div data-field="respTimeSavingMS"></div>
-            <div data-field="respTimeTotalMS"></div>
+            <div data-field="unminJStotalBytes"></div>
+            <div data-field="unminJSwastedBytes"></div>
+            <div data-field="unminJSwastedPercent"></div>
 
-            <div data-field="unminCSSsavingMS"></div>
-            <div data-field="unminCSSsavingBytes"></div>
+            <div data-field="modernImageFormatTotalBytes"></div>
+            <div data-field="modernImageFormatWastedBytes"></div>
+            <div data-field="modernImageFormatWastedPercent"></div>
 
-            <div data-field="modernImageFormatSavingMS"></div>
-            <div data-field="modernImageFormatSavingBytes"></div>
+            <div data-field="responsiveImagesTotalBytes"></div>
+            <div data-field="responsiveImagesWastedBytes"></div>
+            <div data-field="responsiveImagesWastedPercent"></div>
 
-            <div data-field="responsiveImagesSavingMS"></div>
-            <div data-field="responsiveImagesSavingBytes"></div>
+            <div data-field="optimizedImagesTotalBytes"></div>
+            <div data-field="optimizedImagesWastedBytes"></div>
+            <div data-field="optimizedImagesWastedPercent"></div>
 
-            <div data-field="optimizedImagesSavingMS"></div>
-            <div data-field="optimizedImagesSavingBytes"></div>
-
-            <div data-field="legacyJSsavingMS"></div>
-            <div data-field="legacyJSsavingBytes"></div>
         </div>
-
+    </section>
+    <section id="changed_numbers">
         <div class="changed_numbers">
             <div class="wrapper">
                 <div class="grams"></div>
