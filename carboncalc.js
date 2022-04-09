@@ -56,6 +56,7 @@ const SiteInfo = {
 let URLvalue
 let fieldValue
 let monthly
+let errorValue = 1
 
 URLvalue = localStorage.getItem('URLvalue')
 fieldValue = localStorage.getItem('fieldValue')
@@ -63,8 +64,18 @@ monthly = localStorage.getItem('monthly')
 console.log(URLvalue, fieldValue, monthly)
 
 async function calcLighthouseAndCo2() {
-    const co2Promise = await fetch(`https://kea-alt-del.dk/websitecarbon/site/?url=${URLvalue}`)
-
+    // const co2Promise = await fetch(`https://api.websitecarbon.com/site?url=${URLvalue}`, {
+    //         method: "GET",
+    //         mode: "no-cors",
+    //         headers: {
+    //             "Content-Type": "application/json; charset=utf-8",
+    //             "cache-control": "no-cache",
+    //             'Access-Control-Allow-Origin': "http://localhost:3000",
+    //         },
+    //     })
+    const co2Promise = await fetch(`https://kea-alt-del.dk/websitecarbon/site/?url=${URLvalue}`, {
+        method: "GET",
+    })
     const lighthousePromise = await fetch(
         `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URLvalue}&key=${adviceAPIkey}`, {
             method: "GET",
@@ -72,8 +83,7 @@ async function calcLighthouseAndCo2() {
                 "Content-Type": "application/json; charset=utf-8",
                 "cache-control": "no-cache",
             },
-        }
-    )
+        })
     Promise.all([co2Promise, lighthousePromise]).then(valueArray => {
         return Promise.all(valueArray.map(r => r.json()))
 
@@ -82,6 +92,13 @@ async function calcLighthouseAndCo2() {
         console.log(lighthouseData)
         fillInfo(co2Data, lighthouseData)
     }).catch((e) => {
+        console.log(errorValue)
+        errorValue++
+        if (errorValue <= 5) {
+            calcLighthouseAndCo2()
+        } else {
+            alert("The carbon fetch request has failed!! - Please try again later or input an other site")
+        }
         console.log(e);
     });
 }
@@ -91,16 +108,39 @@ calcLighthouseAndCo2();
 function fillInfo(co2Data, data) {
     const siteInfo = Object.create(SiteInfo);
 
-    // General info
+    // Web URL input
     siteInfo.webURL = data.lighthouseResult.finalUrl
-    siteInfo.fetchtime = data.lighthouseResult.fetchTime
+
+    // Industry input
     siteInfo.fieldValue = fieldValue
+        // Monthly users input
     siteInfo.monthly = monthly
 
     // Energyconsumption
-    siteInfo.energyUsed = co2Data.statistics.energy
-    siteInfo.co2GridGrams = co2Data.statistics.co2.grid.grams
-    siteInfo.co2RenewableGrams = co2Data.statistics.co2.renewable.grams
+    try {
+        siteInfo.energyUsed = co2Data.statistics.energy
+    } catch (error) {
+        siteInfo.energyUsed = 0
+    }
+    try {
+        siteInfo.co2GridGrams = co2Data.statistics.co2.grid.grams
+    } catch (error) {
+        siteInfo.co2GridGrams = 0
+    }
+    try {
+        siteInfo.co2RenewableGrams = co2Data.statistics.co2.renewable.grams
+    } catch (error) {
+        siteInfo.co2RenewableGrams = 0
+    }
+
+    // Time calculation
+    let timestamp = co2Data.timestamp
+    let date = new Date(timestamp * 1000)
+    let hours = date.getHours()
+    let minutes = '0' + date.getMinutes()
+    let seconds = '0' + date.getSeconds()
+    let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)
+    siteInfo.fetchtime = formattedTime
 
     // Unused CSS rules
     try {
