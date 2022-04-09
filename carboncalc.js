@@ -294,64 +294,64 @@ function displayInfoList(siteInfo) {
 
     document.querySelector("[data-field=fetchtime]").textContent = siteInfo.fetchtime
     document.querySelector("[data-field=weburl]").textContent = siteInfo.webURL
-    document.querySelector("[data-field=fieldValue]").textContent = siteInfo.fieldValue
+    document.querySelector("[data-field=fieldValue]").textContent = "Field of industry: " + siteInfo.fieldValue
     document.querySelector("[data-field=monthly]").textContent = siteInfo.monthly + " Monthly visitors"
 
     // energyUsed: "",
-    document.querySelector("[data-field=energyUsed]").textContent = siteInfo.energyUsed
+    document.querySelector("[data-field=energyUsed]").textContent = siteInfo.energyUsed + " kW"
         // co2GridGrams: "",
-    document.querySelector("[data-field=co2GridGrams]").textContent = siteInfo.co2GridGrams
+    document.querySelector("[data-field=co2GridGrams]").textContent = siteInfo.co2GridGrams + " g"
         // co2RenewableGrams: "",
-    document.querySelector("[data-field=co2RenewableGrams]").textContent = siteInfo.co2RenewableGrams
+    document.querySelector("[data-field=co2RenewableGrams]").textContent = siteInfo.co2RenewableGrams + " g"
 
     // unusedCSStotalBytes: "",
-    document.querySelector("[data-field=unusedCSStotalBytes]").textContent = siteInfo.unusedCSStotalBytes
+    document.querySelector("[data-field=unusedCSStotalBytes]").textContent = siteInfo.unusedCSStotalBytes + " bytes"
         // unusedCSSwastedBytes: "",
-    document.querySelector("[data-field=unusedCSSwastedBytes]").textContent = siteInfo.unusedCSSwastedBytes
+    document.querySelector("[data-field=unusedCSSwastedBytes]").textContent = siteInfo.unusedCSSwastedBytes + " bytes"
         // unusedCSSwastedPercent: "",
-    document.querySelector("[data-field=unusedCSSwastedPercent]").textContent = siteInfo.unusedCSSwastedPercent
+    document.querySelector("[data-field=unusedCSSwastedPercent]").textContent = siteInfo.unusedCSSwastedPercent + " %"
 
     // unusedJStotalBytes: "",
-    document.querySelector("[data-field=unusedJStotalBytes]").textContent = siteInfo.unusedJStotalBytes
+    document.querySelector("[data-field=unusedJStotalBytes]").textContent = siteInfo.unusedJStotalBytes + " bytes"
         // unusedJSwastedBytes: "",
-    document.querySelector("[data-field=unusedJSwastedBytes]").textContent = siteInfo.unusedJSwastedBytes
+    document.querySelector("[data-field=unusedJSwastedBytes]").textContent = siteInfo.unusedJSwastedBytes + " bytes"
         // unusedJSwastedPercent: "",
-    document.querySelector("[data-field=unusedJSwastedPercent]").textContent = siteInfo.unusedJSwastedPercent
+    document.querySelector("[data-field=unusedJSwastedPercent]").textContent = siteInfo.unusedJSwastedPercent + " %"
 
     // unminCSStotalBytes: "",
-    document.querySelector("[data-field=unminCSStotalBytes]").textContent = siteInfo.unminCSStotalBytes
+    document.querySelector("[data-field=unminCSStotalBytes]").textContent = siteInfo.unminCSStotalBytes + " bytes"
         // unminCSSwastedBytes: "",
-    document.querySelector("[data-field=unminCSSwastedBytes]").textContent = siteInfo.unminCSSwastedBytes
+    document.querySelector("[data-field=unminCSSwastedBytes]").textContent = siteInfo.unminCSSwastedBytes + " bytes"
         // unminCSSwastedPercent: "",
-    document.querySelector("[data-field=unminCSSwastedPercent]").textContent = siteInfo.unminCSSwastedPercent
+    document.querySelector("[data-field=unminCSSwastedPercent]").textContent = siteInfo.unminCSSwastedPercent + " %"
 
     // unminJStotalBytes: "",
-    document.querySelector("[data-field=unminJStotalBytes]").textContent = siteInfo.unminJStotalBytes
+    document.querySelector("[data-field=unminJStotalBytes]").textContent = siteInfo.unminJStotalBytes + " bytes"
         // unminJSwastedBytes: "",
-    document.querySelector("[data-field=unminJSwastedBytes]").textContent = siteInfo.unminJSwastedBytes
+    document.querySelector("[data-field=unminJSwastedBytes]").textContent = siteInfo.unminJSwastedBytes + " bytes"
         // unminJSwastedPercent: "",
-    document.querySelector("[data-field=unminJSwastedPercent]").textContent = siteInfo.unminJSwastedPercent
+    document.querySelector("[data-field=unminJSwastedPercent]").textContent = siteInfo.unminJSwastedPercent + " %"
 
     // modernImageFormatTotalBytes: "",
-    document.querySelector("[data-field=modernImageFormatTotalBytes]").textContent = siteInfo.modernImageFormatTotalBytes
+    document.querySelector("[data-field=modernImageFormatTotalBytes]").textContent = siteInfo.modernImageFormatTotalBytes + " bytes"
         // modernImageFormatWastedBytes: "",
-    document.querySelector("[data-field=modernImageFormatWastedBytes]").textContent = siteInfo.modernImageFormatWastedBytes
+    document.querySelector("[data-field=modernImageFormatWastedBytes]").textContent = siteInfo.modernImageFormatWastedBytes + " bytes"
         // modernImageFormatWastedPercent: "",
-    document.querySelector("[data-field=modernImageFormatWastedPercent]").textContent = siteInfo.modernImageFormatWastedPercent
+    document.querySelector("[data-field=modernImageFormatWastedPercent]").textContent = siteInfo.modernImageFormatWastedPercent + " %"
 
     // responsiveImagesTotalBytes: "",
-    document.querySelector("[data-field=responsiveImagesTotalBytes]").textContent = siteInfo.responsiveImagesTotalBytes
+    document.querySelector("[data-field=responsiveImagesTotalBytes]").textContent = siteInfo.responsiveImagesTotalBytes + " bytes"
         // responsiveImagesWastedBytes: "",
-    document.querySelector("[data-field=responsiveImagesWastedBytes]").textContent = siteInfo.responsiveImagesWastedBytes
+    document.querySelector("[data-field=responsiveImagesWastedBytes]").textContent = siteInfo.responsiveImagesWastedBytes + " bytes"
         // responsiveImagesWastedPercent: "",
-    document.querySelector("[data-field=responsiveImagesWastedPercent]").textContent = siteInfo.responsiveImagesWastedPercent
+    document.querySelector("[data-field=responsiveImagesWastedPercent]").textContent = siteInfo.responsiveImagesWastedPercent + " %"
 
     // optimizedImagesTotalBytes: "",
-    document.querySelector("[data-field=optimizedImagesTotalBytes]").textContent = siteInfo.optimizedImagesTotalBytes
+    document.querySelector("[data-field=optimizedImagesTotalBytes]").textContent = siteInfo.optimizedImagesTotalBytes + " bytes"
         // optimizedImagesWastedBytes: "",
-    document.querySelector("[data-field=optimizedImagesWastedBytes]").textContent = siteInfo.optimizedImagesWastedBytes
+    document.querySelector("[data-field=optimizedImagesWastedBytes]").textContent = siteInfo.optimizedImagesWastedBytes + " bytes"
         // optimizedImagesWastedPercent: "",
-    document.querySelector("[data-field=optimizedImagesWastedPercent]").textContent = siteInfo.optimizedImagesWastedPercent
+    document.querySelector("[data-field=optimizedImagesWastedPercent]").textContent = siteInfo.optimizedImagesWastedPercent + " %"
 
 
 
