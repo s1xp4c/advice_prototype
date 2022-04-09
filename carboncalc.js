@@ -9,6 +9,11 @@ const imageFromURL = new Image();
 //  let URLvalue = JSON.parse(localStorage.URLvalue || null) || {};
 // let fieldValue
 
+const ReturnVisitors = {
+    visitURL: "",
+    visitDate: "",
+}
+
 const SiteInfo = {
     webURL: "",
     fetchtime: "",
@@ -97,7 +102,7 @@ async function calcLighthouseAndCo2() {
         if (errorValue <= 5) {
             calcLighthouseAndCo2()
         } else {
-            alert("The carbon fetch request has failed!! - Please try again later or input an other site")
+            alert("The carbon fetch request has failed!! - Please try again later or input another site")
         }
         console.log(e);
     });
@@ -135,12 +140,7 @@ function fillInfo(co2Data, data) {
 
     // Time calculation
     let timestamp = co2Data.timestamp
-    let date = new Date(timestamp * 1000)
-    let hours = date.getHours()
-    let minutes = '0' + date.getMinutes()
-    let seconds = '0' + date.getSeconds()
-    let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)
-    siteInfo.fetchtime = formattedTime
+    siteInfo.fetchtime = timeCalc(timestamp)
 
     // Unused CSS rules
     try {
@@ -222,6 +222,9 @@ function fillInfo(co2Data, data) {
         siteInfo.modernImageFormatWastedBytes = 0
     }
     // Calc the percent here
+    let modernTotalBytes = siteInfo.modernImageFormatTotalBytes
+    let modernWastedBytes = siteInfo.modernImageFormatWastedBytes
+    siteInfo.modernImageFormatWastedPercent = calcPercent(modernTotalBytes, modernWastedBytes)
 
     // Responsive Images
     try {
@@ -251,7 +254,10 @@ function fillInfo(co2Data, data) {
     } catch (error) {
         siteInfo.optimizedImagesSwastedBytes = 0
     }
-    // Calc percent here
+    // Calc the percent here
+    let optimizedTotalBytes = siteInfo.optimizedImagesStotalBytes
+    let optimizedWastedBytes = siteInfo.optimizedImagesSwastedBytes
+    siteInfo.optimizedImagesWastedPercent = calcPercent(optimizedTotalBytes, optimizedWastedBytes)
 
     // Image data
     siteInfo.imageData = data.lighthouseResult.audits['full-page-screenshot'].details.screenshot.data
@@ -262,6 +268,25 @@ function fillInfo(co2Data, data) {
     displayInfoList(siteInfo)
 
 }
+
+function timeCalc(timestamp) {
+    let date = new Date(timestamp * 1000)
+    let hours = date.getHours()
+    let minutes = '0' + date.getMinutes()
+    let seconds = '0' + date.getSeconds()
+    let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)
+    return formattedTime
+}
+
+function calcPercent(total, wasted) {
+    let wastedPercent
+    if (total === 0) {
+        return wastedPercent = 0
+    }
+    wastedPercent = 100 / total * wasted
+    return wastedPercent
+}
+
 let splashWidth
 let splashHeight
 
