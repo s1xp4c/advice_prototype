@@ -63,7 +63,7 @@ let URLvalue
 let fieldValue
 let monthly
 let errorValue = 1
-const zero = 0.000
+const zero = 0
 
 const bytes = 1
 const kiloBytes = 1000
@@ -258,17 +258,17 @@ function fillInfo(co2Data, data) {
 
     // Optimized Images
     try {
-        siteInfo.optimizedImagesStotalBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].totalBytes.toPrecision(4) / divider
+        siteInfo.optimizedImagesTotalBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].totalBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.optimizedImagesStotalBytes = zero
+        siteInfo.optimizedImagesTotalBytes = zero
     }
     try {
-        siteInfo.optimizedImagesSwastedBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].wastedBytes.toPrecision(4) / divider
+        siteInfo.optimizedImagesWastedBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].wastedBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.optimizedImagesSwastedBytes = zero
+        siteInfo.optimizedImagesWastedBytes = zero
     }
     // Calc the percent here
-    siteInfo.optimizedImagesWastedPercent = calcPercent(siteInfo.optimizedImagesStotalBytes, siteInfo.optimizedImagesSwastedBytes).toPrecision(4)
+    siteInfo.optimizedImagesWastedPercent = calcPercent(siteInfo.optimizedImagesTotalBytes, siteInfo.optimizedImagesWastedBytes).toPrecision(4)
 
     // Image data
     siteInfo.imageData = data.lighthouseResult.audits['full-page-screenshot'].details.screenshot.data
