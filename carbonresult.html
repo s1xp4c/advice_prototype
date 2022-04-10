@@ -5,8 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./scss/main.scss">
+    <link rel="stylesheet" href="./scss/style.scss">
     <script type="module" src="./carboncalc.js" defer></script>
+
+<!-- font link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <title>Carbon result</title>
 </head>
 
@@ -23,7 +29,7 @@
                 <h2>PAGE SUSTAINABILITY</h2>
                 <p>Lorem ipsunecessitatibus <span data-field="energyUsed"></span> repellat qui cupiditate ullam a provident voluptatem ipsum iusto, cumque <span data-field="co2GridGrams"></span> sed eum dolor assumenda placeat aaliquam, <span data-field="co2RenewableGrams"></span>                    sapiente excep tempore reiciendis!</p>
             </div>
-            <div id="imgDiv">
+            <div id="screenshot_container">
                 <canvas id="imgFromURL"></canvas>
             </div>
         </section>
@@ -32,36 +38,36 @@
     <section id="page_numbers">
         <div class="original_numbers">
 
-            <div data-field="fieldValue"></div>
-            <div data-field="monthly"></div>
+            <p data-field="fieldValue"></p>
+            <p data-field="monthly"></p>
 
-            <div data-field="unusedCSStotalBytes"></div>
-            <div data-field="unusedCSSwastedBytes"></div>
-            <div data-field="unusedCSSwastedPercent"></div>
+            <p data-field="unusedCSStotalBytes"></p>
+            <p data-field="unusedCSSwastedBytes"></p>
+            <p data-field="unusedCSSwastedPercent"></p>
 
-            <div data-field="unusedJStotalBytes"></div>
-            <div data-field="unusedJSwastedBytes"></div>
-            <div data-field="unusedJSwastedPercent"></div>
+            <p data-field="unusedJStotalBytes"></p>
+            <p data-field="unusedJSwastedBytes"></p>
+            <p data-field="unusedJSwastedPercent"></p>
 
-            <div data-field="unminCSStotalBytes"></div>
-            <div data-field="unminCSSwastedBytes"></div>
-            <div data-field="unminCSSwastedPercent"></div>
+            <p data-field="unminCSStotalBytes"></p>
+            <p data-field="unminCSSwastedBytes"></p>
+            <p data-field="unminCSSwastedPercent"></p>
 
-            <div data-field="unminJStotalBytes"></div>
-            <div data-field="unminJSwastedBytes"></div>
-            <div data-field="unminJSwastedPercent"></div>
+            <p data-field="unminJStotalBytes"></p>
+            <p data-field="unminJSwastedBytes"></p>
+            <p data-field="unminJSwastedPercent"></p>
 
-            <div data-field="modernImageFormatTotalBytes"></div>
-            <div data-field="modernImageFormatWastedBytes"></div>
-            <div data-field="modernImageFormatWastedPercent"></div>
+            <p data-field="modernImageFormatTotalBytes"></p>
+            <p data-field="modernImageFormatWastedBytes"></p>
+            <p data-field="modernImageFormatWastedPercent"></p>
 
-            <div data-field="responsiveImagesTotalBytes"></div>
-            <div data-field="responsiveImagesWastedBytes"></div>
-            <div data-field="responsiveImagesWastedPercent"></div>
+            <p data-field="responsiveImagesTotalBytes"></p>
+            <p data-field="responsiveImagesWastedBytes"></p>
+            <p data-field="responsiveImagesWastedPercent"></p>
 
-            <div data-field="optimizedImagesTotalBytes"></div>
-            <div data-field="optimizedImagesWastedBytes"></div>
-            <div data-field="optimizedImagesWastedPercent"></div>
+            <p data-field="optimizedImagesTotalBytes"></p>
+            <p data-field="optimizedImagesWastedBytes"></p>
+            <p data-field="optimizedImagesWastedPercent"></p>
 
         </div>
     </section>

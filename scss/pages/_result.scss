@@ -1,0 +1,15 @@
+
+#screenshot_container {
+    // position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#imgFromURL {
+    object-fit: cover;
+    width: 60vw;
+    height: 33vw;
+    object-position: 0% 0%;
+}
+
