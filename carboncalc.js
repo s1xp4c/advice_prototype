@@ -152,12 +152,12 @@ function fillInfo(co2Data, data) {
 
     // Unused CSS rules
     try {
-        siteInfo.unusedCSStotalBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].totalBytes
+        siteInfo.unusedCSStotalBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].totalBytes / 1000
     } catch (error) {
         siteInfo.unusedCSStotalBytes = 0
     }
     try {
-        siteInfo.unusedCSSwastedBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedBytes
+        siteInfo.unusedCSSwastedBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedBytes / 1000
     } catch (error) {
         siteInfo.unusedCSSwastedBytes = 0
     }
@@ -169,12 +169,12 @@ function fillInfo(co2Data, data) {
 
     // Unused Javascript
     try {
-        siteInfo.unusedJStotalBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].totalBytes
+        siteInfo.unusedJStotalBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].totalBytes / 1000
     } catch (error) {
         siteInfo.unusedJStotalBytes = 0
     }
     try {
-        siteInfo.unusedJSwastedBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedBytes
+        siteInfo.unusedJSwastedBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedBytes / 1000
     } catch (error) {
         siteInfo.unusedJSwastedBytes = 0
     }
@@ -186,12 +186,12 @@ function fillInfo(co2Data, data) {
 
     // Unminified CSS
     try {
-        siteInfo.unminCSStotalBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].totalBytes
+        siteInfo.unminCSStotalBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].totalBytes / 1000
     } catch (error) {
         siteInfo.unminCSStotalBytes = 0
     }
     try {
-        siteInfo.unminCSSwastedBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedBytes
+        siteInfo.unminCSSwastedBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedBytes / 1000
     } catch (error) {
         siteInfo.unminCSSwastedBytes = 0
     }
@@ -203,12 +203,12 @@ function fillInfo(co2Data, data) {
 
     // Unminified Javascript
     try {
-        siteInfo.unminJStotalBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].totalBytes
+        siteInfo.unminJStotalBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].totalBytes / 1000
     } catch (error) {
         siteInfo.unminJStotalBytes = 0
     }
     try {
-        siteInfo.unminJSwastedBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedBytes
+        siteInfo.unminJSwastedBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedBytes / 1000
     } catch (error) {
         siteInfo.unminJSwastedBytes = 0
     }
@@ -220,12 +220,12 @@ function fillInfo(co2Data, data) {
 
     // Modern Image Format
     try {
-        siteInfo.modernImageFormatTotalBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].totalBytes
+        siteInfo.modernImageFormatTotalBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].totalBytes / 1000
     } catch (error) {
         siteInfo.modernImageFormatTotalBytes = 0
     }
     try {
-        siteInfo.modernImageFormatWastedBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].wastedBytes
+        siteInfo.modernImageFormatWastedBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].wastedBytes / 1000
     } catch (error) {
         siteInfo.modernImageFormatWastedBytes = 0
     }
@@ -236,12 +236,12 @@ function fillInfo(co2Data, data) {
 
     // Responsive Images
     try {
-        siteInfo.responsiveImagesTotalBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].totalBytes
+        siteInfo.responsiveImagesTotalBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].totalBytes / 1000
     } catch (error) {
         siteInfo.responsiveImagesTotalBytes = 0
     }
     try {
-        siteInfo.responsiveImagesWastedBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedBytes
+        siteInfo.responsiveImagesWastedBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedBytes / 1000
     } catch (error) {
         siteInfo.responsiveImagesWastedBytes = 0
     }
@@ -253,12 +253,12 @@ function fillInfo(co2Data, data) {
 
     // Optimized Images
     try {
-        siteInfo.optimizedImagesStotalBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].totalBytes
+        siteInfo.optimizedImagesStotalBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].totalBytes / 1000
     } catch (error) {
         siteInfo.optimizedImagesStotalBytes = 0
     }
     try {
-        siteInfo.optimizedImagesSwastedBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].wastedBytes
+        siteInfo.optimizedImagesSwastedBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].wastedBytes / 1000
     } catch (error) {
         siteInfo.optimizedImagesSwastedBytes = 0
     }
@@ -274,7 +274,7 @@ function fillInfo(co2Data, data) {
 
     console.log(siteInfo)
     displayInfoList(siteInfo)
-
+    changeInfoList(siteInfo)
 }
 
 function timeCalc(timestamp) {
@@ -314,51 +314,51 @@ function displayInfoList(siteInfo) {
     document.querySelector("[data-field=co2RenewableGrams]").textContent = siteInfo.co2RenewableGrams + " g"
 
     // unusedCSStotalBytes: "",
-    document.querySelector("[data-field=unusedCSStotalBytes]").textContent = siteInfo.unusedCSStotalBytes + " bytes"
+    document.querySelector("[data-field=unusedCSStotalBytes]").textContent = siteInfo.unusedCSStotalBytes + " kB"
         // unusedCSSwastedBytes: "",
-    document.querySelector("[data-field=unusedCSSwastedBytes]").textContent = siteInfo.unusedCSSwastedBytes + " bytes"
+    document.querySelector("[data-field=unusedCSSwastedBytes]").textContent = siteInfo.unusedCSSwastedBytes + " kB"
         // unusedCSSwastedPercent: "",
     document.querySelector("[data-field=unusedCSSwastedPercent]").textContent = siteInfo.unusedCSSwastedPercent + " %"
 
     // unusedJStotalBytes: "",
-    document.querySelector("[data-field=unusedJStotalBytes]").textContent = siteInfo.unusedJStotalBytes + " bytes"
+    document.querySelector("[data-field=unusedJStotalBytes]").textContent = siteInfo.unusedJStotalBytes + " kB"
         // unusedJSwastedBytes: "",
-    document.querySelector("[data-field=unusedJSwastedBytes]").textContent = siteInfo.unusedJSwastedBytes + " bytes"
+    document.querySelector("[data-field=unusedJSwastedBytes]").textContent = siteInfo.unusedJSwastedBytes + " kB"
         // unusedJSwastedPercent: "",
     document.querySelector("[data-field=unusedJSwastedPercent]").textContent = siteInfo.unusedJSwastedPercent + " %"
 
     // unminCSStotalBytes: "",
-    document.querySelector("[data-field=unminCSStotalBytes]").textContent = siteInfo.unminCSStotalBytes + " bytes"
+    document.querySelector("[data-field=unminCSStotalBytes]").textContent = siteInfo.unminCSStotalBytes + " kB"
         // unminCSSwastedBytes: "",
-    document.querySelector("[data-field=unminCSSwastedBytes]").textContent = siteInfo.unminCSSwastedBytes + " bytes"
+    document.querySelector("[data-field=unminCSSwastedBytes]").textContent = siteInfo.unminCSSwastedBytes + " kB"
         // unminCSSwastedPercent: "",
     document.querySelector("[data-field=unminCSSwastedPercent]").textContent = siteInfo.unminCSSwastedPercent + " %"
 
     // unminJStotalBytes: "",
-    document.querySelector("[data-field=unminJStotalBytes]").textContent = siteInfo.unminJStotalBytes + " bytes"
+    document.querySelector("[data-field=unminJStotalBytes]").textContent = siteInfo.unminJStotalBytes + " kB"
         // unminJSwastedBytes: "",
-    document.querySelector("[data-field=unminJSwastedBytes]").textContent = siteInfo.unminJSwastedBytes + " bytes"
+    document.querySelector("[data-field=unminJSwastedBytes]").textContent = siteInfo.unminJSwastedBytes + " kB"
         // unminJSwastedPercent: "",
     document.querySelector("[data-field=unminJSwastedPercent]").textContent = siteInfo.unminJSwastedPercent + " %"
 
     // modernImageFormatTotalBytes: "",
-    document.querySelector("[data-field=modernImageFormatTotalBytes]").textContent = siteInfo.modernImageFormatTotalBytes + " bytes"
+    document.querySelector("[data-field=modernImageFormatTotalBytes]").textContent = siteInfo.modernImageFormatTotalBytes + " kB"
         // modernImageFormatWastedBytes: "",
-    document.querySelector("[data-field=modernImageFormatWastedBytes]").textContent = siteInfo.modernImageFormatWastedBytes + " bytes"
+    document.querySelector("[data-field=modernImageFormatWastedBytes]").textContent = siteInfo.modernImageFormatWastedBytes + " kB"
         // modernImageFormatWastedPercent: "",
     document.querySelector("[data-field=modernImageFormatWastedPercent]").textContent = siteInfo.modernImageFormatWastedPercent + " %"
 
     // responsiveImagesTotalBytes: "",
-    document.querySelector("[data-field=responsiveImagesTotalBytes]").textContent = siteInfo.responsiveImagesTotalBytes + " bytes"
+    document.querySelector("[data-field=responsiveImagesTotalBytes]").textContent = siteInfo.responsiveImagesTotalBytes + " kB"
         // responsiveImagesWastedBytes: "",
-    document.querySelector("[data-field=responsiveImagesWastedBytes]").textContent = siteInfo.responsiveImagesWastedBytes + " bytes"
+    document.querySelector("[data-field=responsiveImagesWastedBytes]").textContent = siteInfo.responsiveImagesWastedBytes + " kB"
         // responsiveImagesWastedPercent: "",
     document.querySelector("[data-field=responsiveImagesWastedPercent]").textContent = siteInfo.responsiveImagesWastedPercent + " %"
 
     // optimizedImagesTotalBytes: "",
-    document.querySelector("[data-field=optimizedImagesTotalBytes]").textContent = siteInfo.optimizedImagesTotalBytes + " bytes"
+    document.querySelector("[data-field=optimizedImagesTotalBytes]").textContent = siteInfo.optimizedImagesTotalBytes + " kB"
         // optimizedImagesWastedBytes: "",
-    document.querySelector("[data-field=optimizedImagesWastedBytes]").textContent = siteInfo.optimizedImagesWastedBytes + " bytes"
+    document.querySelector("[data-field=optimizedImagesWastedBytes]").textContent = siteInfo.optimizedImagesWastedBytes + " kB"
         // optimizedImagesWastedPercent: "",
     document.querySelector("[data-field=optimizedImagesWastedPercent]").textContent = siteInfo.optimizedImagesWastedPercent + " %"
 
@@ -366,6 +366,66 @@ function displayInfoList(siteInfo) {
     imageFromURL.src = siteInfo.imageData
     splashWidth = siteInfo.imageWidth / 3
     splashHeight = siteInfo.imageHeight / 3
+}
+
+function changeInfoList(siteInfo) {
+
+    // energyUsed: "",
+    document.querySelector("[data-field=energyUsedChange]").textContent = siteInfo.energyUsed + " kW"
+        // co2GridGrams: "",
+    document.querySelector("[data-field=co2GridGramsChange]").textContent = siteInfo.co2GridGrams + " g"
+        // co2RenewableGrams: "",
+    document.querySelector("[data-field=co2RenewableGramsChange]").textContent = siteInfo.co2RenewableGrams + " g"
+
+    // unusedCSStotalBytes: "",
+    document.querySelector("[data-field=unusedCSStotalBytesChange]").textContent = siteInfo.unusedCSStotalBytes + " kB"
+        // unusedCSSwastedBytes: "",
+    document.querySelector("[data-field=unusedCSSwastedBytesChange]").textContent = siteInfo.unusedCSSwastedBytes + " kB"
+        // unusedCSSwastedPercent: "",
+    document.querySelector("[data-field=unusedCSSwastedPercentChange]").textContent = siteInfo.unusedCSSwastedPercent + " %"
+
+    // unusedJStotalBytes: "",
+    document.querySelector("[data-field=unusedJStotalBytesChange]").textContent = siteInfo.unusedJStotalBytes + " kB"
+        // unusedJSwastedBytes: "",
+    document.querySelector("[data-field=unusedJSwastedBytesChange]").textContent = siteInfo.unusedJSwastedBytes + " kB"
+        // unusedJSwastedPercent: "",
+    document.querySelector("[data-field=unusedJSwastedPercentChange]").textContent = siteInfo.unusedJSwastedPercent + " %"
+
+    // unminCSStotalBytes: "",
+    document.querySelector("[data-field=unminCSStotalBytesChange]").textContent = siteInfo.unminCSStotalBytes + " kB"
+        // unminCSSwastedBytes: "",
+    document.querySelector("[data-field=unminCSSwastedBytesChange]").textContent = siteInfo.unminCSSwastedBytes + " kB"
+        // unminCSSwastedPercent: "",
+    document.querySelector("[data-field=unminCSSwastedPercentChange]").textContent = siteInfo.unminCSSwastedPercent + " %"
+
+    // unminJStotalBytes: "",
+    document.querySelector("[data-field=unminJStotalBytesChange]").textContent = siteInfo.unminJStotalBytes + " kB"
+        // unminJSwastedBytes: "",
+    document.querySelector("[data-field=unminJSwastedBytesChange]").textContent = siteInfo.unminJSwastedBytes + " kB"
+        // unminJSwastedPercent: "",
+    document.querySelector("[data-field=unminJSwastedPercentChange]").textContent = siteInfo.unminJSwastedPercent + " %"
+
+    // modernImageFormatTotalBytes: "",
+    document.querySelector("[data-field=modernImageFormatTotalBytesChange]").textContent = siteInfo.modernImageFormatTotalBytes + " kB"
+        // modernImageFormatWastedBytes: "",
+    document.querySelector("[data-field=modernImageFormatWastedBytesChange]").textContent = siteInfo.modernImageFormatWastedBytes + " kB"
+        // modernImageFormatWastedPercent: "",
+    document.querySelector("[data-field=modernImageFormatWastedPercentChange]").textContent = siteInfo.modernImageFormatWastedPercent + " %"
+
+    // responsiveImagesTotalBytes: "",
+    document.querySelector("[data-field=responsiveImagesTotalBytesChange]").textContent = siteInfo.responsiveImagesTotalBytes + " kB"
+        // responsiveImagesWastedBytes: "",
+    document.querySelector("[data-field=responsiveImagesWastedBytesChange]").textContent = siteInfo.responsiveImagesWastedBytes + " kB"
+        // responsiveImagesWastedPercent: "",
+    document.querySelector("[data-field=responsiveImagesWastedPercentChange]").textContent = siteInfo.responsiveImagesWastedPercent + " %"
+
+    // optimizedImagesTotalBytes: "",
+    document.querySelector("[data-field=optimizedImagesTotalBytesChange]").textContent = siteInfo.optimizedImagesTotalBytes + " kB"
+        // optimizedImagesWastedBytes: "",
+    document.querySelector("[data-field=optimizedImagesWastedBytesChange]").textContent = siteInfo.optimizedImagesWastedBytes + " kB"
+        // optimizedImagesWastedPercent: "",
+    document.querySelector("[data-field=optimizedImagesWastedPercentChange]").textContent = siteInfo.optimizedImagesWastedPercent + " %"
+
 }
 
 imageFromURL.addEventListener('load', function() {
