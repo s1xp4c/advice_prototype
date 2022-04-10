@@ -17,6 +17,7 @@ const ReturnVisitors = {
 const SiteInfo = {
     webURL: "",
     fetchtime: "",
+    fetchdate: "",
     fieldValue: "",
     monthly: "",
 
@@ -137,6 +138,13 @@ function fillInfo(co2Data, data) {
     } catch (error) {
         siteInfo.co2RenewableGrams = 0
     }
+
+    // Slice out Date from papgespeed 
+    let fullDateAndTime = data.analysisUTCTimestamp
+    let timeDataT = fullDateAndTime.indexOf('T')
+    let slicedDate = fullDateAndTime.substr(0, timeDataT)
+
+    siteInfo.fetchdate = slicedDate
 
     // Time calculation
     let timestamp = co2Data.timestamp
@@ -293,6 +301,7 @@ let splashHeight
 function displayInfoList(siteInfo) {
 
     document.querySelector("[data-field=fetchtime]").textContent = siteInfo.fetchtime
+    document.querySelector("[data-field=fetchdate]").textContent = siteInfo.fetchdate
     document.querySelector("[data-field=weburl]").textContent = siteInfo.webURL
     document.querySelector("[data-field=fieldValue]").textContent = "Field of industry: " + siteInfo.fieldValue
     document.querySelector("[data-field=monthly]").textContent = siteInfo.monthly + " Monthly visitors"
@@ -353,8 +362,7 @@ function displayInfoList(siteInfo) {
         // optimizedImagesWastedPercent: "",
     document.querySelector("[data-field=optimizedImagesWastedPercent]").textContent = siteInfo.optimizedImagesWastedPercent + " %"
 
-
-
+    // Image data
     imageFromURL.src = siteInfo.imageData
     splashWidth = siteInfo.imageWidth / 3
     splashHeight = siteInfo.imageHeight / 3
