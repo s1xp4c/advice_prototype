@@ -94,8 +94,7 @@ async function calcLighthouseAndCo2() {
         return Promise.all(valueArray.map(r => r.json()))
 
     }).then(([co2Data, lighthouseData]) => {
-        console.log(co2Data)
-        console.log(lighthouseData)
+        console.log(co2Data, lighthouseData)
         fillInfo(co2Data, lighthouseData)
     }).catch((e) => {
         console.log(errorValue)
@@ -152,120 +151,116 @@ function fillInfo(co2Data, data) {
 
     // Unused CSS rules
     try {
-        siteInfo.unusedCSStotalBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].totalBytes / 1000
+        siteInfo.unusedCSStotalBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].totalBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.unusedCSStotalBytes = 0
     }
     try {
-        siteInfo.unusedCSSwastedBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedBytes / 1000
+        siteInfo.unusedCSSwastedBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.unusedCSSwastedBytes = 0
     }
     try {
-        siteInfo.unusedCSSwastedPercent = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedPercent
+        siteInfo.unusedCSSwastedPercent = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedPercent.toPrecision(4)
     } catch (error) {
         siteInfo.unusedCSSwastedPercent = 0
     }
 
     // Unused Javascript
     try {
-        siteInfo.unusedJStotalBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].totalBytes / 1000
+        siteInfo.unusedJStotalBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].totalBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.unusedJStotalBytes = 0
     }
     try {
-        siteInfo.unusedJSwastedBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedBytes / 1000
+        siteInfo.unusedJSwastedBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.unusedJSwastedBytes = 0
     }
     try {
-        siteInfo.unusedJSwastedPercent = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedPercent
+        siteInfo.unusedJSwastedPercent = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedPercent.toPrecision(4)
     } catch (error) {
         siteInfo.unusedJSwastedPercent = 0
     }
 
     // Unminified CSS
     try {
-        siteInfo.unminCSStotalBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].totalBytes / 1000
+        siteInfo.unminCSStotalBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].totalBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.unminCSStotalBytes = 0
     }
     try {
-        siteInfo.unminCSSwastedBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedBytes / 1000
+        siteInfo.unminCSSwastedBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.unminCSSwastedBytes = 0
     }
     try {
-        siteInfo.unminCSSwastedPercent = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedPercent
+        siteInfo.unminCSSwastedPercent = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedPercent.toPrecision(4)
     } catch (error) {
         siteInfo.unminCSSwastedPercent = 0
     }
 
     // Unminified Javascript
     try {
-        siteInfo.unminJStotalBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].totalBytes / 1000
+        siteInfo.unminJStotalBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].totalBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.unminJStotalBytes = 0
     }
     try {
-        siteInfo.unminJSwastedBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedBytes / 1000
+        siteInfo.unminJSwastedBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.unminJSwastedBytes = 0
     }
     try {
-        siteInfo.unminJSwastedPercent = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedPercent
+        siteInfo.unminJSwastedPercent = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedPercent.toPrecision(4)
     } catch (error) {
         siteInfo.unminJSwastedPercent = 0
     }
 
     // Modern Image Format
     try {
-        siteInfo.modernImageFormatTotalBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].totalBytes / 1000
+        siteInfo.modernImageFormatTotalBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].totalBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.modernImageFormatTotalBytes = 0
     }
     try {
-        siteInfo.modernImageFormatWastedBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].wastedBytes / 1000
+        siteInfo.modernImageFormatWastedBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].wastedBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.modernImageFormatWastedBytes = 0
     }
     // Calc the percent here
-    let modernTotalBytes = siteInfo.modernImageFormatTotalBytes
-    let modernWastedBytes = siteInfo.modernImageFormatWastedBytes
-    siteInfo.modernImageFormatWastedPercent = calcPercent(modernTotalBytes, modernWastedBytes)
+    siteInfo.modernImageFormatWastedPercent = calcPercent(siteInfo.modernImageFormatTotalBytes, siteInfo.modernImageFormatWastedBytes).toPrecision(4)
 
     // Responsive Images
     try {
-        siteInfo.responsiveImagesTotalBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].totalBytes / 1000
+        siteInfo.responsiveImagesTotalBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].totalBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.responsiveImagesTotalBytes = 0
     }
     try {
-        siteInfo.responsiveImagesWastedBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedBytes / 1000
+        siteInfo.responsiveImagesWastedBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.responsiveImagesWastedBytes = 0
     }
     try {
-        siteInfo.responsiveImagesWastedPercent = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedPercent
+        siteInfo.responsiveImagesWastedPercent = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedPercent.toPrecision(4)
     } catch (error) {
         siteInfo.responsiveImagesWastedPercent = 0
     }
 
     // Optimized Images
     try {
-        siteInfo.optimizedImagesStotalBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].totalBytes / 1000
+        siteInfo.optimizedImagesStotalBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].totalBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.optimizedImagesStotalBytes = 0
     }
     try {
-        siteInfo.optimizedImagesSwastedBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].wastedBytes / 1000
+        siteInfo.optimizedImagesSwastedBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].wastedBytes.toPrecision(4) / 1000
     } catch (error) {
         siteInfo.optimizedImagesSwastedBytes = 0
     }
     // Calc the percent here
-    let optimizedTotalBytes = siteInfo.optimizedImagesStotalBytes
-    let optimizedWastedBytes = siteInfo.optimizedImagesSwastedBytes
-    siteInfo.optimizedImagesWastedPercent = calcPercent(optimizedTotalBytes, optimizedWastedBytes)
+    siteInfo.optimizedImagesWastedPercent = calcPercent(siteInfo.optimizedImagesStotalBytes, siteInfo.optimizedImagesSwastedBytes).toPrecision(4)
 
     // Image data
     siteInfo.imageData = data.lighthouseResult.audits['full-page-screenshot'].details.screenshot.data
