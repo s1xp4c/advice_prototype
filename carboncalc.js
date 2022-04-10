@@ -63,6 +63,12 @@ let URLvalue
 let fieldValue
 let monthly
 let errorValue = 1
+const zero = 0.000
+
+const bytes = 1
+const kiloBytes = 1000
+const megaBytes = 1000000
+const divider = kiloBytes
 
 URLvalue = localStorage.getItem('URLvalue')
 fieldValue = localStorage.getItem('fieldValue')
@@ -111,6 +117,8 @@ async function calcLighthouseAndCo2() {
 calcLighthouseAndCo2();
 
 function fillInfo(co2Data, data) {
+
+
     const siteInfo = Object.create(SiteInfo);
 
     // Web URL input
@@ -125,17 +133,17 @@ function fillInfo(co2Data, data) {
     try {
         siteInfo.energyUsed = co2Data.statistics.energy
     } catch (error) {
-        siteInfo.energyUsed = 0
+        siteInfo.energyUsed = zero
     }
     try {
         siteInfo.co2GridGrams = co2Data.statistics.co2.grid.grams
     } catch (error) {
-        siteInfo.co2GridGrams = 0
+        siteInfo.co2GridGrams = zero
     }
     try {
         siteInfo.co2RenewableGrams = co2Data.statistics.co2.renewable.grams
     } catch (error) {
-        siteInfo.co2RenewableGrams = 0
+        siteInfo.co2RenewableGrams = zero
     }
 
     // Slice out Date from papgespeed 
@@ -151,113 +159,113 @@ function fillInfo(co2Data, data) {
 
     // Unused CSS rules
     try {
-        siteInfo.unusedCSStotalBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].totalBytes.toPrecision(4) / 1000
+        siteInfo.unusedCSStotalBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].totalBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.unusedCSStotalBytes = 0
+        siteInfo.unusedCSStotalBytes = zero
     }
     try {
-        siteInfo.unusedCSSwastedBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedBytes.toPrecision(4) / 1000
+        siteInfo.unusedCSSwastedBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.unusedCSSwastedBytes = 0
+        siteInfo.unusedCSSwastedBytes = zero
     }
     try {
         siteInfo.unusedCSSwastedPercent = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedPercent.toPrecision(4)
     } catch (error) {
-        siteInfo.unusedCSSwastedPercent = 0
+        siteInfo.unusedCSSwastedPercent = zero
     }
 
     // Unused Javascript
     try {
-        siteInfo.unusedJStotalBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].totalBytes.toPrecision(4) / 1000
+        siteInfo.unusedJStotalBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].totalBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.unusedJStotalBytes = 0
+        siteInfo.unusedJStotalBytes = zero
     }
     try {
-        siteInfo.unusedJSwastedBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedBytes.toPrecision(4) / 1000
+        siteInfo.unusedJSwastedBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.unusedJSwastedBytes = 0
+        siteInfo.unusedJSwastedBytes = zero
     }
     try {
         siteInfo.unusedJSwastedPercent = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedPercent.toPrecision(4)
     } catch (error) {
-        siteInfo.unusedJSwastedPercent = 0
+        siteInfo.unusedJSwastedPercent = zero
     }
 
     // Unminified CSS
     try {
-        siteInfo.unminCSStotalBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].totalBytes.toPrecision(4) / 1000
+        siteInfo.unminCSStotalBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].totalBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.unminCSStotalBytes = 0
+        siteInfo.unminCSStotalBytes = zero
     }
     try {
-        siteInfo.unminCSSwastedBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedBytes.toPrecision(4) / 1000
+        siteInfo.unminCSSwastedBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.unminCSSwastedBytes = 0
+        siteInfo.unminCSSwastedBytes = zero
     }
     try {
         siteInfo.unminCSSwastedPercent = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedPercent.toPrecision(4)
     } catch (error) {
-        siteInfo.unminCSSwastedPercent = 0
+        siteInfo.unminCSSwastedPercent = zero
     }
 
     // Unminified Javascript
     try {
-        siteInfo.unminJStotalBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].totalBytes.toPrecision(4) / 1000
+        siteInfo.unminJStotalBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].totalBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.unminJStotalBytes = 0
+        siteInfo.unminJStotalBytes = zero
     }
     try {
-        siteInfo.unminJSwastedBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedBytes.toPrecision(4) / 1000
+        siteInfo.unminJSwastedBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.unminJSwastedBytes = 0
+        siteInfo.unminJSwastedBytes = zero
     }
     try {
         siteInfo.unminJSwastedPercent = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedPercent.toPrecision(4)
     } catch (error) {
-        siteInfo.unminJSwastedPercent = 0
+        siteInfo.unminJSwastedPercent = zero
     }
 
     // Modern Image Format
     try {
-        siteInfo.modernImageFormatTotalBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].totalBytes.toPrecision(4) / 1000
+        siteInfo.modernImageFormatTotalBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].totalBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.modernImageFormatTotalBytes = 0
+        siteInfo.modernImageFormatTotalBytes = zero
     }
     try {
-        siteInfo.modernImageFormatWastedBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].wastedBytes.toPrecision(4) / 1000
+        siteInfo.modernImageFormatWastedBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].wastedBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.modernImageFormatWastedBytes = 0
+        siteInfo.modernImageFormatWastedBytes = zero
     }
     // Calc the percent here
     siteInfo.modernImageFormatWastedPercent = calcPercent(siteInfo.modernImageFormatTotalBytes, siteInfo.modernImageFormatWastedBytes).toPrecision(4)
 
     // Responsive Images
     try {
-        siteInfo.responsiveImagesTotalBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].totalBytes.toPrecision(4) / 1000
+        siteInfo.responsiveImagesTotalBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].totalBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.responsiveImagesTotalBytes = 0
+        siteInfo.responsiveImagesTotalBytes = zero
     }
     try {
-        siteInfo.responsiveImagesWastedBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedBytes.toPrecision(4) / 1000
+        siteInfo.responsiveImagesWastedBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.responsiveImagesWastedBytes = 0
+        siteInfo.responsiveImagesWastedBytes = zero
     }
     try {
         siteInfo.responsiveImagesWastedPercent = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedPercent.toPrecision(4)
     } catch (error) {
-        siteInfo.responsiveImagesWastedPercent = 0
+        siteInfo.responsiveImagesWastedPercent = zero
     }
 
     // Optimized Images
     try {
-        siteInfo.optimizedImagesStotalBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].totalBytes.toPrecision(4) / 1000
+        siteInfo.optimizedImagesStotalBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].totalBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.optimizedImagesStotalBytes = 0
+        siteInfo.optimizedImagesStotalBytes = zero
     }
     try {
-        siteInfo.optimizedImagesSwastedBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].wastedBytes.toPrecision(4) / 1000
+        siteInfo.optimizedImagesSwastedBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].wastedBytes.toPrecision(4) / divider
     } catch (error) {
-        siteInfo.optimizedImagesSwastedBytes = 0
+        siteInfo.optimizedImagesSwastedBytes = zero
     }
     // Calc the percent here
     siteInfo.optimizedImagesWastedPercent = calcPercent(siteInfo.optimizedImagesStotalBytes, siteInfo.optimizedImagesSwastedBytes).toPrecision(4)
@@ -284,7 +292,7 @@ function timeCalc(timestamp) {
 function calcPercent(total, wasted) {
     let wastedPercent
     if (total === 0) {
-        return wastedPercent = 0
+        return wastedPercent = zero
     }
     wastedPercent = 100 / total * wasted
     return wastedPercent
