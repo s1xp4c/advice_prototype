@@ -20,17 +20,17 @@ function showSliderValue() {
 // Apply scores to a form for database
 // Fetch data from DB and apply to new sliders that can be moved
 // const allRanges = document.querySelectorAll(".range-wrap");
-// allRanges.forEach((wrap) => {
-//   const range = wrap.querySelector(".range");
-//   const bubble = wrap.querySelector(".bubble");
+allRanges.forEach((wrap) => {
+  const range = wrap.querySelector(".range");
+  const bubble = wrap.querySelector(".bubble");
 
-//   range.addEventListener("input", () => {
-//     setBubble(range, bubble);
-//   });
+  range.addEventListener("input", () => {
+    setBubble(range, bubble);
+  });
 
-  // setting bubble on DOM load
-//   setBubble(range, bubble);
-// });
+  setting bubble on DOM load
+  setBubble(range, bubble);
+});
 
 function setBubble(range, bubble) {
   const val = range.value;
