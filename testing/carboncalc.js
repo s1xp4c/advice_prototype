@@ -61,12 +61,6 @@ let fieldValue
 let monthly
 let errorValue = 1
 const zero = 0
-let calculatedCo2FromBytes
-const co2PerByte = 0.000866384
-
-function calcCo2FromBytes(bytes) {
-    calculatedCo2FromBytes = bytes * co2PerByte
-}
 
 const DividerNumbers = {
     bytes: 1,
@@ -138,10 +132,10 @@ if (monthly === "1") {
 } else if (monthly === "1000") {
     divider = DividerNumbers.kiloBytes
     numSuffix = NumberSuffix.kB
-    weightSuffix = WeightSuffix.kg
+    weightSuffix = WeightSuffix.g
     powerSuffix = PowerSuffix.kW
-    co2Divider = Co2Divider.kilos
-    powerDivider = PowerDivider.kiloWatt
+    co2Divider = Co2Divider.grams
+    powerDivider = PowerDivider.Watt
 
 } else if (monthly === "10000") {
     divider = DividerNumbers.megaBytes
@@ -260,14 +254,12 @@ function fillInfo(co2Data, data) {
     try {
         let unusedCSStotalBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].totalBytes / divider * monthly
         siteInfo.unusedCSStotalBytes = unusedCSStotalBytes.toFixed(2)
-
     } catch (error) {
         siteInfo.unusedCSStotalBytes = zero
     }
     try {
         let unusedCSSwastedBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedBytes / divider * monthly
         siteInfo.unusedCSSwastedBytes = unusedCSSwastedBytes.toFixed(2)
-            // siteInfo.unusedCSSCo2 = calcCo2FromBytes(unusedCSSwastedBytes).toFixed(2)
     } catch (error) {
         siteInfo.unusedCSSwastedBytes = zero
     }
@@ -281,14 +273,12 @@ function fillInfo(co2Data, data) {
     try {
         let unusedJStotalBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].totalBytes / divider * monthly
         siteInfo.unusedJStotalBytes = unusedJStotalBytes.toFixed(2)
-
     } catch (error) {
         siteInfo.unusedJStotalBytes = zero
     }
     try {
         let unusedJSwastedBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedBytes / divider * monthly
         siteInfo.unusedJSwastedBytes = unusedJSwastedBytes.toFixed(2)
-            // siteInfo.unusedJSCo2 = calcCo2FromBytes(unusedJSwastedBytes).toFixed(2)
     } catch (error) {
         siteInfo.unusedJSwastedBytes = zero
     }
@@ -308,7 +298,6 @@ function fillInfo(co2Data, data) {
     try {
         let unminCSSwastedBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedBytes / divider * monthly
         siteInfo.unminCSSwastedBytes = unminCSSwastedBytes.toFixed(2)
-            // siteInfo.unminCSSCo2 = calcCo2FromBytes(unminCSSwastedBytes).toFixed(2)
     } catch (error) {
         siteInfo.unminCSSwastedBytes = zero
     }
@@ -328,8 +317,6 @@ function fillInfo(co2Data, data) {
     try {
         let unminJSwastedBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedBytes / divider * monthly
         siteInfo.unminJSwastedBytes = unminJSwastedBytes.toFixed(2)
-            // siteInfo.unminJSCo2 = calcCo2FromBytes(unminJSwastedBytes).toFixed(2)
-
     } catch (error) {
         siteInfo.unminJSwastedBytes = zero
     }
@@ -349,8 +336,6 @@ function fillInfo(co2Data, data) {
     try {
         let modernImageFormatWastedBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].wastedBytes / divider * monthly
         siteInfo.modernImageFormatWastedBytes = modernImageFormatWastedBytes.toFixed(2)
-            // siteInfo.modernImageFormatCo2 = calcCo2FromBytes(modernImageFormatWastedBytes).toFixed(2)
-
     } catch (error) {
         siteInfo.modernImageFormatWastedBytes = zero
     }
@@ -366,8 +351,6 @@ function fillInfo(co2Data, data) {
     try {
         let responsiveImagesWastedBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedBytes / divider * monthly
         siteInfo.responsiveImagesWastedBytes = responsiveImagesWastedBytes.toFixed(2)
-            // siteInfo.responsiveImagesCo2 = calcCo2FromBytes(responsiveImagesWastedBytes).toFixed(2)
-
     } catch (error) {
         siteInfo.responsiveImagesWastedBytes = zero
     }
@@ -387,8 +370,6 @@ function fillInfo(co2Data, data) {
     try {
         let optimizedImagesWastedBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].wastedBytes / divider * monthly
         siteInfo.optimizedImagesWastedBytes = optimizedImagesWastedBytes.toFixed(2)
-            // siteInfo.optimizedImagesCo2 = calcCo2FromBytes(optimizedImagesWastedBytes).toFixed(2)
-
     } catch (error) {
         siteInfo.optimizedImagesWastedBytes = zero
     }
@@ -557,6 +538,7 @@ function changeInfoList(siteInfo) {
 }
 
 imageFromURL.addEventListener('load', function() {
+
 
     const splashCanvas = document.getElementById('imgFromURL');
     const splashCTX = splashCanvas.getContext('2d');

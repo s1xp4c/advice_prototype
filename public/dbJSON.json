@@ -1,0 +1,55 @@
+{
+    "industryfield": {
+        "webURL": {
+            "fetchtime": "",
+            "fetchdate": "",
+            "fieldValue": "",
+            "monthly": "",
+
+            "energyUsed": "",
+
+            "co2GridGrams": "",
+            "co2RenewableGrams": "",
+
+            "unusedCSStotalBytes": "",
+            "unusedCSSwastedBytes": "",
+            "unusedCSSwastedPercent": "",
+            "unusedCSSCo2": "",
+
+            "unusedJStotalBytes": "",
+            "unusedJSwastedBytes": "",
+            "unusedJSwastedPercent": "",
+            "unusedJSCo2": "",
+
+            "unminCSStotalBytes": "",
+            "unminCSSwastedBytes": "",
+            "unminCSSwastedPercent": "",
+            "unminCSSCo2": "",
+
+            "unminJStotalBytes": "",
+            "unminJSwastedBytes": "",
+            "unminJSwastedPercent": "",
+            "unminJSCo2": "",
+
+            "modernImageFormatTotalBytes": "",
+            "modernImageFormatWastedBytes": "",
+            "modernImageFormatWastedPercent": "",
+            "modernImageFormatCo2": "",
+
+            "responsiveImagesTotalBytes": "",
+            "responsiveImagesWastedBytes": "",
+            "responsiveImagesWastedPercent": "",
+            "responsiveImagesCo2": "",
+
+            "optimizedImagesTotalBytes": "",
+            "optimizedImagesWastedBytes": "",
+            "optimizedImagesWastedPercent": "",
+            "optimizedImagesCo2": "",
+
+            "imageData": "",
+            "imageWidth": "",
+            "imageHeight": ""
+        }
+
+    }
+}
