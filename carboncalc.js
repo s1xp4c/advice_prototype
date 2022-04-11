@@ -1,18 +1,8 @@
 "use strict";
 
-
-
 const adviceAPIkey = "AIzaSyA3T3lU6NyXFlEjJMt739iXmn-GBT_B7qk";
-// const inputForm = document.getElementById("siteinput");
 
 const imageFromURL = new Image();
-//  let URLvalue = JSON.parse(localStorage.URLvalue || null) || {};
-// let fieldValue
-
-const ReturnVisitors = {
-    visitURL: "",
-    visitDate: "",
-}
 
 const SiteInfo = {
     webURL: "",
@@ -29,30 +19,37 @@ const SiteInfo = {
     unusedCSStotalBytes: "",
     unusedCSSwastedBytes: "",
     unusedCSSwastedPercent: "",
+    unusedCSSCo2: "",
 
     unusedJStotalBytes: "",
     unusedJSwastedBytes: "",
     unusedJSwastedPercent: "",
+    unusedJSCo2: "",
 
     unminCSStotalBytes: "",
     unminCSSwastedBytes: "",
     unminCSSwastedPercent: "",
+    unminCSSCo2: "",
 
     unminJStotalBytes: "",
     unminJSwastedBytes: "",
     unminJSwastedPercent: "",
+    unminJSCo2: "",
 
     modernImageFormatTotalBytes: "",
     modernImageFormatWastedBytes: "",
     modernImageFormatWastedPercent: "",
+    modernImageFormatCo2: "",
 
     responsiveImagesTotalBytes: "",
     responsiveImagesWastedBytes: "",
     responsiveImagesWastedPercent: "",
+    responsiveImagesCo2: "",
 
     optimizedImagesTotalBytes: "",
     optimizedImagesWastedBytes: "",
     optimizedImagesWastedPercent: "",
+    optimizedImagesCo2: "",
 
     imageData: "",
     imageWidth: "",
