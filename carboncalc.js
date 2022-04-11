@@ -66,6 +66,7 @@ const co2PerByte = 0.000866384
 
 function calcCo2FromBytes(bytes) {
     calculatedCo2FromBytes = bytes * co2PerByte
+    console.log(calculatedCo2FromBytes)
 }
 
 const DividerNumbers = {
@@ -225,7 +226,7 @@ function fillInfo(co2Data, data) {
 
     // Energyconsumption
     try {
-        let energyUsed = co2Data.statistics.energy / powerDivider * monthly
+        let energyUsed = co2Data.statistics.energy * monthly
         siteInfo.energyUsed = energyUsed.toFixed(2)
     } catch (error) {
         siteInfo.energyUsed = zero
@@ -267,7 +268,6 @@ function fillInfo(co2Data, data) {
     try {
         let unusedCSSwastedBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedBytes / divider * monthly
         siteInfo.unusedCSSwastedBytes = unusedCSSwastedBytes.toFixed(2)
-            // siteInfo.unusedCSSCo2 = calcCo2FromBytes(unusedCSSwastedBytes).toFixed(2)
     } catch (error) {
         siteInfo.unusedCSSwastedBytes = zero
     }
@@ -275,6 +275,11 @@ function fillInfo(co2Data, data) {
         siteInfo.unusedCSSwastedPercent = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedPercent.toFixed(2)
     } catch (error) {
         siteInfo.unusedCSSwastedPercent = zero
+    }
+    try {
+        siteInfo.unusedCSSCo2 = calcCo2FromBytes(unusedCSSwastedBytes).toFixed(2)
+    } catch (error) {
+        siteInfo.unusedCSSCo2 = zero
     }
 
     // Unused Javascript
