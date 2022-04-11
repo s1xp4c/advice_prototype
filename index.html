@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./scss/style.scss">
+    <link rel="stylesheet" href="./scss/main.scss">
     <script type="module" src="./main.js" defer></script>
 
 
@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>advice proto six</title>
+    <title>Sustainable Website Tester</title>
 </head>
 
 <body>
@@ -22,10 +22,10 @@
 
     <header id="carbon_header">
         <div class="header_text">
-            <h1>SUSTAINABLE WEBSITE TESTER</h1>
-            <p></p>
+            <h1>SUSTAINABLE WEBSITE TEST</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur perspiciatis quisquam neque enim ipsam perferendis aperiam natus aut tempora vero in eos hic quasi ratione quis, eaque harum quo iusto.</p>
         </div>
-        <div class="logo">
+        <div class="icon">
             <img src="./images/icon.png" class="header_icon" alt="Icon with leaves this is in a circle">
         </div>
     </header>
@@ -33,11 +33,12 @@
 
 
     <section id="form_test">
-        <h2>TEST YOUR COMPANY SITE</h2>
-        <form id="siteinput" class="siteinput">
-            <div>
-                <label for="industryfield">Industry field</label>
-                <select name="industryfield" id="industryfield">
+        <div class="form_div">
+            <h2>TEST YOUR COMPANY SITE</h2>
+            <form id="siteinput" class="siteinput">
+                <div class="industry_wrapper">
+                    <label for="industryfield">Industry field</label>
+                    <select name="industryfield" id="industryfield">
                     <option value="Agriculture">Agriculture</option>
                     <option value="Finance">Finance</option>
                     <option value="Fashion">Fashion</option>
@@ -50,27 +51,28 @@
                     <option value="Consumer goods">Consumer goods</option>
                     <option value="Other">Other</option>
                 </select>
-            </div>
-            <div>
-                <label for="monthlyvisitors">Monthly Visitors</label>
-                <select name="monthlyvisitors" id="monthlyvisitors">
+                </div>
+                <div class="visitor_wrapper">
+                    <label for="monthlyvisitors">Monthly Visitors</label>
+                    <select name="monthlyvisitors" id="monthlyvisitors">
                     <option value="100">One hundred</option>
                     <option value="1000">One thousand</option>
                     <option value="10000">Ten thousand</option>
                     <option value="100000">One hundred thousand</option>
                     <option value="1000000">One million</option>
                 </select>
-            </div>
-            <div>
-                <label for="urlname">Website</label>
-                <input type="text" id="urlname" name="urlname"><br><br>
-            </div>
-            <div>
-                <input type="submit" value="submit">
-            </div>
-        </form>
-    </section>
+                </div>
+                <div class="url_wrapper">
+                    <label for="urlname">Website</label>
+                    <input type="text" id="urlname" name="urlname">
+                </div>
+                <div class="btn_div">
+                    <button type="submit" value="submit" class="btn">SUBMIT</button>
+                </div>
+            </form>
+        </div>
 
+    </section>
 
 
 
