@@ -72,21 +72,34 @@
   .link_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
-    grid-template-columns: 0.3fr;
+    grid-template-columns: 0.7fr;
     margin-top: 25px;
   }
 
   .email_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
-    grid-template-columns: 0.3fr;
+    grid-template-columns: 0.7fr;
     margin-top: 25px;
+  }
+
+  .radio_wrapper {
+    display: grid;
+    grid: auto/auto-flow 1fr;
+    grid-template-columns: 0.7fr;
+    margin-top: 25px;
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
   }
 
   .message_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
-    grid-template-columns: 0.3fr;
+    grid-template-columns: 0.7fr;
     margin-top: 25px;
   }
 
@@ -94,3 +107,4 @@
     justify-content: flex-start;
     align-items: flex-start;
   }
+

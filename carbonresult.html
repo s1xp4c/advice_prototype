@@ -186,6 +186,24 @@
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required>
         </div>
+        <div class="radio_wrapper">
+            <label class="radio_label">Submit to database?</label>
+            <ul role="list" class="controls">
+                <li>
+                  <label for="yes">
+                    <input id="yes" type="radio" name="database" value="yes" checked/>
+                    Yes
+                  </label>
+                </li>
+                <li>
+                  <label for="no">
+                    <input id="no" type="radio" name="database" value="no" />
+                    No
+                  </label>
+                </li>
+              </ul>
+        </div>
+
         <div class="message_wrapper">
             <label for="message_area" class="message_label">Message</label>
         <textarea name="message" id="message" cols="30" rows="10"></textarea>
