@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="./scss/main.scss">
     <script type="module" src="./carboncalc.js" defer></script>
 
-<!-- font link -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <title>Carbon Result</title>
 </head>
@@ -28,18 +28,18 @@
             <h1>RESULTS FOR: <span data-field="weburl"></span></h1>
         </div>
 
-            <div class="result_header_div">
-           
+        <div class="result_header_div">
+
             <div class="info_text">
-                
+
                 <h3>PAGE SUSTAINABILITY</h3>
-                    <p data-field="fetchtime"></p> 
-                    <p data-field="fetchdate"></p>
-                    <p data-field="fieldValue"></p>
-                    <p data-field="monthly"></p> 
-                    <p data-field="energyUsed"></p>
-                    <p data-field="co2GridGrams"></p>
-                    <p data-field="co2RenewableGrams"></p>                  
+                <p data-field="fetchtime"></p>
+                <p data-field="fetchdate"></p>
+                <p data-field="fieldValue"></p>
+                <p data-field="monthly"></p>
+                <p data-field="energyUsed"></p>
+                <p data-field="co2GridGrams"></p>
+                <p data-field="co2RenewableGrams"></p>
             </div>
 
             <div id="screenshot_container">
@@ -48,167 +48,186 @@
 
         </div>
     </header>
-    
+
     <section id="Numbers_from_test">
-    <div class="flex">
-        <!-- <section id="page_numbers"> -->
-        <div class="original_numbers">
-            <h2>Original Numbers</h2>
+        <div class="flex">
+            <!-- <section id="page_numbers"> -->
+            <div class="original_numbers">
+                <h2>Original Numbers</h2>
 
-            <div class="data_space">
-            <p>Unused CSS rules:</p>
-            <p data-field="unusedCSStotalBytes"></p>
-            <p data-field="unusedCSSwastedBytes"></p>
-            <p data-field="unusedCSSwastedPercent"></p>
-        </div>
+                <div class="data_space">
+                    <p>Unused CSS rules:</p>
+                    <p data-field="unusedCSStotalBytes"></p>
+                    <p data-field="unusedCSSwastedBytes"></p>
+                    <p data-field="unusedCSSwastedPercent"></p>
+                    <p data-field="unusedCSSCo2"></p>
+                </div>
 
-        <div class="data_space">
-            <p>Unminified CSS:</p>
-        <p data-field="unminCSStotalBytes"></p>
-        <p data-field="unminCSSwastedBytes"></p>
-        <p data-field="unminCSSwastedPercent"></p>
-    </div>
+                <div class="data_space">
+                    <p>Unminified CSS:</p>
+                    <p data-field="unminCSStotalBytes"></p>
+                    <p data-field="unminCSSwastedBytes"></p>
+                    <p data-field="unminCSSwastedPercent"></p>
+                    <p data-field="unminCSSCo2"></p>
+                </div>
 
-        <div class="data_space">
-            <p>Unused Javascript rules:</p>
-            <p data-field="unusedJStotalBytes"></p>
-            <p data-field="unusedJSwastedBytes"></p>
-            <p data-field="unusedJSwastedPercent"></p>
-        </div>
+                <div class="data_space">
+                    <p>Unused Javascript rules:</p>
+                    <p data-field="unusedJStotalBytes"></p>
+                    <p data-field="unusedJSwastedBytes"></p>
+                    <p data-field="unusedJSwastedPercent"></p>
+                    <p data-field="unusedJSCo2"></p>
+                </div>
 
 
-            <div class="data_space">
-                <p>Unminified Javascript:</p>
-            <p data-field="unminJStotalBytes"></p>
-            <p data-field="unminJSwastedBytes"></p>
-            <p data-field="unminJSwastedPercent"></p>
-        </div>
+                <div class="data_space">
+                    <p>Unminified Javascript:</p>
+                    <p data-field="unminJStotalBytes"></p>
+                    <p data-field="unminJSwastedBytes"></p>
+                    <p data-field="unminJSwastedPercent"></p>
+                    <p data-field="unminJSCo2"></p>
+                </div>
 
-            <div class="data_space">
-                <p>Not using modern Image Format:</p>
-            <p data-field="modernImageFormatTotalBytes"></p>
-            <p data-field="modernImageFormatWastedBytes"></p>
-            <p data-field="modernImageFormatWastedPercent"></p>
-        </div>
+                <div class="data_space">
+                    <p>Not using modern Image Format:</p>
+                    <p data-field="modernImageFormatTotalBytes"></p>
+                    <p data-field="modernImageFormatWastedBytes"></p>
+                    <p data-field="modernImageFormatWastedPercent"></p>
+                    <p data-field="modernImageFormatCo2"></p>
+                </div>
 
-            <div class="data_space">
-                <p>Non responsive Images</p>
-            <p data-field="responsiveImagesTotalBytes"></p>
-            <p data-field="responsiveImagesWastedBytes"></p>
-            <p data-field="responsiveImagesWastedPercent"></p>
-        </div>
+                <div class="data_space">
+                    <p>Non responsive Images</p>
+                    <p data-field="responsiveImagesTotalBytes"></p>
+                    <p data-field="responsiveImagesWastedBytes"></p>
+                    <p data-field="responsiveImagesWastedPercent"></p>
+                    <p data-field="responsiveImagesCo2"></p>
+                </div>
 
-            <div class="data_space">
-                <p>Non optimized images</p>
-            <p data-field="optimizedImagesTotalBytes"></p>
-            <p data-field="optimizedImagesWastedBytes"></p>
-            <p data-field="optimizedImagesWastedPercent"></p>
-        </div>
+                <div class="data_space">
+                    <p>Non optimized images</p>
+                    <p data-field="optimizedImagesTotalBytes"></p>
+                    <p data-field="optimizedImagesWastedBytes"></p>
+                    <p data-field="optimizedImagesWastedPercent"></p>
+                    <p data-field="optimizedImagesCo2"></p>
+                </div>
 
-        </div>
-    <!-- </section>
+            </div>
+            <!-- </section>
     <section id="changed_numbers"> -->
-        <div class="changed_numbers">
-            <h2>Numbers to change</h2>
+            <div class="changed_numbers">
+                <h2>Numbers to change</h2>
 
-            <div class="data_space">
-                <p>Unused CSS rules:</p>
-            <p data-field="unusedCSStotalBytesChange"></p>
-            <p data-field="unusedCSSwastedBytesChange"></p>
-            <p data-field="unusedCSSwastedPercentChange"></p>
+                <div class="data_space">
+                    <p>Unused CSS rules:</p>
+                    <p data-field="unusedCSStotalBytesChange"></p>
+                    <p data-field="unusedCSSwastedBytesChange"></p>
+                    <p data-field="unusedCSSwastedPercentChange"></p>
+                    <p data-field="unusedCSSCo2Change"></p>
+
+                </div>
+
+                <div class="data_space">
+                    <p>Unminified CSS:</p>
+                    <p data-field="unminCSStotalBytesChange"></p>
+                    <p data-field="unminCSSwastedBytesChange"></p>
+                    <p data-field="unminCSSwastedPercentChange"></p>
+                    <p data-field="unminCSSCo2Change"></p>
+
+                </div>
+
+                <div class="data_space">
+                    <p>Unused Javascript rules:</p>
+                    <p data-field="unusedJStotalBytesChange"></p>
+                    <p data-field="unusedJSwastedBytesChange"></p>
+                    <p data-field="unusedJSwastedPercentChange"></p>
+                    <p data-field="unusedJSCo2Change"></p>
+
+                </div>
+
+
+
+                <div class="data_space">
+                    <p>Unminified Javascript:</p>
+
+                    <p data-field="unminJStotalBytesChange"></p>
+                    <p data-field="unminJSwastedBytesChange"></p>
+                    <p data-field="unminJSwastedPercentChange"></p>
+                    <p data-field="unminJSCo2Change"></p>
+
+                </div>
+
+                <div class="data_space">
+                    <p>Not using modern Image Format:</p>
+
+                    <p data-field="modernImageFormatTotalBytesChange"></p>
+                    <p data-field="modernImageFormatWastedBytesChange"></p>
+                    <p data-field="modernImageFormatWastedPercentChange"></p>
+                    <p data-field="modernImageFormatCo2Change"></p>
+
+                </div>
+
+                <div class="data_space">
+                    <p>Non responsive Images</p>
+
+                    <p data-field="responsiveImagesTotalBytesChange"></p>
+                    <p data-field="responsiveImagesWastedBytesChange"></p>
+                    <p data-field="responsiveImagesWastedPercentChange"></p>
+                    <p data-field="responsiveImagesCo2Change"></p>
+                </div>
+
+                <div class="data_space">
+                    <p>Non optimized images</p>
+                    <p data-field="optimizedImagesTotalBytesChange"></p>
+                    <p data-field="optimizedImagesWastedBytesChange"></p>
+                    <p data-field="optimizedImagesWastedPercentChange"></p>
+                    <p data-field="optimizedImagesCo2Change"></p>
+                </div>
+
+            </div>
+            <!-- </section> -->
+
+
         </div>
-
-        <div class="data_space">
-            <p>Unminified CSS:</p>
-            <p data-field="unminCSStotalBytesChange"></p>
-            <p data-field="unminCSSwastedBytesChange"></p>
-            <p data-field="unminCSSwastedPercentChange"></p>
-        </div>
-
-            <div class="data_space">
-                <p>Unused Javascript rules:</p>
-            <p data-field="unusedJStotalBytesChange"></p>
-            <p data-field="unusedJSwastedBytesChange"></p>
-            <p data-field="unusedJSwastedPercentChange"></p>
-        </div>
-
-            
-
-            <div class="data_space">
-                <p>Unminified Javascript:</p>
-
-            <p data-field="unminJStotalBytesChange"></p>
-            <p data-field="unminJSwastedBytesChange"></p>
-            <p data-field="unminJSwastedPercentChange"></p>
-        </div>
-
-            <div class="data_space">
-                <p>Not using modern Image Format:</p>
-
-            <p data-field="modernImageFormatTotalBytesChange"></p>
-            <p data-field="modernImageFormatWastedBytesChange"></p>
-            <p data-field="modernImageFormatWastedPercentChange"></p>
-        </div>
-
-            <div class="data_space">
-                <p>Non responsive Images</p>
-
-            <p data-field="responsiveImagesTotalBytesChange"></p>
-            <p data-field="responsiveImagesWastedBytesChange"></p>
-            <p data-field="responsiveImagesWastedPercentChange"></p>
-        </div>
-
-            <div class="data_space">
-                <p>Non optimized images</p>
-            <p data-field="optimizedImagesTotalBytesChange"></p>
-            <p data-field="optimizedImagesWastedBytesChange"></p>
-            <p data-field="optimizedImagesWastedPercentChange"></p>
-        </div>
-        
-        </div>
-    <!-- </section> -->
-
-
-</div>
-</section>
-
-<section id="result_form_section">
-    <div class="header_text">
-        <section id="form_test">
-        <div class="form_div">
-        <h2>SEND THE RESULT PAGE TO YOUR COLLEAGUES</h2>
-        <form id="result_form" class="result_form">
-            <div class="link_wrapper">
-                <label for="result_page_link">LINK</label>
-                <p>Generated link here</p>
-        </div>
-            <div class="email_wrapper">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
-        </div>
-        <div class="radio_wrapper">
-            <label class="radio_label">Submit to database?</label>
-            <input type="checkbox" id="yes" checked>
-        </div>
-
-        <div class="message_wrapper">
-            <label for="message_area" class="message_label">Message</label>
-        <textarea name="message" id="message" cols="30" rows="10"></textarea>
-        </div>
-        <div class="btn_div">
-            <button class="btn">SEND</button>
-        </div>
-        </form>
-    </div>
-
     </section>
 
-</div>
-<div class="icon">
-    <img src="./images/icon.png" class="header_icon" alt="Icon with leaves this is in a circle">
-</div>
+    <section id="result_form_section">
+        <div class="header_text">
+            <section id="form_test">
+                <div class="form_div">
+                    <h2>SEND THE RESULT PAGE TO YOUR COLLEAGUES</h2>
+                    <form id="result_form" class="result_form">
+                        <div class="link_wrapper">
+                            <label for="result_page_link">LINK</label>
+                            <p>Generated link here</p>
+                        </div>
+                        <div class="email_wrapper">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="radio_wrapper">
+                            <label class="radio_label">Submit to database?</label>
+                            <input type="checkbox" id="yes" checked>
+                        </div>
 
-</section>
+                        <div class="message_wrapper">
+                            <label for="message_area" class="message_label">Message</label>
+                            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="btn_div">
+                            <button class="btn">SEND</button>
+                        </div>
+                    </form>
+                </div>
+
+            </section>
+
+        </div>
+        <div class="icon">
+            <img src="./images/icon.png" class="header_icon" alt="Icon with leaves this is in a circle">
+        </div>
+
+    </section>
 
 
 </body>
