@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./scss/style.scss">
+    <link rel="stylesheet" href="./scss/main.scss">
     <script type="module" src="./carboncalc.js" defer></script>
 
 <!-- font link -->
@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Carbon result</title>
+    <title>Carbon Result</title>
 </head>
 
 <body>
@@ -22,64 +22,169 @@
         <img src="/images/icon.png" alt="Icon loading" id="loader">
     </div>
 
-    <section id="result_header">
-        <h1>RESULT FOR <span data-field="weburl"></span> @ <span data-field="fetchtime"></span> </h1>
-        <section id="info_section">
+    <header id="result_header">
+        
+
+        <div class="result_header_div">
+
             <div class="info_text">
-                <h2>PAGE SUSTAINABILITY</h2>
-                <p>Lorem ipsunecessitatibus <span data-field="energyUsed"></span> repellat qui cupiditate ullam a provident voluptatem ipsum iusto, cumque <span data-field="co2GridGrams"></span> sed eum dolor assumenda placeat aaliquam, <span data-field="co2RenewableGrams"></span>                    sapiente excep tempore reiciendis!</p>
+                <h2>RESULTS FOR: <span data-field="weburl"></span></h2>
+                <h3>PAGE SUSTAINABILITY</h3>
+                    <p data-field="fetchtime"></p> 
+                    <p data-field="fetchdate"></p>
+                    <p data-field="fieldValue"></p>
+                    <p data-field="monthly"></p> 
+                    <p data-field="energyUsed"></p>
+                    <p data-field="co2GridGrams"></p>
+                    <p data-field="co2RenewableGrams"></p>                  
             </div>
+
             <div id="screenshot_container">
                 <canvas id="imgFromURL"></canvas>
             </div>
-        </section>
 
-    </section>
-    <section id="page_numbers">
+        </div>
+    </header>
+    
+    <section id="Numbers_from_test">
+    <div class="flex">
+        <!-- <section id="page_numbers"> -->
         <div class="original_numbers">
+            <h2>Original Numbers</h2>
 
-            <p data-field="fieldValue"></p>
-            <p data-field="monthly"></p>
-
+            <div class="data_space">
+            <p>Unused CSS rules:</p>
             <p data-field="unusedCSStotalBytes"></p>
             <p data-field="unusedCSSwastedBytes"></p>
             <p data-field="unusedCSSwastedPercent"></p>
+        </div>
 
+        <div class="data_space">
+            <p>Unminified CSS:</p>
+        <p data-field="unminCSStotalBytes"></p>
+        <p data-field="unminCSSwastedBytes"></p>
+        <p data-field="unminCSSwastedPercent"></p>
+    </div>
+
+        <div class="data_space">
+            <p>Unused Javascript rules:</p>
             <p data-field="unusedJStotalBytes"></p>
             <p data-field="unusedJSwastedBytes"></p>
             <p data-field="unusedJSwastedPercent"></p>
+        </div>
 
-            <p data-field="unminCSStotalBytes"></p>
-            <p data-field="unminCSSwastedBytes"></p>
-            <p data-field="unminCSSwastedPercent"></p>
 
+            <div class="data_space">
+                <p>Unminified Javascript:</p>
             <p data-field="unminJStotalBytes"></p>
             <p data-field="unminJSwastedBytes"></p>
             <p data-field="unminJSwastedPercent"></p>
+        </div>
 
+            <div class="data_space">
+                <p>Not using modern Image Format:</p>
             <p data-field="modernImageFormatTotalBytes"></p>
             <p data-field="modernImageFormatWastedBytes"></p>
             <p data-field="modernImageFormatWastedPercent"></p>
+        </div>
 
+            <div class="data_space">
+                <p>Non responsive Images</p>
             <p data-field="responsiveImagesTotalBytes"></p>
             <p data-field="responsiveImagesWastedBytes"></p>
             <p data-field="responsiveImagesWastedPercent"></p>
+        </div>
 
+            <div class="data_space">
+                <p>Non optimized images</p>
             <p data-field="optimizedImagesTotalBytes"></p>
             <p data-field="optimizedImagesWastedBytes"></p>
             <p data-field="optimizedImagesWastedPercent"></p>
+        </div>
 
         </div>
-    </section>
-    <section id="changed_numbers">
+    <!-- </section>
+    <section id="changed_numbers"> -->
         <div class="changed_numbers">
-            <div class="wrapper">
-                <div class="grams"></div>
-                <div class="seconds"></div>
-                <div class="slider"></div>
-            </div>
+            <h2>Numbers to change</h2>
+
+            <div class="data_space">
+                <p>Unused CSS rules:</p>
+            <p data-field="unusedCSStotalBytesChange"></p>
+            <p data-field="unusedCSSwastedBytesChange"></p>
+            <p data-field="unusedCSSwastedPercentChange"></p>
         </div>
-    </section>
+
+        <div class="data_space">
+            <p>Unminified CSS:</p>
+            <p data-field="unminCSStotalBytesChange"></p>
+            <p data-field="unminCSSwastedBytesChange"></p>
+            <p data-field="unminCSSwastedPercentChange"></p>
+        </div>
+
+            <div class="data_space">
+                <p>Unused Javascript rules:</p>
+            <p data-field="unusedJStotalBytesChange"></p>
+            <p data-field="unusedJSwastedBytesChange"></p>
+            <p data-field="unusedJSwastedPercentChange"></p>
+        </div>
+
+            
+
+            <div class="data_space">
+                <p>Unminified Javascript:</p>
+
+            <p data-field="unminJStotalBytesChange"></p>
+            <p data-field="unminJSwastedBytesChange"></p>
+            <p data-field="unminJSwastedPercentChange"></p>
+        </div>
+
+            <div class="data_space">
+                <p>Not using modern Image Format:</p>
+
+            <p data-field="modernImageFormatTotalBytesChange"></p>
+            <p data-field="modernImageFormatWastedBytesChange"></p>
+            <p data-field="modernImageFormatWastedPercentChange"></p>
+        </div>
+
+            <div class="data_space">
+                <p>Non responsive Images</p>
+
+            <p data-field="responsiveImagesTotalBytesChange"></p>
+            <p data-field="responsiveImagesWastedBytesChange"></p>
+            <p data-field="responsiveImagesWastedPercentChange"></p>
+        </div>
+
+            <div class="data_space">
+                <p>Non optimized images</p>
+            <p data-field="optimizedImagesTotalBytesChange"></p>
+            <p data-field="optimizedImagesWastedBytesChange"></p>
+            <p data-field="optimizedImagesWastedPercentChange"></p>
+        </div>
+        
+        </div>
+    <!-- </section> -->
+
+
+</div>
+</section>
+
+<section id="result_form_section">
+    <form id="result_form">
+        <label for="result_page_link">LINK</label>
+        <input type="text">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email">
+
+
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+        <button class="btn">SEND</button>
+    </form>
+
+</section>
+
 </body>
 
 </html>
