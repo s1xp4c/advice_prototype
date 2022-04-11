@@ -25,6 +25,12 @@
     align-items: center;
 }
 
+
+ .info_text{
+  width: 36vw;
+}
+
+
 #imgFromURL {
     object-fit: cover;
     width: 36vw;
@@ -52,4 +58,9 @@
 
 .data_space {
   margin-bottom: 50px;
+}
+
+.bold_p {
+  font-weight: 700;
+  color: #80e288;
 }

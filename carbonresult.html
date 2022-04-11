@@ -37,9 +37,6 @@
                 <p data-field="fetchdate"></p>
                 <p data-field="fieldValue"></p>
                 <p data-field="monthly"></p>
-                <p data-field="energyUsed"></p>
-                <p data-field="co2GridGrams"></p>
-                <p data-field="co2RenewableGrams"></p>
             </div>
 
             <div id="screenshot_container">
@@ -53,10 +50,15 @@
         <div class="flex">
 
             <div class="original_numbers">
-                <h2>Original Numbers</h2>
 
                 <div class="data_space">
-                    <p>Unused CSS rules:</p>
+                <h2>Original Numbers</h2>
+                <p data-field="energyUsed"></p>
+                <p data-field="co2GridGrams"></p>
+                <p data-field="co2RenewableGrams"></p>
+            </div>
+                <div class="data_space">
+                    <p class="bold_p">Unused CSS rules:</p>
                     <p data-field="unusedCSStotalBytes"></p>
                     <p data-field="unusedCSSwastedBytes"></p>
                     <p data-field="unusedCSSwastedPercent"></p>
@@ -64,7 +66,7 @@
                 </div>
 
                 <div class="data_space">
-                    <p>Unminified CSS:</p>
+                    <p class="bold_p">Unminified CSS:</p>
                     <p data-field="unminCSStotalBytes"></p>
                     <p data-field="unminCSSwastedBytes"></p>
                     <p data-field="unminCSSwastedPercent"></p>
@@ -72,7 +74,7 @@
                 </div>
 
                 <div class="data_space">
-                    <p>Unused Javascript rules:</p>
+                    <p class="bold_p">Unused Javascript rules:</p>
                     <p data-field="unusedJStotalBytes"></p>
                     <p data-field="unusedJSwastedBytes"></p>
                     <p data-field="unusedJSwastedPercent"></p>
@@ -81,7 +83,7 @@
 
 
                 <div class="data_space">
-                    <p>Unminified Javascript:</p>
+                    <p class="bold_p">Unminified Javascript:</p>
                     <p data-field="unminJStotalBytes"></p>
                     <p data-field="unminJSwastedBytes"></p>
                     <p data-field="unminJSwastedPercent"></p>
@@ -89,7 +91,7 @@
                 </div>
 
                 <div class="data_space">
-                    <p>Not using modern Image Format:</p>
+                    <p class="bold_p">Not using modern Image Format:</p>
                     <p data-field="modernImageFormatTotalBytes"></p>
                     <p data-field="modernImageFormatWastedBytes"></p>
                     <p data-field="modernImageFormatWastedPercent"></p>
@@ -97,7 +99,7 @@
                 </div>
 
                 <div class="data_space">
-                    <p>Non responsive Images</p>
+                    <p class="bold_p">Non responsive Images</p>
                     <p data-field="responsiveImagesTotalBytes"></p>
                     <p data-field="responsiveImagesWastedBytes"></p>
                     <p data-field="responsiveImagesWastedPercent"></p>
@@ -105,7 +107,7 @@
                 </div>
 
                 <div class="data_space">
-                    <p>Non optimized images</p>
+                    <p class="bold_p">Non optimized images</p>
                     <p data-field="optimizedImagesTotalBytes"></p>
                     <p data-field="optimizedImagesWastedBytes"></p>
                     <p data-field="optimizedImagesWastedPercent"></p>
@@ -115,11 +117,18 @@
             </div>
 
             <div class="changed_numbers">
+
+
+            <div class="data_space">
                 <h2>Numbers to change</h2>
+                <p data-field="energyUsedChange"></p>
+                <p data-field="co2GridGramsChange"></p>
+                <p data-field="co2RenewableGramsChange"></p>
+            </div>
 
                 <div class="data_space flex1">
                     <div>
-                        <p>Unused CSS rules:</p>
+                        <p class="bold_p">Unused CSS rules:</p>
                         <p data-field="unusedCSStotalBytesChange"></p>
                         <p data-field="unusedCSSwastedBytesChange"></p>
                         <p data-field="unusedCSSwastedPercentChange"></p>
@@ -140,7 +149,7 @@
 
                 <div class="data_space flex1">
                     <div>
-                        <p>Unminified CSS:</p>
+                        <p class="bold_p">Unminified CSS:</p>
                         <p data-field="unminCSStotalBytesChange"></p>
                         <p data-field="unminCSSwastedBytesChange"></p>
                         <p data-field="unminCSSwastedPercentChange"></p>
@@ -166,7 +175,7 @@
 
                 <div class="data_space flex1">
                     <div>
-                        <p>Unused Javascript rules:</p>
+                        <p class="bold_p">Unused Javascript rules:</p>
                         <p data-field="unusedJStotalBytesChange"></p>
                         <p data-field="unusedJSwastedBytesChange"></p>
                         <p data-field="unusedJSwastedPercentChange"></p>
@@ -188,7 +197,7 @@
 
                 <div class="data_space flex1">
                     <div>
-                        <p>Unminified Javascript:</p>
+                        <p class="bold_p">Unminified Javascript:</p>
 
                         <p data-field="unminJStotalBytesChange"></p>
                         <p data-field="unminJSwastedBytesChange"></p>
@@ -216,7 +225,7 @@
 
                 <div class="data_space flex1">
                     <div>
-                        <p>Not using modern Image Format:</p>
+                        <p class="bold_p">Not using modern Image Format:</p>
 
                         <p data-field="modernImageFormatTotalBytesChange"></p>
                         <p data-field="modernImageFormatWastedBytesChange"></p>
@@ -238,7 +247,7 @@
 
                 <div class="data_space flex1">
                     <div>
-                        <p>Non responsive Images</p>
+                        <p class="bold_p">Non responsive Images</p>
 
                         <p data-field="responsiveImagesTotalBytesChange"></p>
                         <p data-field="responsiveImagesWastedBytesChange"></p>
@@ -259,7 +268,7 @@
 
                 <div class="data_space flex1">
                     <div>
-                        <p>Non optimized images</p>
+                        <p class="bold_p">Non optimized images</p>
                         <p data-field="optimizedImagesTotalBytesChange"></p>
                         <p data-field="optimizedImagesWastedBytesChange"></p>
                         <p data-field="optimizedImagesWastedPercentChange"></p>
