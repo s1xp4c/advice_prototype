@@ -9,69 +9,27 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 15vw;
-    margin-right: 17vw;
+    margin-left: 11vw;
+    margin-right: 11vw;
     gap: 5vw;
-   min-height: 85vh;
+   
+  }
+
+  .h1_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 70px;
   }
 
   .header_text {
-    width: 29vw;
+    width: 45vw;
   }
 
   .header_icon {
     width: 18vw;
-    justify-content: center;
-    align-items: center;
-    display: flex;
   }
 
-  #form_test {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 40vh;
-    margin-bottom: 100px;
-
-  } 
-
-  .form_div {
-    border: solid #595959 2px;
-    padding: 2.5rem;
-  }
-
-  input {
-    box-shadow: 0 0 0 1px #595959;
-    padding-block: 8px 10px;
-   
-  }
-
-
-  select {
-    box-shadow: 0 0 0 1px #595959;
-    padding-block: 8px 10px;
-    
-  }
-
-
-
-  .industry_wrapper {
-    display: grid;
-    grid: auto/auto-flow 1fr;
-    grid-template-columns: 0.5fr;
-  }
-
-  .visitor_wrapper {
-    display: grid;
-    grid: auto/auto-flow 1fr;
-    grid-template-columns: 0.5fr;
-    margin-top: 25px;
-  }
-
-  .url_wrapper {
-    display: grid;
-    grid: auto/auto-flow 1fr;
-    grid-template-columns: 0.5fr;
-    margin-top: 25px;
-  }
+  
   
