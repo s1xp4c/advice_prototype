@@ -94,17 +94,17 @@
     grid-template-columns: 0.5fr;
     margin-top: 25px;
   }
+  
 
   #yes {
     border: none;
     box-shadow: none;
+    display: initial;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
   }
 
-  #no {
-    border: none;
-    box-shadow: none;
-
-  }
 
   .controls {
     display: flex;
