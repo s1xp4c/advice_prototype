@@ -173,20 +173,38 @@
 </section>
 
 <section id="result_form_section">
-    <form id="result_form">
-        <label for="result_page_link">LINK</label>
-        <input type="text">
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email">
-
-
+    <div class="header_text">
+        <section id="form_test">
+        <div class="form_div">
+        <h2>SEND THE RESULT PAGE TO YOUR COLLEAGUES</h2>
+        <form id="result_form" class="result_form">
+            <div class="link_wrapper">
+                <label for="result_page_link">LINK</label>
+                <input type="text">
+        </div>
+            <div class="email_wrapper">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+        </div>
+        <div class="message_wrapper">
+            <label for="message_area">Message</label>
         <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <div class="btn_div">
+            <button class="btn">SEND</button>
+        </div>
+        </form>
+    </div>
 
-        <button class="btn">SEND</button>
-    </form>
+    </section>
+
+</div>
+<div class="icon">
+    <img src="./images/icon.png" class="header_icon" alt="Icon with leaves this is in a circle">
+</div>
 
 </section>
+
 
 </body>
 
