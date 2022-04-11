@@ -62,12 +62,7 @@ let monthly
 let errorValue = 1
 const zero = 0
 let calculatedCo2FromBytes
-const co2PerByte = 0.000866384
-
-function calcCo2FromBytes(bytes) {
-    calculatedCo2FromBytes = bytes * co2PerByte
-    console.log(calculatedCo2FromBytes)
-}
+const co2PerByte = 6.0286198277026768025957908932939e-7
 
 const DividerNumbers = {
     bytes: 1,
@@ -268,18 +263,15 @@ function fillInfo(co2Data, data) {
     try {
         let unusedCSSwastedBytes = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedBytes / divider * monthly
         siteInfo.unusedCSSwastedBytes = unusedCSSwastedBytes.toFixed(2)
+        siteInfo.unusedCSSCo2 = calcCo2FromBytes(unusedCSSwastedBytes).toFixed(2)
     } catch (error) {
         siteInfo.unusedCSSwastedBytes = zero
+        siteInfo.unusedCSSCo2 = zero
     }
     try {
         siteInfo.unusedCSSwastedPercent = data.lighthouseResult.audits['unused-css-rules'].details.items[0].wastedPercent.toFixed(2)
     } catch (error) {
         siteInfo.unusedCSSwastedPercent = zero
-    }
-    try {
-        siteInfo.unusedCSSCo2 = calcCo2FromBytes(unusedCSSwastedBytes).toFixed(2)
-    } catch (error) {
-        siteInfo.unusedCSSCo2 = zero
     }
 
     // Unused Javascript
@@ -293,9 +285,10 @@ function fillInfo(co2Data, data) {
     try {
         let unusedJSwastedBytes = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedBytes / divider * monthly
         siteInfo.unusedJSwastedBytes = unusedJSwastedBytes.toFixed(2)
-            // siteInfo.unusedJSCo2 = calcCo2FromBytes(unusedJSwastedBytes).toFixed(2)
+        siteInfo.unusedJSCo2 = calcCo2FromBytes(unusedJSwastedBytes).toFixed(2)
     } catch (error) {
         siteInfo.unusedJSwastedBytes = zero
+        siteInfo.unusedJSCo2 = zero
     }
     try {
         siteInfo.unusedJSwastedPercent = data.lighthouseResult.audits['unused-javascript'].details.items[0].wastedPercent.toFixed(2)
@@ -313,9 +306,10 @@ function fillInfo(co2Data, data) {
     try {
         let unminCSSwastedBytes = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedBytes / divider * monthly
         siteInfo.unminCSSwastedBytes = unminCSSwastedBytes.toFixed(2)
-            // siteInfo.unminCSSCo2 = calcCo2FromBytes(unminCSSwastedBytes).toFixed(2)
+        siteInfo.unminCSSCo2 = calcCo2FromBytes(unminCSSwastedBytes).toFixed(2)
     } catch (error) {
         siteInfo.unminCSSwastedBytes = zero
+        siteInfo.unminCSSCo2 = zero
     }
     try {
         siteInfo.unminCSSwastedPercent = data.lighthouseResult.audits['unminified-css'].details.items[0].wastedPercent.toFixed(2)
@@ -333,10 +327,11 @@ function fillInfo(co2Data, data) {
     try {
         let unminJSwastedBytes = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedBytes / divider * monthly
         siteInfo.unminJSwastedBytes = unminJSwastedBytes.toFixed(2)
-            // siteInfo.unminJSCo2 = calcCo2FromBytes(unminJSwastedBytes).toFixed(2)
+        siteInfo.unminJSCo2 = calcCo2FromBytes(unminJSwastedBytes).toFixed(2)
 
     } catch (error) {
         siteInfo.unminJSwastedBytes = zero
+        siteInfo.unminJSCo2 = zero
     }
     try {
         siteInfo.unminJSwastedPercent = data.lighthouseResult.audits['unminified-javascript'].details.items[0].wastedPercent.toFixed(2)
@@ -354,10 +349,11 @@ function fillInfo(co2Data, data) {
     try {
         let modernImageFormatWastedBytes = data.lighthouseResult.audits["modern-image-formats"].details.items[0].wastedBytes / divider * monthly
         siteInfo.modernImageFormatWastedBytes = modernImageFormatWastedBytes.toFixed(2)
-            // siteInfo.modernImageFormatCo2 = calcCo2FromBytes(modernImageFormatWastedBytes).toFixed(2)
+        siteInfo.modernImageFormatCo2 = calcCo2FromBytes(modernImageFormatWastedBytes).toFixed(2)
 
     } catch (error) {
         siteInfo.modernImageFormatWastedBytes = zero
+        siteInfo.modernImageFormatCo2 = zero
     }
     // Calc the percent here
     siteInfo.modernImageFormatWastedPercent = calcPercent(siteInfo.modernImageFormatTotalBytes, siteInfo.modernImageFormatWastedBytes).toFixed(2)
@@ -371,10 +367,11 @@ function fillInfo(co2Data, data) {
     try {
         let responsiveImagesWastedBytes = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedBytes / divider * monthly
         siteInfo.responsiveImagesWastedBytes = responsiveImagesWastedBytes.toFixed(2)
-            // siteInfo.responsiveImagesCo2 = calcCo2FromBytes(responsiveImagesWastedBytes).toFixed(2)
+        siteInfo.responsiveImagesCo2 = calcCo2FromBytes(responsiveImagesWastedBytes).toFixed(2)
 
     } catch (error) {
         siteInfo.responsiveImagesWastedBytes = zero
+        siteInfo.responsiveImagesCo2 = zero
     }
     try {
         siteInfo.responsiveImagesWastedPercent = data.lighthouseResult.audits["uses-responsive-images"].details.items[0].wastedPercent.toFixed(2)
@@ -392,10 +389,11 @@ function fillInfo(co2Data, data) {
     try {
         let optimizedImagesWastedBytes = data.lighthouseResult.audits["uses-optimized-images"].details.items[0].wastedBytes / divider * monthly
         siteInfo.optimizedImagesWastedBytes = optimizedImagesWastedBytes.toFixed(2)
-            // siteInfo.optimizedImagesCo2 = calcCo2FromBytes(optimizedImagesWastedBytes).toFixed(2)
+        siteInfo.optimizedImagesCo2 = calcCo2FromBytes(optimizedImagesWastedBytes).toFixed(2)
 
     } catch (error) {
         siteInfo.optimizedImagesWastedBytes = zero
+        siteInfo.optimizedImagesCo2 = zero
     }
     // Calc the percent here
     siteInfo.optimizedImagesWastedPercent = calcPercent(siteInfo.optimizedImagesTotalBytes, siteInfo.optimizedImagesWastedBytes).toFixed(2)
@@ -408,6 +406,12 @@ function fillInfo(co2Data, data) {
     console.log(siteInfo)
     displayInfoList(siteInfo)
     changeInfoList(siteInfo)
+}
+
+function calcCo2FromBytes(bytes) {
+    let bytesTimesDivider = bytes * divider
+    calculatedCo2FromBytes = bytesTimesDivider * co2PerByte
+    return calculatedCo2FromBytes
 }
 
 function timeCalc(timestamp) {
@@ -452,6 +456,9 @@ function displayInfoList(siteInfo) {
     document.querySelector("[data-field=unusedCSSwastedBytes]").textContent = "Wasted: " + siteInfo.unusedCSSwastedBytes + " " + numSuffix
         // unusedCSSwastedPercent: "",
     document.querySelector("[data-field=unusedCSSwastedPercent]").textContent = "Wasted: " + siteInfo.unusedCSSwastedPercent + " %"
+        // unusedCSSCo2: "",
+    document.querySelector("[data-field=unusedCSSCo2]").textContent = "Wasted: " + siteInfo.unusedCSSCo2 + " g"
+
 
     // unusedJStotalBytes: "",
     document.querySelector("[data-field=unusedJStotalBytes]").textContent = "Total: " + siteInfo.unusedJStotalBytes + " " + numSuffix
@@ -459,6 +466,9 @@ function displayInfoList(siteInfo) {
     document.querySelector("[data-field=unusedJSwastedBytes]").textContent = "Wasted: " + siteInfo.unusedJSwastedBytes + " " + numSuffix
         // unusedJSwastedPercent: "",
     document.querySelector("[data-field=unusedJSwastedPercent]").textContent = "Wasted: " + siteInfo.unusedJSwastedPercent + " %"
+        // unusedJSCo2: "",
+    document.querySelector("[data-field=unusedJSCo2]").textContent = "Wasted: " + siteInfo.unusedJSCo2 + " g"
+
 
     // unminCSStotalBytes: "",
     document.querySelector("[data-field=unminCSStotalBytes]").textContent = "Total: " + siteInfo.unminCSStotalBytes + " " + numSuffix
@@ -466,6 +476,9 @@ function displayInfoList(siteInfo) {
     document.querySelector("[data-field=unminCSSwastedBytes]").textContent = "Wasted: " + siteInfo.unminCSSwastedBytes + " " + numSuffix
         // unminCSSwastedPercent: "",
     document.querySelector("[data-field=unminCSSwastedPercent]").textContent = "Wasted: " + siteInfo.unminCSSwastedPercent + " %"
+        // unminCSSCo2: "",
+    document.querySelector("[data-field=unminCSSCo2]").textContent = "Wasted: " + siteInfo.unminCSSCo2 + " g"
+
 
     // unminJStotalBytes: "",
     document.querySelector("[data-field=unminJStotalBytes]").textContent = "Total: " + siteInfo.unminJStotalBytes + " " + numSuffix
@@ -473,6 +486,9 @@ function displayInfoList(siteInfo) {
     document.querySelector("[data-field=unminJSwastedBytes]").textContent = "Wasted: " + siteInfo.unminJSwastedBytes + " " + numSuffix
         // unminJSwastedPercent: "",
     document.querySelector("[data-field=unminJSwastedPercent]").textContent = "Wasted: " + siteInfo.unminJSwastedPercent + " %"
+        // unminJSCo2: "",
+    document.querySelector("[data-field=unminJSCo2]").textContent = "Wasted: " + siteInfo.unminJSCo2 + " g"
+
 
     // modernImageFormatTotalBytes: "",
     document.querySelector("[data-field=modernImageFormatTotalBytes]").textContent = "Total: " + siteInfo.modernImageFormatTotalBytes + " " + numSuffix
@@ -480,6 +496,9 @@ function displayInfoList(siteInfo) {
     document.querySelector("[data-field=modernImageFormatWastedBytes]").textContent = "Wasted: " + siteInfo.modernImageFormatWastedBytes + " " + numSuffix
         // modernImageFormatWastedPercent: "",
     document.querySelector("[data-field=modernImageFormatWastedPercent]").textContent = "Wasted: " + siteInfo.modernImageFormatWastedPercent + " %"
+        // modernImageFormatCo2: "",
+    document.querySelector("[data-field=modernImageFormatCo2]").textContent = "Wasted: " + siteInfo.modernImageFormatCo2 + " g"
+
 
     // responsiveImagesTotalBytes: "",
     document.querySelector("[data-field=responsiveImagesTotalBytes]").textContent = "Total: " + siteInfo.responsiveImagesTotalBytes + " " + numSuffix
@@ -487,6 +506,9 @@ function displayInfoList(siteInfo) {
     document.querySelector("[data-field=responsiveImagesWastedBytes]").textContent = "Wasted: " + siteInfo.responsiveImagesWastedBytes + " " + numSuffix
         // responsiveImagesWastedPercent: "",
     document.querySelector("[data-field=responsiveImagesWastedPercent]").textContent = "Wasted: " + siteInfo.responsiveImagesWastedPercent + " %"
+        // responsiveImagesCo2: "",
+    document.querySelector("[data-field=responsiveImagesCo2]").textContent = "Wasted: " + siteInfo.responsiveImagesCo2 + " g"
+
 
     // optimizedImagesTotalBytes: "",
     document.querySelector("[data-field=optimizedImagesTotalBytes]").textContent = "Total: " + siteInfo.optimizedImagesTotalBytes + " " + numSuffix
@@ -494,6 +516,9 @@ function displayInfoList(siteInfo) {
     document.querySelector("[data-field=optimizedImagesWastedBytes]").textContent = "Wasted: " + siteInfo.optimizedImagesWastedBytes + " " + numSuffix
         // optimizedImagesWastedPercent: "",
     document.querySelector("[data-field=optimizedImagesWastedPercent]").textContent = "Wasted: " + siteInfo.optimizedImagesWastedPercent + " %"
+        // optimizedImagesCo2: "",
+    document.querySelector("[data-field=optimizedImagesCo2]").textContent = "Wasted: " + siteInfo.optimizedImagesCo2 + " g"
+
 
     // Image data
     imageFromURL.src = siteInfo.imageData
@@ -516,6 +541,8 @@ function changeInfoList(siteInfo) {
     document.querySelector("[data-field=unusedCSSwastedBytesChange]").textContent = "Wasted: " + siteInfo.unusedCSSwastedBytes + " " + numSuffix
         // unusedCSSwastedPercent: "",
     document.querySelector("[data-field=unusedCSSwastedPercentChange]").textContent = "Wasted: " + siteInfo.unusedCSSwastedPercent + " %"
+        // unusedCSSCo2: "",
+    document.querySelector("[data-field=unusedCSSCo2Change]").textContent = "Wasted: " + siteInfo.unusedCSSCo2 + " g"
 
     // unusedJStotalBytes: "",
     document.querySelector("[data-field=unusedJStotalBytesChange]").textContent = "Total: " + siteInfo.unusedJStotalBytes + " " + numSuffix
@@ -523,6 +550,8 @@ function changeInfoList(siteInfo) {
     document.querySelector("[data-field=unusedJSwastedBytesChange]").textContent = "Wasted: " + siteInfo.unusedJSwastedBytes + " " + numSuffix
         // unusedJSwastedPercent: "",
     document.querySelector("[data-field=unusedJSwastedPercentChange]").textContent = "Wasted: " + siteInfo.unusedJSwastedPercent + " %"
+        // unusedJSCo2: "",
+    document.querySelector("[data-field=unusedJSCo2Change]").textContent = "Wasted: " + siteInfo.unusedJSCo2 + " g"
 
     // unminCSStotalBytes: "",
     document.querySelector("[data-field=unminCSStotalBytesChange]").textContent = "Total: " + siteInfo.unminCSStotalBytes + " " + numSuffix
@@ -530,6 +559,8 @@ function changeInfoList(siteInfo) {
     document.querySelector("[data-field=unminCSSwastedBytesChange]").textContent = "Wasted: " + siteInfo.unminCSSwastedBytes + " " + numSuffix
         // unminCSSwastedPercent: "",
     document.querySelector("[data-field=unminCSSwastedPercentChange]").textContent = "Wasted: " + siteInfo.unminCSSwastedPercent + " %"
+        // unminCSSCo2: "",
+    document.querySelector("[data-field=unminCSSCo2Change]").textContent = "Wasted: " + siteInfo.unminCSSCo2 + " g"
 
     // unminJStotalBytes: "",
     document.querySelector("[data-field=unminJStotalBytesChange]").textContent = "Total: " + siteInfo.unminJStotalBytes + " " + numSuffix
@@ -537,6 +568,8 @@ function changeInfoList(siteInfo) {
     document.querySelector("[data-field=unminJSwastedBytesChange]").textContent = "Wasted: " + siteInfo.unminJSwastedBytes + " " + numSuffix
         // unminJSwastedPercent: "",
     document.querySelector("[data-field=unminJSwastedPercentChange]").textContent = "Wasted: " + siteInfo.unminJSwastedPercent + " %"
+        // unminJSCo2: "",
+    document.querySelector("[data-field=unminJSCo2Change]").textContent = "Wasted: " + siteInfo.unminJSCo2 + " g"
 
     // modernImageFormatTotalBytes: "",
     document.querySelector("[data-field=modernImageFormatTotalBytesChange]").textContent = "Total: " + siteInfo.modernImageFormatTotalBytes + " " + numSuffix
@@ -544,6 +577,8 @@ function changeInfoList(siteInfo) {
     document.querySelector("[data-field=modernImageFormatWastedBytesChange]").textContent = "Wasted: " + siteInfo.modernImageFormatWastedBytes + " " + numSuffix
         // modernImageFormatWastedPercent: "",
     document.querySelector("[data-field=modernImageFormatWastedPercentChange]").textContent = "Wasted: " + siteInfo.modernImageFormatWastedPercent + " %"
+        // modernImageFormatCo2: "",
+    document.querySelector("[data-field=modernImageFormatCo2Change]").textContent = "Wasted: " + siteInfo.modernImageFormatCo2 + " g"
 
     // responsiveImagesTotalBytes: "",
     document.querySelector("[data-field=responsiveImagesTotalBytesChange]").textContent = "Total: " + siteInfo.responsiveImagesTotalBytes + " " + numSuffix
@@ -551,6 +586,8 @@ function changeInfoList(siteInfo) {
     document.querySelector("[data-field=responsiveImagesWastedBytesChange]").textContent = "Wasted: " + siteInfo.responsiveImagesWastedBytes + " " + numSuffix
         // responsiveImagesWastedPercent: "",
     document.querySelector("[data-field=responsiveImagesWastedPercentChange]").textContent = "Wasted: " + siteInfo.responsiveImagesWastedPercent + " %"
+        // responsiveImagesCo2: "",
+    document.querySelector("[data-field=responsiveImagesCo2Change]").textContent = "Wasted: " + siteInfo.responsiveImagesCo2 + " g"
 
     // optimizedImagesTotalBytes: "",
     document.querySelector("[data-field=optimizedImagesTotalBytesChange]").textContent = "Total: " + siteInfo.optimizedImagesTotalBytes + " " + numSuffix
@@ -558,7 +595,8 @@ function changeInfoList(siteInfo) {
     document.querySelector("[data-field=optimizedImagesWastedBytesChange]").textContent = "Wasted: " + siteInfo.optimizedImagesWastedBytes + " " + numSuffix
         // optimizedImagesWastedPercent: "",
     document.querySelector("[data-field=optimizedImagesWastedPercentChange]").textContent = "Wasted: " + siteInfo.optimizedImagesWastedPercent + " %"
-
+        // optimizedImagesCo2: "",
+    document.querySelector("[data-field=optimizedImagesCo2Change]").textContent = "Wasted: " + siteInfo.optimizedImagesCo2 + " g"
 }
 
 imageFromURL.addEventListener('load', function() {
