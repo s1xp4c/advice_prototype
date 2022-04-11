@@ -19,14 +19,15 @@
   .form_div {
     border: solid #595959 2px;
     padding: 4rem;
-    border-radius: 10px
+    border-radius: 10px;
   }
 
   input {
     border: none;
     box-shadow: 0 0 0 1px #595959;
-    padding-block: 8px 10px;
-    border-radius: 4px
+    padding-block: 10px 10px;
+    border-radius: 4px;
+    padding-inline: 12px;
    
   }
 
@@ -34,7 +35,7 @@
   select {
     border: none;
     box-shadow: 0 0 0 1px #595959;
-    padding-block: 8px 10px;
+    padding-block: 10px 10px;
     border-radius: 4px
     
   }
@@ -42,9 +43,13 @@
   textarea {
     border: none;
     box-shadow: 0 0 0 1px #595959;
-    padding-block: 8px 10px;
+    padding-block: 10px 10px;
+    padding-inline: 12px;
     border-radius: 4px;
     color: #ffffff;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
   }
 
 
