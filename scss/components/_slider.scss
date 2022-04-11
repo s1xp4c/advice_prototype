@@ -3,6 +3,7 @@
     width: 100%;
     padding: 1.5em 0; /*  Giving more room for hover  */
     max-width: 400px;
+ 
   }
   
   /* Custom Bar */
@@ -55,15 +56,16 @@
     padding: 0.1em;
   }
   .box-minmax {
-    margin-top: 30px;
-    width: 408px;
+    // margin-top: 30px;
+    width: 308px;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
-    color: #080808;
+    color: #e9e1e1;
     span:first-child {
-        margin-left: 10px;
+        margin-left: 1px;
     }
+
 }
   
 //   body {

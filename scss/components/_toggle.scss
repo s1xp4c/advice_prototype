@@ -11,8 +11,8 @@
 
   
   #container {
-    width: 12.25rem;
-    height: 5.5rem;
+    width: 10.25rem;
+    height: 3.5rem;
     margin: 0;
     grid-area: main;
     -ms-flex-item-align: center;
@@ -90,6 +90,7 @@
     position: absolute;
     width: 4.5rem;
     height: 4.5rem;
+    background-color: #e7e5e5;
   }
   
   .face {

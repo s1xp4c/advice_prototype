@@ -40,6 +40,12 @@
     gap: 5vw;
    min-height: 85vh;
 }
+.flex1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // justify-content:end;
+  // align-items: center;
+}
 
 
 .data_space {
