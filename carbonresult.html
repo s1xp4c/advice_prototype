@@ -126,7 +126,9 @@
                     <p data-field="unusedCSSwastedPercentChange"></p>
                 </div>
                     <div class="range-wrap">
-                        <input type="range" class="range" min="0" max="100" id="interact">
+                        <label class="sliders" for="unusedCSSslider"></label>
+
+                        <input type="range" class="range" min="0" max="100" id="unusedCSSslider"  name="unusedCSSslider">
                         <div class="box-minmax">
                             <span>0</span><span>100</span>
                         </div>
@@ -143,8 +145,8 @@
                 </div>
                 <div id="container">
                     <div class="toggle">
-                        <input type="checkbox" name="toggle" class="check-checkbox" id="mytoggle1">
-                        <label class="check-label" for="mytoggle1">
+                        <input type="checkbox" name="unminCSStoggle" class="check-checkbox" id="unminCSStoggle" >
+                        <label class="check-label" for="unminCSStoggle">
                             <div id="background"></div>
                             <span class="face">
                                 <span class="face-container">
@@ -167,7 +169,9 @@
                     <p data-field="unusedJSwastedPercentChange"></p>
                 </div>
                 <div class="range-wrap">
-                    <input type="range" class="range" min="0" max="100" id="interact">
+                    <label class="sliders" for="unusedJSslider"></label>
+
+                    <input type="range" class="range" min="0" max="100" id="unusedJSslider" name="unusedJSslider">
                     <div class="box-minmax">
                         <span>0</span><span>100</span>
                     </div>
@@ -187,8 +191,8 @@
                 </div>
                 <div id="container">
                     <div class="toggle">
-                        <input type="checkbox" name="toggle" class="check-checkbox" id="mytoggle2">
-                        <label class="check-label" for="mytoggle2">
+                        <input type="checkbox" name="unminJStoggle" class="check-checkbox" id="unminJStoggle">
+                        <label class="check-label" for="unminJStoggle">
                             <div id="background"></div>
                             <span class="face">
                                 <span class="face-container">
@@ -210,9 +214,13 @@
                     <p data-field="modernImageFormatTotalBytesChange"></p>
                     <p data-field="modernImageFormatWastedBytesChange"></p>
                     <p data-field="modernImageFormatWastedPercentChange"></p>
+                
                 </div>
                     <div class="range-wrap">
-                        <input type="range" class="range" min="0" max="100">
+                        <label class="sliders" for="modernImageFormattoggle" ></label>
+                        <input type="range" class="range" min="0" max="100" id="modernImageFormattoggle" name="modernImageFormattoggle">
+                       
+
                         <div class="box-minmax">
                             <span>0</span><span>100</span>
                         </div>
@@ -229,7 +237,9 @@
                     <p data-field="responsiveImagesWastedPercentChange"></p>
                 </div>
                     <div class="range-wrap">
-                        <input type="range" class="range" min="0" max="100">
+                        <label class="sliders" for="responsiveImagesslider"></label>
+                        <input type="range" class="range" min="0" max="100" id="responsiveImagesslider" name="responsiveImagesslider">
+
                         <div class="box-minmax">
                             <span>0</span><span>100</span>
                         </div>
@@ -245,7 +255,9 @@
                     <p data-field="optimizedImagesWastedPercentChange"></p>
                 </div>
                     <div class="range-wrap">
-                        <input type="range" class="range" min="0" max="100">
+                        <label class="sliders" for="optimizedImagesslider"></label>
+
+                        <input type="range" class="range" min="0" max="100" id="optimizedImagesslider" name="optimizedImagesslider">
                         <div class="box-minmax">
                             <span>0</span><span>100</span>
                         </div>
