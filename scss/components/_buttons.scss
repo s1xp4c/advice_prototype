@@ -8,14 +8,17 @@
     font-weight: 500;
     font-size: 1.1rem;
     margin-top: 25px;
+    border-radius: 4px
 }
 
 
 .btn:hover {
-    background-color: #a7a7a7;
+    background-color: #80e288;
     border: none;
     padding: 1rem 2rem;
     color: #ffffff;
     cursor: pointer;
+    color: #212121;
+    font-weight: 600;
     
 }
