@@ -1,6 +1,6 @@
 "use strict"
 
-// import './rangeslider'
+
 const inputForm = document.getElementById("siteinput");
 let URLvalue
 let fieldValue
