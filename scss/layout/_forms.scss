@@ -72,20 +72,25 @@
   .link_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
-    grid-template-columns: 0.5fr;
+    grid-template-columns: 0.3fr;
     margin-top: 25px;
   }
 
   .email_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
-    grid-template-columns: 0.5fr;
+    grid-template-columns: 0.3fr;
     margin-top: 25px;
   }
 
   .message_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
-    grid-template-columns: 0.5fr;
+    grid-template-columns: 0.3fr;
     margin-top: 25px;
+  }
+
+  .message_label {
+    justify-content: flex-start;
+    align-items: flex-start;
   }
