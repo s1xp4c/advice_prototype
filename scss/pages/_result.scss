@@ -1,3 +1,20 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    background-color: #212121;
+  }
+
+  .result_header_div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 11vw;
+    margin-right: 11vw;
+    gap: 5vw;
+   min-height: 85vh;
+  }
+
 
 #screenshot_container {
     // position: relative;
@@ -8,8 +25,23 @@
 
 #imgFromURL {
     object-fit: cover;
-    width: 60vw;
-    height: 33vw;
+    width: 36vw;
+    height: 21vw;
     object-position: 0% 0%;
 }
 
+
+.flex {
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 15vw;
+    margin-right: 17vw;
+    gap: 5vw;
+   min-height: 85vh;
+}
+
+
+.data_space {
+  margin-bottom: 50px;
+}
