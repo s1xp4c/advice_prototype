@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 let rangeSlider = document.getElementById("rs-range-line");
 let rangeBullet = document.getElementById("rs-bullet");
@@ -6,9 +6,9 @@ let rangeBullet = document.getElementById("rs-bullet");
 rangeSlider.addEventListener("input", showSliderValue, false);
 
 function showSliderValue() {
-    rangeBullet.innerHTML = rangeSlider.value;
-    let bulletPosition = (rangeSlider.value / rangeSlider.max);
-    rangeBullet.style.left = (bulletPosition * 578) + "px";
+  rangeBullet.innerHTML = rangeSlider.value;
+  let bulletPosition = rangeSlider.value / rangeSlider.max;
+  rangeBullet.style.left = bulletPosition * 578 + "px";
 }
 
 // ToDo: Fetch Lighthouse score from lighthouseResult, categories, performance, score and multiply by 100
@@ -28,7 +28,7 @@ allRanges.forEach((wrap) => {
     setBubble(range, bubble);
   });
 
-  setting bubble on DOM load
+  //setting bubble on DOM load
   setBubble(range, bubble);
 });
 
@@ -36,13 +36,12 @@ function setBubble(range, bubble) {
   const val = range.value;
 
   const min = range.min || 0;
-  const max =  range.max || 100;
+  const max = range.max || 100;
   //rangeSlider.value / rangeSlider.max
 
   const offset = Number(((val - min) * 100) / (max - min));
 
   bubble.textContent = val;
-
 
   bubble.style.left = `calc(${offset}% - 14px)`;
 }
