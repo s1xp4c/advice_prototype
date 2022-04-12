@@ -546,10 +546,10 @@ function displayInfoList(siteInfo) {
     "Energy used: " + siteInfo.energyUsed + " " + powerSuffix;
   // co2GridGrams: "",
   document.querySelector("[data-field=co2GridGrams]").textContent =
-    "CO2 for every new visitor: " + siteInfo.co2GridGrams + " " + weightSuffix;
+    "CO2: " + siteInfo.co2GridGrams + " " + weightSuffix;
   // co2RenewableGrams: "",
   document.querySelector("[data-field=co2RenewableGrams]").textContent =
-    "CO2 that is renewable: " + siteInfo.co2RenewableGrams + " " + weightSuffix;
+    "CO2 renewable: " + siteInfo.co2RenewableGrams + " " + weightSuffix;
 
   // unusedCSStotalBytes: "",
   document.querySelector("[data-field=unusedCSStotalBytes]").textContent =
@@ -694,13 +694,13 @@ function displayInfoList(siteInfo) {
 function changeInfoList(siteInfo) {
   // energyUsed: "",
   document.querySelector("[data-field=energyUsedChange]").textContent =
-    siteInfo.energyUsed + " " + powerSuffix;
+  "Energy used: " + siteInfo.energyUsed + " " + powerSuffix;
   //     // co2GridGrams: "",
   document.querySelector("[data-field=co2GridGramsChange]").textContent =
-    siteInfo.co2GridGrams + " " + weightSuffix;
+  "CO2: " + siteInfo.co2GridGrams + " " + weightSuffix;
   //     // co2RenewableGrams: "",
   document.querySelector("[data-field=co2RenewableGramsChange]").textContent =
-    siteInfo.co2RenewableGrams + " " + weightSuffix;
+  "CO2 renewable: " + siteInfo.co2RenewableGrams + " " + weightSuffix;
 
   // unusedCSStotalBytes: "",
   document.querySelector("[data-field=unusedCSStotalBytesChange]").innerHTML =
