@@ -4,43 +4,39 @@
     align-items: center;
     min-height: 40vh;
     margin-bottom: 100px;
+}
 
-  } 
-
-  #result_form_section {
+#result_form_section {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-left: 11vw;
     margin-right: 11vw;
     gap: 5vw;
-  }
+}
 
-  .form_div {
+.form_div {
     border: solid #595959 2px;
     padding: 4rem;
     border-radius: 10px;
-  }
+}
 
-  input {
+input {
     border: none;
     box-shadow: 0 0 0 1px #595959;
     padding-block: 10px 10px;
     border-radius: 4px;
     padding-inline: 12px;
-   
-  }
+}
 
-
-  select {
+select {
     border: none;
     box-shadow: 0 0 0 1px #595959;
     padding-block: 10px 10px;
     border-radius: 4px
-    
-  }
+}
 
-  textarea {
+textarea {
     border: none;
     box-shadow: 0 0 0 1px #595959;
     padding-block: 10px 10px;
@@ -50,77 +46,143 @@
     font-family: "Gothic A1", sans-serif;
     font-size: 1rem;
     font-weight: 400;
-  }
+}
 
-
-
-  .industry_wrapper {
+.industry_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
     grid-template-columns: 0.5fr;
-  }
+}
 
-  .visitor_wrapper {
-    display: grid;
-    grid: auto/auto-flow 1fr;
-    grid-template-columns: 0.5fr;
-    margin-top: 25px;
-  }
-
-  .url_wrapper {
+.visitor_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
     grid-template-columns: 0.5fr;
     margin-top: 25px;
-  }
+}
 
-  .link_wrapper {
+.url_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
     grid-template-columns: 0.5fr;
     margin-top: 25px;
-  }
+}
 
-  .email_wrapper {
+.link_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
     grid-template-columns: 0.5fr;
     margin-top: 25px;
-  }
+}
 
-  .radio_wrapper {
+.email_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
     grid-template-columns: 0.5fr;
     margin-top: 25px;
-  }
-  
+}
 
-  #yes {
-    border: none;
-    box-shadow: none;
-    display: initial;
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-  }
-
-
-  .controls {
+.controls {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
-  }
+}
 
-  .message_wrapper {
+.message_wrapper {
     display: grid;
     grid: auto/auto-flow 1fr;
     grid-template-columns: 0.5fr;
     margin-top: 25px;
-  }
+}
 
-  .message_label {
+.message_label {
     justify-content: flex-start;
     align-items: flex-start;
-  }
+}
 
+// Radio and checkbox styling
+// input[type=radio],
+// input[type=checkbox] {
+//     visibility: hidden;
+// }
+// .radio label:before {
+//     border-radius: 8px;
+// }
+// .checkbox label:before {
+//     border-radius: 3px;
+// }
+// input[type=radio]:checked {
+//     content: "\2022";
+//     color: #f3f3f3;
+//     font-size: 30px;
+//     text-align: center;
+//     line-height: 18px;
+// }
+// input[type=checkbox]:checked {
+//     content: "\2713";
+//     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+//     font-size: 15px;
+//     color: #f3f3f3;
+//     text-align: center;
+//     line-height: 15px;
+// }
+// Radio and checkbox hide before making it manually
+input[type=radio],
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+.checkbox_wrapper {
+    display: grid;
+    grid: auto/auto-flow 1fr;
+    grid-template-columns: 0.5fr;
+    margin-top: 25px;
+}
+
+.yes {
+    position: absolute;
+    top: 0;
+    // left: 0;
+    border: none;
+    box-shadow: none;
+    width: 25px;
+    height: 25px;
+    background-color: #595959;
+    margin-left: 10px;
+}
+
+.yes:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox_label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 15px;
+    &:hover input~.yes {
+        background-color: #595959;
+    }
+    & input:active~.yes {
+        background-color: white;
+    }
+    & input:checked~.yes {
+        background-color: hotpink;
+    }
+    & input:checked~.yes:after {
+        display: block;
+    }
+    & .yes:after {
+        left: 9px;
+        bottom: 4px;
+        width: 8px;
+        height: 20px;
+        border: solid #595959;
+        border-width: 0 4px 4px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}
