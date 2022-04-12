@@ -56,10 +56,12 @@
     </div>
     </div>
     
-    <section id="Numbers_from_test">
-        <div class="grid_wrapper">
+    <section id="numbers_from_test">
 
-            <div class="original_numbers">
+        <div class="original_numbers">
+
+
+            <div class="grid_wrapper">
 
                 <div class="data_space">
                     <h2>ORIGINAL NUMBERS</h2>
@@ -79,10 +81,10 @@
                     <h2>USE TOOLS TO CHANGE NUMBERS</h2>
                 </div>
 
-                
+            </div>
 
 
-
+            <div class="grid_wrapper">
                 <div class="data_space">
                     <p class="bold_p hover_field"> <sup>&#9432;</sup>Unused CSS rules:
                         <span class="info_hover_text">Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity.</span></p>
@@ -103,6 +105,8 @@
                     </div>
                 </div>
 
+                
+                <div class="data_space flex1">
                 <div class="range-wrap">
                     <label class="sliders" for="unusedCSSslider"></label>
 
@@ -112,7 +116,10 @@
                     </div>
                     <output class="bubble"></output>
                 </div>
+            </div>
+            </div>
 
+            <div class="grid_wrapper">
 
                 <div class="data_space">
                     <p class="bold_p hover_field2"><sup>&#9432;</sup>Unminified CSS:
@@ -130,27 +137,30 @@
                         <p data-field="unminCSSwastedBytesChange"></p>
                         <p data-field="unminCSSwastedPercentChange"></p>
                         <p data-field="unminCSSCo2Change"></p>
-
-                    </div>
-                    <div id="container">
-                        <div class="toggle">
-                            <input type="checkbox" name="unminCSStoggle" class="check-checkbox" id="unminCSStoggle">
-                            <label class="check-label" for="unminCSStoggle">
-                            <div id="background"></div>
-                            <span class="face">
-                                <span class="face-container">
-                                    <span class="eye left"></span>
-                                    <span class="eye right"></span>
-                                    <span class="mouth"></span>
-                                </span>
-                            </span>
-                        </label>
-                        </div>
                     </div>
                 </div>
 
-                
+            <div class="data_space flex1">
+                <div id="container">
+                    <div class="toggle">
+                        <input type="checkbox" name="unminCSStoggle" class="check-checkbox" id="unminCSStoggle">
+                        <label class="check-label" for="unminCSStoggle">
+                        <div id="background"></div>
+                        <span class="face">
+                            <span class="face-container">
+                                <span class="eye left"></span>
+                                <span class="eye right"></span>
+                                <span class="mouth"></span>
+                            </span>
+                        </span>
+                    </label>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+
+            <div class="grid_wrapper">
                 <div class="data_space">
                     <p class="bold_p hover_field3"><sup>&#9432;</sup>Unused Javascript rules:
                         <span class="info_hover_text3">Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity.</span></p>
@@ -169,19 +179,26 @@
                         <p data-field="unusedJSwastedPercentChange"></p>
                         <p data-field="unusedJSCo2Change"></p>
 
-                    </div>
-                    <div class="range-wrap">
-                        <label class="sliders" for="unusedJSslider"></label>
+                   
+                    
+                </div>
+            <!-- <div class="data_space flex1"> -->
+                <div class="range-wrap">
+                    <label class="sliders" for="unusedJSslider"></label>
 
-                        <input type="range" class="range" min="0" max="100" id="unusedJSslider" name="unusedJSslider">
-                        <div class="box-minmax">
-                            <span>0</span><span>100</span>
-                        </div>
-                        <output class="bubble"></output>
+                    <input type="range" class="range" min="0" max="100" id="unusedJSslider" name="unusedJSslider">
+                    <div class="box-minmax">
+                        <span>0</span><span>100</span>
                     </div>
+                    <output class="bubble"></output>
                 </div>
 
+            </div>
+            <!-- </div> -->
+            </div>
 
+
+            <div class="grid_wrapper">
                 <div class="data_space">
                     <p class="bold_p hover_field4"><sup>&#9432;</sup>Unminified Javascript:
                         <span class="info_hover_text4">Minifying JavaScript files can reduce payload sizes and script parse time.</span></p>
@@ -191,7 +208,6 @@
                     <p data-field="unminJSwastedPercent"></p>
                     <p data-field="unminJSCo2"></p>
                 </div>
-
 
                 <div class="data_space flex1">
                     <div>
@@ -203,24 +219,31 @@
                         <p data-field="unminJSCo2Change"></p>
 
                     </div>
-                    <div id="container">
-                        <div class="toggle">
-                            <input type="checkbox" name="unminJStoggle" class="check-checkbox" id="unminJStoggle">
-                            <label class="check-label" for="unminJStoggle">
-                            <div id="background"></div>
-                            <span class="face">
-                                <span class="face-container">
-                                    <span class="eye left"></span>
-                                    <span class="eye right"></span>
-                                    <span class="mouth"></span>
-                                </span>
-                            </span>
-                        </label>
-                        </div>
-                    </div>
+                    
 
                 </div>
 
+                <div class="data_space flex1">
+                <div id="container">
+                    <div class="toggle">
+                        <input type="checkbox" name="unminJStoggle" class="check-checkbox" id="unminJStoggle">
+                        <label class="check-label" for="unminJStoggle">
+                        <div id="background"></div>
+                        <span class="face">
+                            <span class="face-container">
+                                <span class="eye left"></span>
+                                <span class="eye right"></span>
+                                <span class="mouth"></span>
+                            </span>
+                        </span>
+                    </label>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+            <div class="grid_wrapper">
                 <div class="data_space">
                     <p class="bold_p hover_field5"><sup>&#9432;</sup>Not using modern Image Format:
                         <span class="info_hover_text5">Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption.</span></p>
@@ -241,18 +264,24 @@
                         <p data-field="modernImageFormatCo2Change"></p>
 
                     </div>
-                    <div class="range-wrap">
-                        <label class="sliders" for="modernImageFormattoggle"></label>
-                        <input type="range" class="range" min="0" max="100" id="modernImageFormattoggle" name="modernImageFormattoggle">
-
-
-                        <div class="box-minmax">
-                            <span>0</span><span>100</span>
-                        </div>
-                        <output class="bubble"></output>
-                    </div>
+                    
                 </div>
 
+                <div class="data_space flex1">
+                <div class="range-wrap">
+                    <label class="sliders" for="modernImageFormattoggle"></label>
+                    <input type="range" class="range" min="0" max="100" id="modernImageFormattoggle" name="modernImageFormattoggle">
+
+
+                    <div class="box-minmax">
+                        <span>0</span><span>100</span>
+                    </div>
+                    <output class="bubble"></output>
+                </div>
+            </div>
+            </div>
+
+            <div class="grid_wrapper">
 
                 <div class="data_space">
                     <p class="bold_p hover_field6"><sup>&#9432;</sup>Non responsive Images:
@@ -273,17 +302,23 @@
                         <p data-field="responsiveImagesWastedPercentChange"></p>
                         <p data-field="responsiveImagesCo2Change"></p>
                     </div>
-                    <div class="range-wrap">
-                        <label class="sliders" for="responsiveImagesslider"></label>
-                        <input type="range" class="range" min="0" max="100" id="responsiveImagesslider" name="responsiveImagesslider">
-
-                        <div class="box-minmax">
-                            <span>0</span><span>100</span>
-                        </div>
-                        <output class="bubble"></output>
-                    </div>
+                    
                 </div>
 
+                <div class="data_space flex1">
+                <div class="range-wrap">
+                    <label class="sliders" for="responsiveImagesslider"></label>
+                    <input type="range" class="range" min="0" max="100" id="responsiveImagesslider" name="responsiveImagesslider">
+
+                    <div class="box-minmax">
+                        <span>0</span><span>100</span>
+                    </div>
+                    <output class="bubble"></output>
+                </div>
+            </div>
+            </div>
+
+            <div class="grid_wrapper">
                 <div class="data_space">
                     <p class="bold_p hover_field7"><sup>&#9432;</sup>Non optimized Images:
                         <span class="info_hover_text7">Optimized images load faster and consume less cellular data.</span></p>
@@ -302,22 +337,27 @@
                         <p data-field="optimizedImagesWastedPercentChange"></p>
                         <p data-field="optimizedImagesCo2Change"></p>
                     </div>
-                    <div class="range-wrap">
-                        <label class="sliders" for="optimizedImagesslider"></label>
-
-                        <input type="range" class="range" min="0" max="100" id="optimizedImagesslider" name="optimizedImagesslider">
-                        <div class="box-minmax">
-                            <span>0</span><span>100</span>
-                        </div>
-                        <output class="bubble"></output>
-                    </div>
+                   
                 </div>
 
+                <div class="data_space flex1">
+
+                <div class="range-wrap">
+                    <label class="sliders" for="optimizedImagesslider"></label>
+
+                    <input type="range" class="range" min="0" max="100" id="optimizedImagesslider" name="optimizedImagesslider">
+                    <div class="box-minmax">
+                        <span>0</span><span>100</span>
+                    </div>
+                    <output class="bubble"></output>
+                </div>
             </div>
 
-            <div class="changed_numbers"> 
-
             </div>
+
+            <!-- <div class="changed_numbers"> 
+
+            </div> -->
 
 
         </div>

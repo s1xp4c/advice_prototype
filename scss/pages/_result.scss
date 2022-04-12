@@ -33,6 +33,10 @@
     object-position: 0% 0%;
 }
 
+#numbers_from_test {
+  margin-right: 43px;
+  margin-left: 47px;
+}
 
 .grid_wrapper {
   // display: flex;
@@ -45,13 +49,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  margin-bottom: 50px;
 }
 
 
 
 .flex1{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
   // justify-content:end;
   // align-items: center;
 }
