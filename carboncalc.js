@@ -210,7 +210,7 @@ async function calcLighthouseAndCo2() {
 
 calcLighthouseAndCo2();
 
-function fillInfo(co2Data, data) {
+export function fillInfo(co2Data, data) {
     // Create object from template
     const siteInfo = Object.create(SiteInfo);
 
