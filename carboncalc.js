@@ -168,6 +168,12 @@ if (monthly === "1") {
 const okAlertBox = document.getElementById("alertBox")
 const okAlertButton = document.getElementById("okAlert")
 
+okAlertButton.addEventListener("submit", (e) => {
+    console.log("alert ok button")
+    e.preventDefault();
+    location.href = `./index.html`;
+})
+
 async function calcLighthouseAndCo2() {
     // const co2Promise = await fetch(`https://api.websitecarbon.com/site?url=${URLvalue}`, {
     //         method: "GET",
@@ -202,10 +208,8 @@ async function calcLighthouseAndCo2() {
             calcLighthouseAndCo2()
         } else {
             console.log("fail alert")
-            okAlertBox.classList.toggle("hide")
-            okAlertButton.addEventListener("click", () => {
-                location.href = `./index.html`;
-            })
+            okAlertBox.classList.remove("hide")
+
         }
         console.log(e);
     });
