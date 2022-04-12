@@ -498,7 +498,9 @@ export function fillInfo(co2Data, data) {
     console.log(siteInfo);
     displayInfoList(siteInfo);
     changeInfoList(siteInfo);
-    stringifyJSON(siteInfo)
+    // stringifyJSON(siteInfo)
+
+    // Make function that fires stringifyJSON(siteInfo) on submit IF checkbox checked
 }
 
 function calcCo2FromBytes(bytes) {
