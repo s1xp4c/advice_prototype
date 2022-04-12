@@ -546,10 +546,10 @@ function displayInfoList(siteInfo) {
         "Energy used: " + siteInfo.energyUsed + " " + powerSuffix;
     // co2GridGrams: "",
     document.querySelector("[data-field=co2GridGrams]").textContent =
-        "CO2 for every new visitor: " + siteInfo.co2GridGrams + " " + weightSuffix;
+        "CO2 total: " + siteInfo.co2GridGrams + " " + weightSuffix;
     // co2RenewableGrams: "",
     document.querySelector("[data-field=co2RenewableGrams]").textContent =
-        "CO2 that is renewable: " + siteInfo.co2RenewableGrams + " " + weightSuffix;
+        "CO2 renewable: " + siteInfo.co2RenewableGrams + " " + weightSuffix;
 
     // unusedCSStotalBytes: "",
     document.querySelector("[data-field=unusedCSStotalBytes]").textContent =
@@ -572,7 +572,7 @@ function displayInfoList(siteInfo) {
         "Wasted: " + siteInfo.unusedCSSwastedPercent + " %";
     // unusedCSSCo2: "",
     document.querySelector("[data-field=unusedCSSCo2]").textContent =
-        "Wasted: " + siteInfo.unusedCSSCo2 + " g";
+        "CO2 wasted: " + siteInfo.unusedCSSCo2 + " g";
     // unusedJStotalBytes: "",
     document.querySelector("[data-field=unusedJStotalBytes]").textContent =
         "Total: " + siteInfo.unusedJStotalBytes + " " + numSuffix;
@@ -589,7 +589,7 @@ function displayInfoList(siteInfo) {
 
     // unusedJSCo2: "",
     document.querySelector("[data-field=unusedJSCo2]").textContent =
-        "Wasted: " + siteInfo.unusedJSCo2 + " g";
+        "CO2 wasted: " + siteInfo.unusedJSCo2 + " g";
 
     // unminCSStotalBytes: "",
     document.querySelector("[data-field=unminCSStotalBytes]").textContent =
@@ -605,7 +605,7 @@ function displayInfoList(siteInfo) {
     }
     // unminCSSCo2: "",
     document.querySelector("[data-field=unminCSSCo2]").textContent =
-        "Wasted: " + siteInfo.unminCSSCo2 + " g";
+        "CO2 wasted: " + siteInfo.unminCSSCo2 + " g";
 
     // unminJStotalBytes: "",
     document.querySelector("[data-field=unminJStotalBytes]").textContent =
@@ -621,7 +621,7 @@ function displayInfoList(siteInfo) {
     }
     // unminJSCo2: "",
     document.querySelector("[data-field=unminJSCo2]").textContent =
-        "Wasted: " + siteInfo.unminJSCo2 + " g";
+        "CO2 wasted: " + siteInfo.unminJSCo2 + " g";
 
     // modernImageFormatTotalBytes: "",
     document.querySelector(
@@ -643,7 +643,7 @@ function displayInfoList(siteInfo) {
 
     // modernImageFormatCo2: "",
     document.querySelector("[data-field=modernImageFormatCo2]").textContent =
-        "Wasted: " + siteInfo.modernImageFormatCo2 + " g";
+        "CO2 wasted: " + siteInfo.modernImageFormatCo2 + " g";
 
     // responsiveImagesTotalBytes: "",
     document.querySelector(
@@ -664,7 +664,7 @@ function displayInfoList(siteInfo) {
 
     // responsiveImagesCo2: "",
     document.querySelector("[data-field=responsiveImagesCo2]").textContent =
-        "Wasted: " + siteInfo.responsiveImagesCo2 + " g";
+        "CO2 wasted: " + siteInfo.responsiveImagesCo2 + " g";
 
     // optimizedImagesTotalBytes: "",
     document.querySelector("[data-field=optimizedImagesTotalBytes]").textContent =
@@ -683,7 +683,7 @@ function displayInfoList(siteInfo) {
 
     // optimizedImagesCo2: "",
     document.querySelector("[data-field=optimizedImagesCo2]").textContent =
-        "Wasted: " + siteInfo.optimizedImagesCo2 + " g";
+        "CO2 wasted: " + siteInfo.optimizedImagesCo2 + " g";
 
     // Image data
     imageFromURL.src = siteInfo.imageData;
@@ -694,17 +694,17 @@ function displayInfoList(siteInfo) {
 function changeInfoList(siteInfo) {
     // energyUsed: "",
     document.querySelector("[data-field=energyUsedChange]").textContent =
-        siteInfo.energyUsed + " " + powerSuffix;
+        "Energy used: " + siteInfo.energyUsed + " " + powerSuffix;
     //     // co2GridGrams: "",
     document.querySelector("[data-field=co2GridGramsChange]").textContent =
-        siteInfo.co2GridGrams + " " + weightSuffix;
+        "CO2 total: " + siteInfo.co2GridGrams + " " + weightSuffix;
     //     // co2RenewableGrams: "",
     document.querySelector("[data-field=co2RenewableGramsChange]").textContent =
-        siteInfo.co2RenewableGrams + " " + weightSuffix;
+        "CO2 renewable: " + siteInfo.co2RenewableGrams + " " + weightSuffix;
 
     // unusedCSStotalBytes: "",
     document.querySelector("[data-field=unusedCSStotalBytesChange]").innerHTML =
-        "total: " + siteInfo.unusedCSStotalBytes + " " + numSuffix;
+        "Total: " + siteInfo.unusedCSStotalBytes + " " + numSuffix;
     // unusedCSSwastedBytes: "",
     document.querySelector(
         "[data-field=unusedCSSwastedBytesChange]"
@@ -715,7 +715,7 @@ function changeInfoList(siteInfo) {
     ).textContent = "Wasted: " + siteInfo.unusedCSSwastedPercent + " %";
     // unusedCSSCo2: "",
     document.querySelector("[data-field=unusedCSSCo2Change]").textContent =
-        "Wasted: " + siteInfo.unusedCSSCo2 + " g";
+        " CO2 wasted: " + siteInfo.unusedCSSCo2 + " g";
 
     // unusedJStotalBytes: "",
     document.querySelector("[data-field=unusedJStotalBytesChange]").textContent =
@@ -729,7 +729,7 @@ function changeInfoList(siteInfo) {
     ).textContent = "Wasted: " + siteInfo.unusedJSwastedPercent + " %";
     // unusedJSCo2: "",
     document.querySelector("[data-field=unusedJSCo2Change]").textContent =
-        "Wasted: " + siteInfo.unusedJSCo2 + " g";
+        "CO2 wasted: " + siteInfo.unusedJSCo2 + " g";
 
     // unminCSStotalBytes: "",
     document.querySelector("[data-field=unminCSStotalBytesChange]").textContent =
@@ -743,7 +743,7 @@ function changeInfoList(siteInfo) {
     ).textContent = "Wasted: " + siteInfo.unminCSSwastedPercent + " %";
     // unminCSSCo2: "",
     document.querySelector("[data-field=unminCSSCo2Change]").textContent =
-        "Wasted: " + siteInfo.unminCSSCo2 + " g";
+        "CO2 wasted: " + siteInfo.unminCSSCo2 + " g";
 
     // unminJStotalBytes: "",
     document.querySelector("[data-field=unminJStotalBytesChange]").textContent =
@@ -757,7 +757,7 @@ function changeInfoList(siteInfo) {
     ).textContent = "Wasted: " + siteInfo.unminJSwastedPercent + " %";
     // unminJSCo2: "",
     document.querySelector("[data-field=unminJSCo2Change]").textContent =
-        "Wasted: " + siteInfo.unminJSCo2 + " g";
+        "CO2 wasted: " + siteInfo.unminJSCo2 + " g";
 
     // modernImageFormatTotalBytes: "",
     document.querySelector(
@@ -776,7 +776,7 @@ function changeInfoList(siteInfo) {
     // modernImageFormatCo2: "",
     document.querySelector(
         "[data-field=modernImageFormatCo2Change]"
-    ).textContent = "Wasted: " + siteInfo.modernImageFormatCo2 + " g";
+    ).textContent = "CO2 wasted: " + siteInfo.modernImageFormatCo2 + " g";
 
     // responsiveImagesTotalBytes: "",
     document.querySelector(
@@ -794,7 +794,7 @@ function changeInfoList(siteInfo) {
     ).textContent = "Wasted: " + siteInfo.responsiveImagesWastedPercent + " %";
     // responsiveImagesCo2: "",
     document.querySelector("[data-field=responsiveImagesCo2Change]").textContent =
-        "Wasted: " + siteInfo.responsiveImagesCo2 + " g";
+        "CO2 wasted: " + siteInfo.responsiveImagesCo2 + " g";
 
     // optimizedImagesTotalBytes: "",
     document.querySelector(
@@ -812,7 +812,7 @@ function changeInfoList(siteInfo) {
     ).textContent = "Wasted: " + siteInfo.optimizedImagesWastedPercent + " %";
     // optimizedImagesCo2: "",
     document.querySelector("[data-field=optimizedImagesCo2Change]").textContent =
-        "Wasted: " + siteInfo.optimizedImagesCo2 + " g";
+        "CO2 wasted: " + siteInfo.optimizedImagesCo2 + " g";
 }
 
 imageFromURL.addEventListener("load", function() {
