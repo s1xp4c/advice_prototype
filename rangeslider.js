@@ -8,10 +8,11 @@
 
 // Apply scores to a form for database
 // Fetch data from DB and apply to new sliders that can be moved
+let bubble;
 const allRanges = document.querySelectorAll(".range-wrap");
 allRanges.forEach((wrap) => {
   const range = wrap.querySelector(".range");
-  const bubble = wrap.querySelector(".bubble");
+  let bubble = wrap.querySelector(".bubble");
 
   range.addEventListener("input", () => {
     setBubble(range, bubble);
@@ -35,13 +36,7 @@ function setBubble(range, bubble) {
   bubble.style.left = `calc(${offset}% - 14px)`;
 }
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   let slider = document.getElementsByClassName("range");
-//   console.log(slider);
-//   slider.addEventListener("change", () => {
-//     console.log("Changed Input");
-//   });
-// });
+
 const NumberSuffix = {
   b: "b",
   kB: "kB",
@@ -74,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           let originalValue = value.split(":")[1].split(" ")[1];
           let changedvalue = (originalValue / 100) * sliderValue;
+      
           let updatedText = value.replace(
             originalValue,
             changedvalue.toFixed(2)
@@ -84,7 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       console.log(toChangeDiv);
       console.log("Number Change : ", sliderValue);
+    //   let bubbles=document.getElementsByClassName('bubble')
+    //   bubbles.innertext=sliderValue;
     });
+    
+   
   }
   let checkBoxes = document.querySelectorAll(".check-checkbox");
   for (let j = 0; j < checkBoxes.length; j++) {

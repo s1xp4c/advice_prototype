@@ -554,20 +554,16 @@ function displayInfoList(siteInfo) {
   // unusedCSStotalBytes: "",
   document.querySelector("[data-field=unusedCSStotalBytes]").textContent =
     "Total: " + siteInfo.unusedCSStotalBytes + " " + numSuffix;
-  document
-    .querySelector(
-      "#Numbers_from_test > div > div.changed_numbers > div:nth-child(2) > div.range-wrap > output"
-    )
-    .setAttribute(
-      "style",
-      `left: calc(${siteInfo.unusedCSSwastedPercent}% - 14px);`
-    );
-  let attributeValue = `calc(0% - 14px)`;
-  let elem = document.getElementsByClassName("bubble")[0];
-  console.log("ELEM", elem);
-  console.log("Value is ", siteInfo.unusedCSSwastedPercent, attributeValue);
-  elem.style.left = attributeValue;
-  console.log("Updated", elem);
+  let bubbles = document.getElementsByClassName("bubble");
+
+  bubbles[0].setAttribute("style", `left: calc(${siteInfo.unusedCSSwastedPercent}% - 14px);`);
+  bubbles[0].innerText=(siteInfo.unusedCSSwastedPercent).toString().split(".")[0];
+  // let attributeValue = `calc(0% - 14px)`;
+  // let elem = document.getElementsByClassName("bubble")[0];
+  // console.log("ELEM", elem);
+  // console.log("Value is ", siteInfo.unusedCSSwastedPercent, attributeValue);
+  // elem.style.left = attributeValue;
+  //console.log("Updated", elem);
   // unusedCSSwastedBytes: "",
   document.querySelector("[data-field=unusedCSSwastedBytes]").textContent =
     "Wasted: " + siteInfo.unusedCSSwastedBytes + " " + numSuffix;
@@ -586,14 +582,11 @@ function displayInfoList(siteInfo) {
   // unusedJSwastedPercent: "",
   document.querySelector("[data-field=unusedJSwastedPercent]").textContent =
     "Wasted: " + siteInfo.unusedJSwastedPercent + " %";
-  document
-    .querySelector(
-      "#Numbers_from_test > div > div.changed_numbers > div:nth-child(2) > div.range-wrap > output"
-    )
-    .setAttribute(
-      "style",
-      `left: calc(${siteInfo.unusedJSwastedPercent}% - 14px);`
-    );
+    bubbles[1].setAttribute("style", `left: calc(${siteInfo.unusedJSwastedPercent}% - 14px);`);
+    bubbles[1].innerText=(siteInfo.unusedJSwastedPercent).toString().split(".")[0];
+
+
+
   // unusedJSCo2: "",
   document.querySelector("[data-field=unusedJSCo2]").textContent =
     "Wasted: " + siteInfo.unusedJSCo2 + " g";
@@ -644,14 +637,10 @@ function displayInfoList(siteInfo) {
   document.querySelector(
     "[data-field=modernImageFormatWastedPercent]"
   ).textContent = "Wasted: " + siteInfo.modernImageFormatWastedPercent + " %";
-  document
-    .querySelector(
-      "#Numbers_from_test > div > div.changed_numbers > div:nth-child(2) > div.range-wrap > output"
-    )
-    .setAttribute(
-      "style",
-      `left: calc(${siteInfo.modernImageFormatWastedPercent}% - 14px);`
-    );
+  bubbles[2].setAttribute("style", `left: calc(${siteInfo.modernImageFormatWastedPercent}% - 14px);`);
+
+  bubbles[2].innerText=(siteInfo.modernImageFormatWastedPercent).toString().split(".")[0];
+
   // modernImageFormatCo2: "",
   document.querySelector("[data-field=modernImageFormatCo2]").textContent =
     "Wasted: " + siteInfo.modernImageFormatCo2 + " g";
@@ -670,6 +659,9 @@ function displayInfoList(siteInfo) {
   document.querySelector(
     "[data-field=responsiveImagesWastedPercent]"
   ).textContent = "Wasted: " + siteInfo.responsiveImagesWastedPercent + " %";
+  bubbles[3].setAttribute("style", `left: calc(${siteInfo.responsiveImagesWastedPercent}% - 14px);`);
+  bubbles[3].innerText=(siteInfo.responsiveImagesWastedPercent).toString().split(".")[0];
+
   // responsiveImagesCo2: "",
   document.querySelector("[data-field=responsiveImagesCo2]").textContent =
     "Wasted: " + siteInfo.responsiveImagesCo2 + " g";
@@ -686,6 +678,9 @@ function displayInfoList(siteInfo) {
   document.querySelector(
     "[data-field=optimizedImagesWastedPercent]"
   ).textContent = "Wasted: " + siteInfo.optimizedImagesWastedPercent + " %";
+  bubbles[4].setAttribute("style", `left: calc(${siteInfo.optimizedImagesWastedPercent}% - 14px);`);
+  bubbles[4].innerText=(siteInfo.optimizedImagesWastedPercent).toString().split(".")[0];
+
   // optimizedImagesCo2: "",
   document.querySelector("[data-field=optimizedImagesCo2]").textContent =
     "Wasted: " + siteInfo.optimizedImagesCo2 + " g";
@@ -873,6 +868,6 @@ imageFromURL.addEventListener("load", function () {
 });
 
 function endLoadingAnimation() {
-    let loader = document.getElementById("loading_icon");
-    loader.classList.add("hide");
+  let loader = document.getElementById("loading_icon");
+  loader.classList.add("hide");
 }
