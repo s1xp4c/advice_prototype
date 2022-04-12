@@ -873,6 +873,6 @@ imageFromURL.addEventListener("load", function () {
 });
 
 function endLoadingAnimation() {
-  let loader = document.getElementById("loader");
-  loader.classList.add("hide");
+    let loader = document.getElementById("loading_icon");
+    loader.classList.add("hide");
 }
