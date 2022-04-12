@@ -63,8 +63,14 @@
     font-size: 20px;
     color: #e9e1e1;
     span:first-child {
-        margin-left: 1px;
+        margin-left: -10px;
     }
+
+    span ~ span {
+      margin-right: -100px;
+  }
+
+   
 
 }
   

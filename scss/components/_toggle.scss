@@ -8,19 +8,22 @@
     }
   }
   
+  
 
   
   #container {
     width: 10.25rem;
     height: 3.5rem;
     margin: 0;
-    grid-area: main;
+    // grid-area: main;
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
     align-self: center;
     -ms-grid-column-align: center;
     justify-self: center;
   }
+
+  
   
   .toggle {
     position: absolute;
