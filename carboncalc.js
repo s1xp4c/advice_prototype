@@ -90,9 +90,9 @@ const NumberSuffix = {
 }
 
 const WeightSuffix = {
-    g: "grams",
-    kg: "kilos",
-    t: "tons"
+    g: "g",
+    kg: "kg",
+    t: "t"
 }
 
 const PowerSuffix = {
@@ -199,6 +199,9 @@ async function calcLighthouseAndCo2() {
             calcLighthouseAndCo2()
         } else {
             alert("The carbon fetch request has failed!! - Please try again later or input another site")
+            document.querySelector(alert).addEventListener("click", () => {
+                location.href = `./index.html`;
+            })
         }
         console.log(e);
     });
@@ -238,8 +241,6 @@ function fillInfo(co2Data, data) {
     } catch (error) {
         siteInfo.co2RenewableGrams = zero
     }
-
-
 
     // Slice out Date from papgespeed 
     let fullDateAndTime = data.analysisUTCTimestamp
