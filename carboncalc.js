@@ -522,21 +522,21 @@ function displayInfoList(siteInfo) {
 
     // Image data
     imageFromURL.src = siteInfo.imageData
-    splashWidth = siteInfo.imageWidth / 3
-    splashHeight = siteInfo.imageHeight / 3
+    splashWidth = siteInfo.imageWidth
+    splashHeight = siteInfo.imageHeight
 }
 
 function changeInfoList(siteInfo) {
 
     // energyUsed: "",
-    // document.querySelector("[data-field=energyUsedChange]").textContent = siteInfo.energyUsed + " kW"
-    //     // co2GridGrams: "",
-    // document.querySelector("[data-field=co2GridGramsChange]").textContent = siteInfo.co2GridGrams + " g"
-    //     // co2RenewableGrams: "",
-    // document.querySelector("[data-field=co2RenewableGramsChange]").textContent = siteInfo.co2RenewableGrams + " g"
+    document.querySelector("[data-field=energyUsedChange]").textContent = siteInfo.energyUsed + " " + powerSuffix
+        //     // co2GridGrams: "",
+    document.querySelector("[data-field=co2GridGramsChange]").textContent = siteInfo.co2GridGrams + " " + weightSuffix
+        //     // co2RenewableGrams: "",
+    document.querySelector("[data-field=co2RenewableGramsChange]").textContent = siteInfo.co2RenewableGrams + " " + weightSuffix
 
     // unusedCSStotalBytes: "",
-    document.querySelector("[data-field=unusedCSStotalBytesChange]").textContent = "Total: " + siteInfo.unusedCSStotalBytes + " " + numSuffix
+    document.querySelector("[data-field=unusedCSStotalBytesChange]").innerHTML = 'total: ' + siteInfo.unusedCSStotalBytes + " " + numSuffix
         // unusedCSSwastedBytes: "",
     document.querySelector("[data-field=unusedCSSwastedBytesChange]").textContent = "Wasted: " + siteInfo.unusedCSSwastedBytes + " " + numSuffix
         // unusedCSSwastedPercent: "",
