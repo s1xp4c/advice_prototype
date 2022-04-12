@@ -202,7 +202,7 @@ async function calcLighthouseAndCo2() {
         } else {
             console.log("fail alert")
             okAlertBox.classList.remove("hide")
-
+            endLoadingAnimation()
         }
         console.log(e);
     });
