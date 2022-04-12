@@ -78,13 +78,14 @@
                 </div>
 
                 <div class="data_space">
-                    <h2>USE TOOLS TO CHANGE NUMBERS</h2>
+                    <h2>USE TOOLS</h2>
+                    <p>Use the sliders and toggles to change the numbers of the wasted values.</p>
                 </div>
 
             </div>
 
 
-            <div class="grid_wrapper">
+            <div class="grid_wrapper_for_tools">
                 <div class="data_space">
                     <p class="bold_p hover_field"> <sup>&#9432;</sup>Unused CSS rules:
                         <span class="info_hover_text">Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity.</span></p>
@@ -94,8 +95,8 @@
                     <p data-field="unusedCSSCo2"></p>
                 </div>
 
-                <div class="data_space flex1">
-                    <div>
+                <div class="data_space flex1 wrapper_for_tool">
+                    <div class="">
                         <p class="bold_p">Unused CSS rules:</p>
                         <p data-field="unusedCSStotalBytesChange"></p>
                         <p data-field="unusedCSSwastedBytesChange"></p>
@@ -103,23 +104,21 @@
                         <p data-field="unusedCSSCo2Change"></p>
 
                     </div>
-                </div>
 
-                
-                <div class="data_space flex1">
                 <div class="range-wrap">
                     <label class="sliders" for="unusedCSSslider"></label>
 
                     <input type="range" class="range" min="0" max="100" id="unusedCSSslider" name="unusedCSSslider">
                     <div class="box-minmax">
-                        <span>0</span><span>100</span>
+                        <span>0%</span><span>100%</span>
                     </div>
                     <output class="bubble"></output>
                 </div>
+
             </div>
             </div>
 
-            <div class="grid_wrapper">
+            <div class="grid_wrapper_for_tools">
 
                 <div class="data_space">
                     <p class="bold_p hover_field2"><sup>&#9432;</sup>Unminified CSS:
@@ -130,7 +129,7 @@
                     <p data-field="unminCSSCo2"></p>
                 </div>
 
-                <div class="data_space flex1">
+                <div class="data_space flex1 wrapper_for_tool">
                     <div>
                         <p class="bold_p">Unminified CSS:</p>
                         <p data-field="unminCSStotalBytesChange"></p>
@@ -138,9 +137,8 @@
                         <p data-field="unminCSSwastedPercentChange"></p>
                         <p data-field="unminCSSCo2Change"></p>
                     </div>
-                </div>
+                
 
-            <div class="data_space flex1">
                 <div id="container">
                     <div class="toggle">
                         <input type="checkbox" name="unminCSStoggle" class="check-checkbox" id="unminCSStoggle">
@@ -160,7 +158,7 @@
         </div>
 
 
-            <div class="grid_wrapper">
+            <div class="grid_wrapper_for_tools">
                 <div class="data_space">
                     <p class="bold_p hover_field3"><sup>&#9432;</sup>Unused Javascript rules:
                         <span class="info_hover_text3">Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity.</span></p>
@@ -171,7 +169,7 @@
                     <p data-field="unusedJSCo2"></p>
                 </div>
 
-                <div class="data_space flex1">
+                <div class="data_space flex1 wrapper_for_tool">
                     <div>
                         <p class="bold_p">Unused Javascript rules:</p>
                         <p data-field="unusedJStotalBytesChange"></p>
@@ -182,23 +180,21 @@
                    
                     
                 </div>
-            <!-- <div class="data_space flex1"> -->
+            
                 <div class="range-wrap">
                     <label class="sliders" for="unusedJSslider"></label>
 
                     <input type="range" class="range" min="0" max="100" id="unusedJSslider" name="unusedJSslider">
                     <div class="box-minmax">
-                        <span>0</span><span>100</span>
+                        <span>0%</span><span>100%</span>
                     </div>
                     <output class="bubble"></output>
                 </div>
-
-            </div>
-            <!-- </div> -->
-            </div>
+        </div>
+    </div>
 
 
-            <div class="grid_wrapper">
+            <div class="grid_wrapper_for_tools">
                 <div class="data_space">
                     <p class="bold_p hover_field4"><sup>&#9432;</sup>Unminified Javascript:
                         <span class="info_hover_text4">Minifying JavaScript files can reduce payload sizes and script parse time.</span></p>
@@ -209,7 +205,7 @@
                     <p data-field="unminJSCo2"></p>
                 </div>
 
-                <div class="data_space flex1">
+                <div class="data_space flex1 wrapper_for_tool">
                     <div>
                         <p class="bold_p">Unminified Javascript:</p>
 
@@ -221,9 +217,8 @@
                     </div>
                     
 
-                </div>
+                
 
-                <div class="data_space flex1">
                 <div id="container">
                     <div class="toggle">
                         <input type="checkbox" name="unminJStoggle" class="check-checkbox" id="unminJStoggle">
@@ -243,7 +238,7 @@
             </div>
 
 
-            <div class="grid_wrapper">
+            <div class="grid_wrapper_for_tools">
                 <div class="data_space">
                     <p class="bold_p hover_field5"><sup>&#9432;</sup>Not using modern Image Format:
                         <span class="info_hover_text5">Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption.</span></p>
@@ -254,7 +249,7 @@
                     <p data-field="modernImageFormatCo2"></p>
                 </div>
 
-                <div class="data_space flex1">
+                <div class="data_space flex1 wrapper_for_tool">
                     <div>
                         <p class="bold_p">Not using modern Image Format:</p>
 
@@ -265,7 +260,7 @@
 
                     </div>
                     
-                </div>
+                
 
                 <div class="data_space flex1">
                 <div class="range-wrap">
@@ -274,14 +269,15 @@
 
 
                     <div class="box-minmax">
-                        <span>0</span><span>100</span>
+                        <span>0%</span><span>100%</span>
                     </div>
                     <output class="bubble"></output>
                 </div>
             </div>
+        </div>
             </div>
 
-            <div class="grid_wrapper">
+            <div class="grid_wrapper_for_tools">
 
                 <div class="data_space">
                     <p class="bold_p hover_field6"><sup>&#9432;</sup>Non responsive Images:
@@ -293,7 +289,7 @@
                     <p data-field="responsiveImagesCo2"></p>
                 </div>
 
-                <div class="data_space flex1">
+                <div class="data_space flex1 wrapper_for_tool">
                     <div>
                         <p class="bold_p">Non responsive Images</p>
 
@@ -303,7 +299,7 @@
                         <p data-field="responsiveImagesCo2Change"></p>
                     </div>
                     
-                </div>
+               
 
                 <div class="data_space flex1">
                 <div class="range-wrap">
@@ -311,14 +307,14 @@
                     <input type="range" class="range" min="0" max="100" id="responsiveImagesslider" name="responsiveImagesslider">
 
                     <div class="box-minmax">
-                        <span>0</span><span>100</span>
+                        <span>0%</span><span>100%</span>
                     </div>
                     <output class="bubble"></output>
                 </div>
             </div>
             </div>
-
-            <div class="grid_wrapper">
+        </div>
+            <div class="grid_wrapper_for_tools">
                 <div class="data_space">
                     <p class="bold_p hover_field7"><sup>&#9432;</sup>Non optimized Images:
                         <span class="info_hover_text7">Optimized images load faster and consume less cellular data.</span></p>
@@ -329,7 +325,7 @@
                     <p data-field="optimizedImagesCo2"></p>
                 </div>
 
-                <div class="data_space flex1">
+                <div class="data_space flex1 wrapper_for_tool">
                     <div>
                         <p class="bold_p">Non optimized images</p>
                         <p data-field="optimizedImagesTotalBytesChange"></p>
@@ -338,7 +334,7 @@
                         <p data-field="optimizedImagesCo2Change"></p>
                     </div>
                    
-                </div>
+                
 
                 <div class="data_space flex1">
 
@@ -347,18 +343,13 @@
 
                     <input type="range" class="range" min="0" max="100" id="optimizedImagesslider" name="optimizedImagesslider">
                     <div class="box-minmax">
-                        <span>0</span><span>100</span>
+                        <span>0%</span><span>100%</span>
                     </div>
                     <output class="bubble"></output>
                 </div>
             </div>
-
+        </div>
             </div>
-
-            <!-- <div class="changed_numbers"> 
-
-            </div> -->
-
 
         </div>
     </section>

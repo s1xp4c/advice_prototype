@@ -34,11 +34,18 @@
 }
 
 #numbers_from_test {
-  margin-right: 43px;
-  margin-left: 47px;
+  margin-inline: 180px
 }
 
 .grid_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+
+.grid_wrapper_for_tools {
   // display: flex;
   //   justify-content: space-around;
   //   align-items: center;
@@ -47,19 +54,25 @@
   //   gap: 5vw;
   //   min-height: 85vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr;
   gap: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+}
+
+.wrapper_for_tool {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px
 }
 
 
 
-.flex1{
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // justify-content:end;
-  // align-items: center;
-}
+// .flex1 {
+//   // display: grid;
+//   // grid-template-columns: 1fr 1fr;
+//   // justify-content:end;
+//   // align-items: center;
+// }
 
 
 .data_space {
