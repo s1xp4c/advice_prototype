@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/main.scss">
+    <script type="module" src="./getdata.js" defer></script>
+
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+
+    <title>Carbon Result</title>
+</head>
+
+<body>
+
+    <div id="loading_icon">
+        <img src="/images/icon.png" alt="Icon loading" id="loader">
+    </div>
+
+    <header id="result_header">
+
+        <div class="h1_div">
+            <h1>RESULTS FOR: <span data-field="weburl"></span></h1>
+        </div>
+
+        <div class="result_header_div">
+
+            <div class="info_text">
+
+                <h3>PAGE SUSTAINABILITY</h3>
+                <p data-field="fetchtime"></p>
+                <p data-field="fetchdate"></p>
+                <p data-field="fieldValue"></p>
+                <p data-field="monthly"></p>
+            </div>
+
+            <div id="screenshot_container">
+                <canvas id="imgFromURL"></canvas>
+            </div>
+
+        </div>
+    </header>
+    <div id="alertBox" class="alertbox hide">
+        <div class="alertText">
+            <p>The carbon fetch request has failed!! </p> <br>
+            <p> Please try again later or input another site</p>
+
+            <button type="button" value="Ok" id="okAlert" class="btn" onclick="parent.location='index.html'">OK!</button>
+        </div>
+    </div>
+
+    <section id="numbers_from_test">
+
+        <div class="original_numbers">
+
+
+            <div class="grid_wrapper">
+
+                <div class="data_space">
+                    <h2>ORIGINAL NUMBERS</h2>
+                    <p data-field="energyUsed"></p>
+                    <p data-field="co2GridGrams"></p>
+                    <p data-field="co2RenewableGrams"></p>
+                </div>
+
+                <div class="data_space">
+                    <h2>NUMBERS TO CHANGE</h2>
+                    <p data-field="energyUsedChange"></p>
+                    <p data-field="co2GridGramsChange"></p>
+                    <p data-field="co2RenewableGramsChange"></p>
+                </div>
+
+                <div class="data_space">
+                    <h2>USE TOOLS</h2>
+                    <p>Use the sliders and toggles to change the numbers of the wasted values.</p>
+                </div>
+
+            </div>
+
+
+            <div class="grid_wrapper_for_tools">
+                <div class="data_space">
+                    <p class="bold_p hover_field"> <sup>&#9432;</sup>Unused CSS rules:
+                        <span class="info_hover_text">Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity.</span></p>
+                    <p data-field="unusedCSStotalBytes"></p>
+                    <p data-field="unusedCSSwastedBytes"></p>
+                    <p data-field="unusedCSSwastedPercent"></p>
+                    <p data-field="unusedCSSCo2"></p>
+                </div>
+
+                <div class="data_space flex1 wrapper_for_tool">
+                    <div class="">
+                        <p class="bold_p">Unused CSS rules:</p>
+                        <p data-field="unusedCSStotalBytesChange"></p>
+                        <p data-field="unusedCSSwastedBytesChange"></p>
+                        <p data-field="unusedCSSwastedPercentChange"></p>
+                        <p data-field="unusedCSSCo2Change"></p>
+
+                    </div>
+
+                    <div class="range-wrap">
+                        <label class="sliders" for="unusedCSSslider"></label>
+
+                        <input type="range" class="range" min="0" max="100" id="unusedCSSslider" name="unusedCSSslider">
+                        <div class="box-minmax">
+                            <span>0%</span><span>100%</span>
+                        </div>
+                        <output class="bubble"></output>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="grid_wrapper_for_tools">
+
+                <div class="data_space">
+                    <p class="bold_p hover_field2"><sup>&#9432;</sup>Unminified CSS:
+                        <span class="info_hover_text2">Minifying CSS files can reduce network payload sizes.</span></p>
+                    <p data-field="unminCSStotalBytes"></p>
+                    <p data-field="unminCSSwastedBytes"></p>
+                    <p data-field="unminCSSwastedPercent"></p>
+                    <p data-field="unminCSSCo2"></p>
+                </div>
+
+                <div class="data_space flex1 wrapper_for_tool">
+                    <div>
+                        <p class="bold_p">Unminified CSS:</p>
+                        <p data-field="unminCSStotalBytesChange"></p>
+                        <p data-field="unminCSSwastedBytesChange"></p>
+                        <p data-field="unminCSSwastedPercentChange"></p>
+                        <p data-field="unminCSSCo2Change"></p>
+                    </div>
+
+
+                    <div id="container">
+
+                        <div class="toggle">
+                            <input type="checkbox" name="unminCSStoggle" class="check-checkbox" id="unminCSStoggle">
+                            <label class="check-label" for="unminCSStoggle">
+                        <div id="background"></div>
+                        <span class="face">
+                            <span class="face-container">
+                                <span class="eye left"></span>
+                                <span class="eye right"></span>
+                                <span class="mouth"></span>
+                            </span>
+                        </span>
+                    </label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid_wrapper_for_tools">
+                <div class="data_space">
+                    <p class="bold_p hover_field3"><sup>&#9432;</sup>Unused Javascript rules:
+                        <span class="info_hover_text3">Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity.</span></p>
+
+                    <p data-field="unusedJStotalBytes"></p>
+                    <p data-field="unusedJSwastedBytes"></p>
+                    <p data-field="unusedJSwastedPercent"></p>
+                    <p data-field="unusedJSCo2"></p>
+                </div>
+
+                <div class="data_space flex1 wrapper_for_tool">
+                    <div>
+                        <p class="bold_p">Unused Javascript rules:</p>
+                        <p data-field="unusedJStotalBytesChange"></p>
+                        <p data-field="unusedJSwastedBytesChange"></p>
+                        <p data-field="unusedJSwastedPercentChange"></p>
+                        <p data-field="unusedJSCo2Change"></p>
+
+
+
+                    </div>
+
+                    <div class="range-wrap">
+                        <label class="sliders" for="unusedJSslider"></label>
+
+                        <input type="range" class="range" min="0" max="100" id="unusedJSslider" name="unusedJSslider">
+                        <div class="box-minmax">
+                            <span>0%</span><span>100%</span>
+                        </div>
+                        <output class="bubble"></output>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid_wrapper_for_tools">
+                <div class="data_space">
+                    <p class="bold_p hover_field4"><sup>&#9432;</sup>Unminified Javascript:
+                        <span class="info_hover_text4">Minifying JavaScript files can reduce payload sizes and script parse time.</span></p>
+
+                    <p data-field="unminJStotalBytes"></p>
+                    <p data-field="unminJSwastedBytes"></p>
+                    <p data-field="unminJSwastedPercent"></p>
+                    <p data-field="unminJSCo2"></p>
+                </div>
+
+                <div class="data_space flex1 wrapper_for_tool">
+                    <div>
+                        <p class="bold_p">Unminified Javascript:</p>
+
+                        <p data-field="unminJStotalBytesChange"></p>
+                        <p data-field="unminJSwastedBytesChange"></p>
+                        <p data-field="unminJSwastedPercentChange"></p>
+                        <p data-field="unminJSCo2Change"></p>
+
+                    </div>
+
+
+
+
+                    <div id="container">
+                        <div class="toggle">
+                            <input type="checkbox" name="unminJStoggle" class="check-checkbox" id="unminJStoggle">
+                            <label class="check-label" for="unminJStoggle">
+                        <div id="background"></div>
+                        <span class="face">
+                            <span class="face-container">
+                                <span class="eye left"></span>
+                                <span class="eye right"></span>
+                                <span class="mouth"></span>
+                            </span>
+                        </span>
+                    </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid_wrapper_for_tools">
+                <div class="data_space">
+                    <p class="bold_p hover_field5"><sup>&#9432;</sup>Not using modern Image Format:
+                        <span class="info_hover_text5">Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption.</span></p>
+
+                    <p data-field="modernImageFormatTotalBytes"></p>
+                    <p data-field="modernImageFormatWastedBytes"></p>
+                    <p data-field="modernImageFormatWastedPercent"></p>
+                    <p data-field="modernImageFormatCo2"></p>
+                </div>
+
+                <div class="data_space flex1 wrapper_for_tool">
+                    <div>
+                        <p class="bold_p">Not using modern Image Format:</p>
+
+                        <p data-field="modernImageFormatTotalBytesChange"></p>
+                        <p data-field="modernImageFormatWastedBytesChange"></p>
+                        <p data-field="modernImageFormatWastedPercentChange"></p>
+                        <p data-field="modernImageFormatCo2Change"></p>
+
+                    </div>
+
+
+
+
+                    <div class="range-wrap">
+                        <label class="sliders" for="modernImageFormattoggle"></label>
+                        <input type="range" class="range" min="0" max="100" id="modernImageFormattoggle" name="modernImageFormattoggle">
+
+
+                        <div class="box-minmax">
+                            <span>0%</span><span>100%</span>
+                        </div>
+                        <output class="bubble"></output>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="grid_wrapper_for_tools">
+
+                <div class="data_space">
+                    <p class="bold_p hover_field6"><sup>&#9432;</sup>Non responsive Images:
+                        <span class="info_hover_text6">Serve images that are appropriately-sized to save cellular data and improve load time.</span></p>
+
+                    <p data-field="responsiveImagesTotalBytes"></p>
+                    <p data-field="responsiveImagesWastedBytes"></p>
+                    <p data-field="responsiveImagesWastedPercent"></p>
+                    <p data-field="responsiveImagesCo2"></p>
+                </div>
+
+                <div class="data_space flex1 wrapper_for_tool">
+                    <div>
+                        <p class="bold_p">Non responsive Images</p>
+
+                        <p data-field="responsiveImagesTotalBytesChange"></p>
+                        <p data-field="responsiveImagesWastedBytesChange"></p>
+                        <p data-field="responsiveImagesWastedPercentChange"></p>
+                        <p data-field="responsiveImagesCo2Change"></p>
+                    </div>
+
+
+
+
+                    <div class="range-wrap">
+                        <label class="sliders" for="responsiveImagesslider"></label>
+                        <input type="range" class="range" min="0" max="100" id="responsiveImagesslider" name="responsiveImagesslider">
+
+                        <div class="box-minmax">
+                            <span>0%</span><span>100%</span>
+                        </div>
+                        <output class="bubble"></output>
+                    </div>
+
+                </div>
+            </div>
+            <div class="grid_wrapper_for_tools">
+                <div class="data_space">
+                    <p class="bold_p hover_field7"><sup>&#9432;</sup>Non optimized Images:
+                        <span class="info_hover_text7">Optimized images load faster and consume less cellular data.</span></p>
+
+                    <p data-field="optimizedImagesTotalBytes"></p>
+                    <p data-field="optimizedImagesWastedBytes"></p>
+                    <p data-field="optimizedImagesWastedPercent"></p>
+                    <p data-field="optimizedImagesCo2"></p>
+                </div>
+
+                <div class="data_space flex1 wrapper_for_tool">
+                    <div>
+                        <p class="bold_p">Non optimized images</p>
+                        <p data-field="optimizedImagesTotalBytesChange"></p>
+                        <p data-field="optimizedImagesWastedBytesChange"></p>
+                        <p data-field="optimizedImagesWastedPercentChange"></p>
+                        <p data-field="optimizedImagesCo2Change"></p>
+                    </div>
+
+
+
+
+                    <div class="range-wrap">
+                        <label class="sliders" for="optimizedImagesslider"></label>
+
+                        <input type="range" class="range" min="0" max="100" id="optimizedImagesslider" name="optimizedImagesslider">
+                        <div class="box-minmax">
+                            <span>0%</span><span>100%</span>
+                        </div>
+                        <output class="bubble"></output>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="result_form_section">
+        <div class="header_text">
+            <section id="form_test">
+                <div class="form_div">
+                    <h2>SEND THE RESULT PAGE TO YOUR COLLEAGUES</h2>
+                    <form id="result_form" class="result_form">
+                        <div class="link_wrapper">
+                            <label for="result_page_link">LINK</label>
+                            <p>Generated link here</p>
+                        </div>
+                        <div class="email_wrapper">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="checkbox_wrapper">
+                            <label class="checkbox_label">Submit to database?
+                            <input type="checkbox" id="yes" checked="checked">
+                            <span class="yes"></span>
+                        </label>
+
+                        </div>
+
+                        <div class="message_wrapper">
+                            <label for="message_area" class="message_label">Message</label>
+                            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="btn_div">
+                            <button class="btn">SEND</button>
+                        </div>
+                    </form>
+                </div>
+
+            </section>
+
+        </div>
+        <div class="icon">
+            <img src="./images/icon.png" class="header_icon" alt="Icon with leaves this is in a circle">
+        </div>
+
+    </section>
+
+    <script src="rangeslider.js"></script>
+</body>
+
+</html>

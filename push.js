@@ -1,35 +1,30 @@
 "use strict"
 
 // const endpoint = "https://pokerplayers-806c.restdb.io/rest/db-json/"
-export const endpoint = "https://lighthouse-d41b.restdb.io/rest/siteinfo"
+export const endpoint = "https://lighthouse-d41b.restdb.io/rest/finance"
     // const restKey = "d1725730fa3e0c99d4ac5adc3aab6ab8ab214"
 export const restKey = "624ed26367937c128d7c95c6"
 
 export function stringifyJSON(siteData) {
-    let postSiteIfo
+    let postSiteInfo
 
-    postSiteIfo = JSON.stringify(siteData)
-    console.log(postSiteIfo)
-    pushSiteInfo(postSiteIfo)
+    postSiteInfo = JSON.stringify(siteData)
+    console.log(postSiteInfo)
+    pushSiteInfo(postSiteInfo)
 }
 
-async function pushSiteInfo(postSiteIfo) {
+export async function pushSiteInfo(postSiteInfo) {
 
-    await fetch({
-        method: 'POST',
-        url: endpoint,
-        headers: {
-            'cache-control': 'no-cache',
-            'x-apikey': restKey,
-            'content-type': 'application/json'
-        },
-        body: postSiteIfo,
-        json: true,
-
-    })
-
-    // .then(response => response.json())
-    //     .then(data => console.log(data))
-
+    await fetch(endpoint, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                "x-apikey": restKey,
+                "cache-control": "no-cache"
+            },
+            body: postSiteInfo,
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
 
 }
