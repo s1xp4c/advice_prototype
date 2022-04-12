@@ -546,7 +546,7 @@ function displayInfoList(siteInfo) {
     "Energy used: " + siteInfo.energyUsed + " " + powerSuffix;
   // co2GridGrams: "",
   document.querySelector("[data-field=co2GridGrams]").textContent =
-    "CO2: " + siteInfo.co2GridGrams + " " + weightSuffix;
+    "CO2 total: " + siteInfo.co2GridGrams + " " + weightSuffix;
   // co2RenewableGrams: "",
   document.querySelector("[data-field=co2RenewableGrams]").textContent =
     "CO2 renewable: " + siteInfo.co2RenewableGrams + " " + weightSuffix;
@@ -697,7 +697,7 @@ function changeInfoList(siteInfo) {
   "Energy used: " + siteInfo.energyUsed + " " + powerSuffix;
   //     // co2GridGrams: "",
   document.querySelector("[data-field=co2GridGramsChange]").textContent =
-  "CO2: " + siteInfo.co2GridGrams + " " + weightSuffix;
+  "CO2 total: " + siteInfo.co2GridGrams + " " + weightSuffix;
   //     // co2RenewableGrams: "",
   document.querySelector("[data-field=co2RenewableGramsChange]").textContent =
   "CO2 renewable: " + siteInfo.co2RenewableGrams + " " + weightSuffix;
