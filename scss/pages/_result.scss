@@ -64,3 +64,290 @@
   font-weight: 700;
   color: #80e288;
 }
+
+
+
+// info hover 
+
+.hover_field {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.hover_field .info_hover_text {
+  visibility: hidden;
+    width: 254px;
+    background-color: #000000cc;
+    color: #fff;
+    text-align: center;
+    border-radius: 14px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%;
+    left: -39%;
+    margin-left: -60px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hover_field .info_hover_text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.hover_field:hover .info_hover_text {
+  visibility: visible;
+}
+
+// hover field 2 
+
+.hover_field2 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.hover_field2 .info_hover_text2 {
+  visibility: hidden;
+    width: 254px;
+    background-color: #000000cc;
+    color: #fff;
+    text-align: center;
+    border-radius: 14px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%;
+    left: -44%;
+    margin-left: -60px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hover_field2 .info_hover_text2::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.hover_field2:hover .info_hover_text2 {
+  visibility: visible;
+}
+
+
+
+// hover field 3
+
+.hover_field3 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.hover_field3 .info_hover_text3 {
+  visibility: hidden;
+    width: 254px;
+    background-color: #000000cc;
+    color: #fff;
+    text-align: center;
+    border-radius: 14px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%;
+    left: -44%;
+    margin-left: -60px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hover_field3 .info_hover_text3::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.hover_field3:hover .info_hover_text3 {
+  visibility: visible;
+}
+
+
+
+
+// hover field 4 
+
+.hover_field4 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.hover_field4 .info_hover_text4 {
+  visibility: hidden;
+    width: 254px;
+    background-color: #000000cc;
+    color: #fff;
+    text-align: center;
+    border-radius: 14px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%;
+    left: -44%;
+    margin-left: -60px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hover_field4 .info_hover_text4::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.hover_field4:hover .info_hover_text4 {
+  visibility: visible;
+}
+
+// hover field 5
+
+.hover_field5 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.hover_field5 .info_hover_text5 {
+  visibility: hidden;
+    width: 254px;
+    background-color: #000000cc;
+    color: #fff;
+    text-align: center;
+    border-radius: 14px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%;
+    left: -44%;
+    margin-left: -60px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hover_field5 .info_hover_text5::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.hover_field5:hover .info_hover_text5 {
+  visibility: visible;
+}
+
+// hover field 6
+
+.hover_field6 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.hover_field6 .info_hover_text6 {
+  visibility: hidden;
+    width: 254px;
+    background-color: #000000cc;
+    color: #fff;
+    text-align: center;
+    border-radius: 14px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%;
+    left: -44%;
+    margin-left: -60px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hover_field6 .info_hover_text6::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.hover_field6:hover .info_hover_text6 {
+  visibility: visible;
+}
+
+// hover field 7 
+
+.hover_field7 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.hover_field7 .info_hover_text7 {
+  visibility: hidden;
+    width: 254px;
+    background-color: #000000cc;
+    color: #fff;
+    text-align: center;
+    border-radius: 14px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%;
+    left: -44%;
+    margin-left: -60px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hover_field7 .info_hover_text7::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.hover_field7:hover .info_hover_text7 {
+  visibility: visible;
+}
