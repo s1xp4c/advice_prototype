@@ -34,15 +34,21 @@
 }
 
 
-.flex {
-  display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 15vw;
-    margin-right: 17vw;
-    gap: 5vw;
-   min-height: 85vh;
+.grid_wrapper {
+  // display: flex;
+  //   justify-content: space-around;
+  //   align-items: center;
+  //   margin-left: 15vw;
+  //   margin-right: 17vw;
+  //   gap: 5vw;
+  //   min-height: 85vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
+
+
+
 .flex1{
   display: grid;
   grid-template-columns: 1fr 1fr;
