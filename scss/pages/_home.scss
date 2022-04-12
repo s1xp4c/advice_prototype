@@ -1,12 +1,20 @@
+body {
+  vertical-align: middle;
+  margin: 0 auto;
+}
 
+.carbon_header_div {
+  margin: 0 auto;
+}
 
   #carbon_header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 5vw;
+    margin: 0 auto;
     margin-left: 11vw;
     margin-right: 11vw;
-    gap: 5vw;
    
   }
 
@@ -14,7 +22,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
+    margin: auto;
+    margin-top: 185px;
     margin-bottom: 70px;
   }
 
