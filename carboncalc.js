@@ -648,6 +648,6 @@ imageFromURL.addEventListener('load', function() {
 })
 
 function endLoadingAnimation() {
-    let loader = document.getElementById("loader");
+    let loader = document.getElementById("loading_icon");
     loader.classList.add("hide");
 }
