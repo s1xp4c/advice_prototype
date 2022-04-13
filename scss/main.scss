@@ -2,13 +2,13 @@
 @use "scss/components";
 @use "scss/layout";
 @use "scss/pages";
-* {
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    background-color: #212121;
-}
+
+@import "./base/config";
+@import "./base/media_q";
+
+
 
 .hide {
     display: none;
 }
+

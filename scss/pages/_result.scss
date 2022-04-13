@@ -8,8 +8,23 @@
     margin-left: 11vw;
     margin-right: 11vw;
     gap: 5vw;
-   min-height: 55vh;
-   margin-bottom: 60px;
+    min-height: 60vh;
+    margin-bottom: 100px;
+  }
+
+  .h1_div_result {
+    display: flex;
+    
+    align-items: center;
+    margin: auto;
+    margin-top: 185px;
+    margin-bottom: 70px;
+    margin-left: 180px;;
+  }
+
+  .weburl_header {
+    color: white;
+    font-weight: 400;
   }
 
 
@@ -23,6 +38,7 @@
 
  .info_text{
   width: 36vw;
+  margin-left: 60px;
 }
 
 
@@ -34,7 +50,8 @@
 }
 
 #numbers_from_test {
-  margin-inline: 180px
+  margin-inline: 180px;
+  margin-bottom: 130px;
 }
 
 .grid_wrapper {
