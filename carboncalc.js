@@ -501,17 +501,17 @@ export function fillInfo(co2Data, data) {
     // stringifyJSON(siteInfo)
 
     // Make function that fires stringifyJSON(siteInfo) on submit IF checkbox checked
-    // checkBoxCheckedOrNot(siteInfo);
+    checkBoxCheckedOrNot(siteInfo);
 
-    // function checkBoxCheckedOrNot(siteInfo) {
-    //     console.log("check checkbooox")
-    //     if (document.getElementById("yes").checked == true) {
-    //         document.querySelector(".send_form_btn").addEventListener("submit", stringifyJSON(siteInfo));
-    //       } else {
-    //         console.log("not checked");
-    //       }
-    // }
-    
+    function checkBoxCheckedOrNot(siteInfo) {
+        console.log("check checkbooox")
+        if (document.getElementById("yes").checked == true) {
+            document.querySelector(".send_form_btn").addEventListener("submit", stringifyJSON(siteInfo));
+          } else {
+            console.log("not checked");
+          }
+    }
+
 }
 
 function calcCo2FromBytes(bytes) {
