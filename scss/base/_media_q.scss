@@ -1,0 +1,371 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    background-color: #212121;
+}
+
+@include media-lg {
+
+h2 {
+    font-size: 1.999rem;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+
+label {
+    font-size: 1.3rem;
+}
+
+.yes {
+     margin-left: 46px;
+}
+
+.hover_field .info_hover_text {
+    left: -29%;
+}
+
+.hover_field2 .info_hover_text2 {
+    left: -33%;
+}
+
+.hover_field3 .info_hover_text3 {
+    left: -24%;
+}
+
+.hover_field4 .info_hover_text4 {
+    left: -24%;
+}
+
+.hover_field5 .info_hover_text5 {
+    left: -24%;
+}
+
+.hover_field6 .info_hover_text6 {
+    left: -24%;
+    
+}
+
+.hover_field7 .info_hover_text7 {
+    left: -24%;
+}
+    
+}
+
+@include media-md {
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+
+    h2 {
+        font-size: 1.555rem;
+    }
+
+    #numbers_from_test {
+        margin-inline: 100px;
+    }
+
+    // SLIDERS
+    .box-minmax span ~ span {
+        margin-right: -28px;
+    }
+
+    // result page
+
+    .header_text {
+        width: 52vw;
+    }
+    
+    .yes {
+        
+        margin-left: 10px;
+    }
+
+    .h1_div_result {
+        margin-top: 115px;
+       
+    }
+
+    .alertText {
+        width: 32vw;
+        
+    }
+
+    #result_form_section {
+        
+        margin-inline: 0;
+        
+    }
+
+    .hover_field .info_hover_text {
+        left: 10%;
+    }
+    
+    .hover_field2 .info_hover_text2 {
+        left: 10%;
+    }
+    
+    .hover_field3 .info_hover_text3 {
+        left: 10%;    }
+    
+    .hover_field4 .info_hover_text4 {
+        left: 10%;    }
+    
+    .hover_field5 .info_hover_text5 {
+        left: 10%;    }
+    
+    .hover_field6 .info_hover_text6 {
+        left: 10%;
+        
+    }
+    
+    .hover_field7 .info_hover_text7 {
+        left: 10%;
+    }
+    
+    
+
+}
+
+
+@include media-mo {
+
+
+    // fonts 
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        // text-align: center;
+    }
+    
+
+    // index
+
+    .h1_div {
+        margin-top: 65px;
+        margin-bottom: 45px;
+        margin-inline: 28px;
+        text-align: center;
+    }
+
+    #carbon_header {
+        display: block;
+        margin-left: 8vw;
+    margin-right: 8vw;
+    }
+
+    #form_test {
+        display: block;
+    }
+
+    .industry_wrapper {
+        display: block;
+        
+    }
+
+    .visitor_wrapper {
+        display: block;
+        
+    }
+
+    .url_wrapper {
+        display: block;
+        
+    }
+
+    .form_div {
+        border: solid #595959 2px;
+        padding: 2rem;
+        border-radius: 10px;
+    }
+
+    .header_text {
+        width: 84vw;
+    }
+
+    label {
+        margin-bottom: 2px;
+        display: block;
+    }
+
+    #monthlyvisitors {
+        width: 263px;
+    }
+
+    .header_icon {
+       display: none;
+    }
+
+    #urlname {
+        width: 263px;
+    }
+
+// result 
+
+.h1_div_result {
+    display: block;
+    
+    margin-top: 65px;
+    margin-bottom: 45px;
+    margin-inline: 28px;
+    text-align: center; 
+}
+
+h1 span {
+    width: 20vw;
+}
+
+h2 {
+   font-size: 1.4rem; 
+}
+
+p {
+    font-size: 1rem;
+}
+
+label {
+    font-size: 1rem;
+
+}
+
+.weburl_header {
+    font-size: 1.2rem;
+}
+
+.result_header_div {
+     display: block; 
+   
+}
+
+.info_text {
+    width: auto;
+    margin-left: auto;
+}
+
+#imgFromURL {
+    object-fit: cover;
+    width: 79vw;
+    height: 44vw;
+    object-position: 0% 0%;
+    margin-top: 38px;
+}
+
+#numbers_from_test {
+    margin-inline: 50px;
+}
+
+
+.hover_field .info_hover_text {
+    left: 10%;
+}
+
+.hover_field2 .info_hover_text2 {
+    left: 10%;
+}
+
+.hover_field3 .info_hover_text3 {
+    left: 10%;
+}
+
+.hover_field4 .info_hover_text4 {
+    left: 10%;
+}
+
+.hover_field5 .info_hover_text5 {
+    left: 10%;
+}
+
+.hover_field6 .info_hover_text6 {
+    left: 10%;
+    
+}
+
+.hover_field7 .info_hover_text7 {
+    left: 10%;
+}
+
+.grid_wrapper {
+    display: block;
+}
+
+.grid_wrapper_for_tools {
+    display: block;
+   
+}
+
+.wrapper_for_tool {
+    display: block;
+    
+}
+
+#result_form_section {
+    display: block;
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
+
+.link_wrapper {
+   display: block;
+   
+}
+
+.email_wrapper {
+    display: block;
+   
+}
+
+.checkbox_wrapper {
+    display: block;
+}
+
+.message_wrapper {
+    display: block;
+}
+
+#email {
+    width: 263px;
+}
+
+textarea {
+    width: 263px;
+}
+
+// loading 
+
+#loader {
+    width: 27vw;
+}
+
+// alert 
+.alertText {
+    width: 83vw;
+    left: 9%;
+    top: 30%;
+}
+
+// sliders
+
+.box-minmax span ~ span {
+    margin-right: 0px;
+}
+
+.box-minmax {
+    width: 316px;
+}
+
+// toggle 
+
+#container {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+}
