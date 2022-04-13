@@ -41,11 +41,93 @@
   margin-left: 60px;
 }
 
-.flexiii{
+// Hover for page sustainability
+
+.hover_info_field {
+  position: relative;
   display: flex;
   color: white;
   font-weight: 700;
 }
+
+.hover_info_field .hover_info {
+  visibility: hidden;
+  width: 254px;
+  background-color: #000000cc;
+  color: #fff;
+  text-align: center;
+  border-radius: 14px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 129%;
+  left: -12%;
+  margin-left: -60px;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: 'Gothic A1', sans-serif;
+}
+
+.hover_info_field .hover_info::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.hover_info_field:hover .hover_info {
+  visibility: visible;
+}
+
+
+
+.hover_info_field2 {
+  position: relative;
+  display: flex;
+  color: white;
+  font-weight: 700;
+}
+
+.hover_info_field2 .hover_info2 {
+  visibility: hidden;
+  width: 254px;
+  background-color: #000000cc;
+  color: #fff;
+  text-align: center;
+  border-radius: 14px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 123%;
+  left: -12%;
+  margin-left: -60px;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: 'Gothic A1', sans-serif;
+}
+
+.hover_info_field2 .hover_info2::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.hover_info_field2:hover .hover_info2 {
+  visibility: visible;
+}
+
+
 
 
 #imgFromURL {
@@ -69,13 +151,6 @@
 
 
 .grid_wrapper_for_tools {
-  // display: flex;
-  //   justify-content: space-around;
-  //   align-items: center;
-  //   margin-left: 15vw;
-  //   margin-right: 17vw;
-  //   gap: 5vw;
-  //   min-height: 85vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px;
@@ -114,7 +189,7 @@
 .hover_field {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
+ 
 }
 
 .hover_field .info_hover_text {
@@ -154,7 +229,7 @@
 .hover_field2 {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
+
 }
 
 .hover_field2 .info_hover_text2 {
@@ -196,7 +271,7 @@
 .hover_field3 {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
+
 }
 
 .hover_field3 .info_hover_text3 {
@@ -239,7 +314,7 @@
 .hover_field4 {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
+  
 }
 
 .hover_field4 .info_hover_text4 {
@@ -279,7 +354,6 @@
 .hover_field5 {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .hover_field5 .info_hover_text5 {
@@ -319,7 +393,6 @@
 .hover_field6 {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .hover_field6 .info_hover_text6 {
@@ -359,7 +432,6 @@
 .hover_field7 {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .hover_field7 .info_hover_text7 {
