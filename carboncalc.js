@@ -572,13 +572,13 @@ function displayInfoList(siteInfo) {
     //     isItGreen: false,
     if (siteInfo.isItGreen) {
         document.querySelector("[data-field=isItGreen]").textContent =
-            "Site is green"
+            "Site is: Green"
     } else if (siteInfo.isItGreen === "unknown") {
         document.querySelector("[data-field=isItGreen]").textContent =
-            "Site green staus is unknown"
+            "Site green status is: Unknown"
     } else {
         document.querySelector("[data-field=isItGreen]").textContent =
-            "Site is NOT green"
+            "Site is: NOT green"
     }
 
     // cleanerThan: "",
