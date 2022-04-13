@@ -7,8 +7,13 @@ const imageFromURL = new Image();
 
 export const SiteInfo = {
     webURL: "",
+
+    isItGreen: false,
+    cleanerThan: "",
+
     fetchtime: "",
     fetchdate: "",
+
     fieldValue: "",
     monthly: "",
 
@@ -213,6 +218,12 @@ calcLighthouseAndCo2();
 export function fillInfo(co2Data, data) {
     // Create object from template
     const siteInfo = Object.create(SiteInfo);
+
+    // Is it green
+    siteInfo.isItGreen = co2Data.green
+
+    // Is cleaner than
+    siteInfo.cleanerThan = co2Data.cleanerThan * 100
 
     // Web URL input
     siteInfo.webURL = data.lighthouseResult.finalUrl;
@@ -541,14 +552,37 @@ let splashWidth;
 let splashHeight;
 
 function displayInfoList(siteInfo) {
+
+    // Fetch time
     document.querySelector("[data-field=fetchtime]").textContent =
         "Time: " + siteInfo.fetchtime;
+
+    //     isItGreen: false,
+    if (siteInfo.isItGreen) {
+        document.querySelector("[data-field=isItGreen]").textContent =
+            "Site is green"
+    } else {
+        document.querySelector("[data-field=isItGreen]").textContent =
+            "Site is NOT green"
+    }
+
+    // cleanerThan: "",
+    document.querySelector("[data-field=cleanerThan]").textContent =
+        "Cleaner than: " + siteInfo.cleanerThan + " %"
+
+    // Fetch date
     document.querySelector("[data-field=fetchdate]").textContent =
         "Date: " + siteInfo.fetchdate;
+
+    // WebURL input
     document.querySelector("[data-field=weburl]").textContent =
         " " + siteInfo.webURL;
+
+    // Industry Field value
     document.querySelector("[data-field=fieldValue]").textContent =
         "Field of industry: " + siteInfo.fieldValue;
+
+    // Monthly
     document.querySelector("[data-field=monthly]").textContent =
         "Monthly visitors: " + siteInfo.monthly;
 

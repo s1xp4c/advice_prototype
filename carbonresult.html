@@ -39,6 +39,8 @@
                 <p data-field="fetchdate"></p>
                 <p data-field="fieldValue"></p>
                 <p data-field="monthly"></p>
+                <p data-field="isItGreen"></p>
+                <p data-field="cleanerThan"></p>
             </div>
 
             <div id="screenshot_container">
@@ -51,11 +53,11 @@
         <div class="alertText">
             <p>The carbon fetch request has failed!! </p> <br>
             <p> Please try again later or input another site</p>
-        
-        <button type="button" value="Ok" id="okAlert" class="btn" onclick="parent.location='index.html'">OK!</button>
+
+            <button type="button" value="Ok" id="okAlert" class="btn" onclick="parent.location='index.html'">OK!</button>
+        </div>
     </div>
-    </div>
-    
+
     <section id="numbers_from_test">
 
         <div class="original_numbers">
@@ -105,17 +107,17 @@
 
                     </div>
 
-                <div class="range-wrap">
-                    <label class="sliders" for="unusedCSSslider"></label>
+                    <div class="range-wrap">
+                        <label class="sliders" for="unusedCSSslider"></label>
 
-                    <input type="range" class="range" min="0" max="100" id="unusedCSSslider" name="unusedCSSslider">
-                    <div class="box-minmax">
-                        <span>0%</span><span>100%</span>
+                        <input type="range" class="range" min="0" max="100" id="unusedCSSslider" name="unusedCSSslider">
+                        <div class="box-minmax">
+                            <span>0%</span><span>100%</span>
+                        </div>
+                        <output class="bubble"></output>
                     </div>
-                    <output class="bubble"></output>
-                </div>
 
-            </div>
+                </div>
             </div>
 
             <div class="grid_wrapper_for_tools">
@@ -137,13 +139,13 @@
                         <p data-field="unminCSSwastedPercentChange"></p>
                         <p data-field="unminCSSCo2Change"></p>
                     </div>
-                
 
-                <div id="container">
-                   
-                    <div class="toggle">
-                        <input type="checkbox" name="unminCSStoggle" class="check-checkbox" id="unminCSStoggle">
-                        <label class="check-label" for="unminCSStoggle">
+
+                    <div id="container">
+
+                        <div class="toggle">
+                            <input type="checkbox" name="unminCSStoggle" class="check-checkbox" id="unminCSStoggle">
+                            <label class="check-label" for="unminCSStoggle">
                         <div id="background"></div>
                         <span class="face">
                             <span class="face-container">
@@ -153,11 +155,11 @@
                             </span>
                         </span>
                     </label>
-                    
-                </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
             <div class="grid_wrapper_for_tools">
@@ -179,21 +181,21 @@
                         <p data-field="unusedJSwastedPercentChange"></p>
                         <p data-field="unusedJSCo2Change"></p>
 
-                   
-                    
-                </div>
-            
-                <div class="range-wrap">
-                    <label class="sliders" for="unusedJSslider"></label>
 
-                    <input type="range" class="range" min="0" max="100" id="unusedJSslider" name="unusedJSslider">
-                    <div class="box-minmax">
-                        <span>0%</span><span>100%</span>
+
                     </div>
-                    <output class="bubble"></output>
+
+                    <div class="range-wrap">
+                        <label class="sliders" for="unusedJSslider"></label>
+
+                        <input type="range" class="range" min="0" max="100" id="unusedJSslider" name="unusedJSslider">
+                        <div class="box-minmax">
+                            <span>0%</span><span>100%</span>
+                        </div>
+                        <output class="bubble"></output>
+                    </div>
                 </div>
-        </div>
-    </div>
+            </div>
 
 
             <div class="grid_wrapper_for_tools">
@@ -217,14 +219,14 @@
                         <p data-field="unminJSCo2Change"></p>
 
                     </div>
-                    
 
-                
 
-                <div id="container">
-                    <div class="toggle">
-                        <input type="checkbox" name="unminJStoggle" class="check-checkbox" id="unminJStoggle">
-                        <label class="check-label" for="unminJStoggle">
+
+
+                    <div id="container">
+                        <div class="toggle">
+                            <input type="checkbox" name="unminJStoggle" class="check-checkbox" id="unminJStoggle">
+                            <label class="check-label" for="unminJStoggle">
                         <div id="background"></div>
                         <span class="face">
                             <span class="face-container">
@@ -234,9 +236,9 @@
                             </span>
                         </span>
                     </label>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
 
 
@@ -261,22 +263,22 @@
                         <p data-field="modernImageFormatCo2Change"></p>
 
                     </div>
-                    
-                
-
-                
-                <div class="range-wrap">
-                    <label class="sliders" for="modernImageFormattoggle"></label>
-                    <input type="range" class="range" min="0" max="100" id="modernImageFormattoggle" name="modernImageFormattoggle">
 
 
-                    <div class="box-minmax">
-                        <span>0%</span><span>100%</span>
+
+
+                    <div class="range-wrap">
+                        <label class="sliders" for="modernImageFormattoggle"></label>
+                        <input type="range" class="range" min="0" max="100" id="modernImageFormattoggle" name="modernImageFormattoggle">
+
+
+                        <div class="box-minmax">
+                            <span>0%</span><span>100%</span>
+                        </div>
+                        <output class="bubble"></output>
                     </div>
-                    <output class="bubble"></output>
+
                 </div>
-            
-        </div>
             </div>
 
             <div class="grid_wrapper_for_tools">
@@ -300,22 +302,22 @@
                         <p data-field="responsiveImagesWastedPercentChange"></p>
                         <p data-field="responsiveImagesCo2Change"></p>
                     </div>
-                    
-               
 
-                
-                <div class="range-wrap">
-                    <label class="sliders" for="responsiveImagesslider"></label>
-                    <input type="range" class="range" min="0" max="100" id="responsiveImagesslider" name="responsiveImagesslider">
 
-                    <div class="box-minmax">
-                        <span>0%</span><span>100%</span>
+
+
+                    <div class="range-wrap">
+                        <label class="sliders" for="responsiveImagesslider"></label>
+                        <input type="range" class="range" min="0" max="100" id="responsiveImagesslider" name="responsiveImagesslider">
+
+                        <div class="box-minmax">
+                            <span>0%</span><span>100%</span>
+                        </div>
+                        <output class="bubble"></output>
                     </div>
-                    <output class="bubble"></output>
+
                 </div>
-            
             </div>
-        </div>
             <div class="grid_wrapper_for_tools">
                 <div class="data_space">
                     <p class="bold_p hover_field7"><sup>&#9432;</sup>Non optimized Images:
@@ -335,24 +337,24 @@
                         <p data-field="optimizedImagesWastedPercentChange"></p>
                         <p data-field="optimizedImagesCo2Change"></p>
                     </div>
-                   
-                
 
 
-                <div class="range-wrap">
-                    <label class="sliders" for="optimizedImagesslider"></label>
 
-                    <input type="range" class="range" min="0" max="100" id="optimizedImagesslider" name="optimizedImagesslider">
-                    <div class="box-minmax">
-                        <span>0%</span><span>100%</span>
+
+                    <div class="range-wrap">
+                        <label class="sliders" for="optimizedImagesslider"></label>
+
+                        <input type="range" class="range" min="0" max="100" id="optimizedImagesslider" name="optimizedImagesslider">
+                        <div class="box-minmax">
+                            <span>0%</span><span>100%</span>
+                        </div>
+                        <output class="bubble"></output>
                     </div>
-                    <output class="bubble"></output>
                 </div>
             </div>
         </div>
-            </div>
 
-        
+
     </section>
 
     <section id="result_form_section">
@@ -374,7 +376,7 @@
                             <input type="checkbox" id="yes" checked="checked">
                             <span class="yes"></span>
                         </label>
-                        
+
                         </div>
 
                         <div class="message_wrapper">
