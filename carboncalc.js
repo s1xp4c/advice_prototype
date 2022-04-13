@@ -220,7 +220,11 @@ export function fillInfo(co2Data, data) {
     const siteInfo = Object.create(SiteInfo);
 
     // Is it green
-    siteInfo.isItGreen = co2Data.green
+    if (co2Data.green === "unknown") {
+        siteInfo.isItGreen = "unknown"
+    } else {
+        siteInfo.isItGreen = co2Data.green
+    }
 
     // Is cleaner than
     siteInfo.cleanerThan = co2Data.cleanerThan * 100
@@ -561,6 +565,9 @@ function displayInfoList(siteInfo) {
     if (siteInfo.isItGreen) {
         document.querySelector("[data-field=isItGreen]").textContent =
             "Site is green"
+    } else if (siteInfo.isItGreen === "unknown") {
+        document.querySelector("[data-field=isItGreen]").textContent =
+            "Site green staus is unknown"
     } else {
         document.querySelector("[data-field=isItGreen]").textContent =
             "Site is NOT green"
