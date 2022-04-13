@@ -519,12 +519,20 @@ export function fillInfo(co2Data, data) {
 }
 
 function checkBoxCheckedOrNot(siteInfo) {
+
     console.log("check checkbooox")
-    if (document.getElementById("yes").checked === true) {
-        document.querySelector(".send_form_btn").addEventListener("submit", stringifyJSON(siteInfo));
-    } else {
-        console.log("not checked");
-    }
+
+    const sendFormSubmit = document.getElementById("result_form")
+    sendFormSubmit.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (document.getElementById("yes").checked === true) {
+            stringifyJSON(siteInfo)
+
+        } else {
+            console.log("not checked");
+        }
+        sendFormSubmit.reset()
+    })
 }
 
 function calcCo2FromBytes(bytes) {
