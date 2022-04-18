@@ -251,7 +251,15 @@ export function fillInfo(co2Data, data) {
     siteInfo.webURL = data.lighthouseResult.finalUrl;
 
     // Industry input
-    siteInfo.fieldValue = fieldValue;
+    // variabel to uppercase the first letter. 
+    const fieldValueUppercase = fieldValue.charAt(0).toUpperCase() + fieldValue.substring(1).toLowerCase();
+
+    // Variabel to replace the dash from the data filld name
+    const dashRemoved = fieldValueUppercase.replace(/-/g, ' ');
+    console.log(dashRemoved);
+
+    siteInfo.fieldValue = dashRemoved;
+
     // Monthly users input
     siteInfo.monthly = monthly;
 
@@ -623,7 +631,7 @@ function displayInfoList(siteInfo) {
 
     // Industry Field value
     document.querySelector("[data-field=fieldValue]").textContent =
-        "Field of industry: " + siteInfo.fieldValue.charAt(0).toUpperCase() + fieldValue.substring(1).toLowerCase();
+        "Field of industry: " + siteInfo.fieldValue;
 
     // Monthly
     document.querySelector("[data-field=monthly]").textContent =
