@@ -4,7 +4,7 @@
 // const mailPort = "2525"
 
 
-const sendEmail = () => {
+export function sendEmail() {
     const sendForm = document.getElementById("result_form");
 
     const mailHost = "smtp.gmail.com"
@@ -30,5 +30,3 @@ const sendEmail = () => {
             alert("mail sent successfully")
         });
 }
-
-export default sendEmail;
