@@ -1,10 +1,10 @@
 "use strict"
 
-const mailHost = "smtp.elasticemail.com"
-const mailUser = "mort108v@stud.kea.dk"
+const mailHost = "smtp.gmail.com"
+const mailUser = "advicesmtp@gmail.com"
 const mailPW = "B887B3C89A5DC6C810F1FF68D65C12C624D8"
 const mailTo = document.getElementById("email").value
-const mailFrom = "carboncalc@advice.dk"
+const mailFrom = "advicesmtp@gmail.com"
 const mailSubject = "Carbon results"
 const mailMessage = document.getElementById("message").value
 const mailLink = "Link to result: " + document.getElementById("generatedlink").value
@@ -14,7 +14,7 @@ const mailPort = "2525"
 export function sendEmail() {
     console.log("mail form activated")
     Email.send({
-            Port: mailPort,
+
             Host: mailHost,
             Username: mailUser,
             Password: mailPW,
