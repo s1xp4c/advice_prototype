@@ -1,13 +1,5 @@
 "use strict";
 
-// ToDo: Fetch Lighthouse score from lighthouseResult, categories, performance, score and multiply by 100
-// Apply score to slider
-// Do some CSS to make it seem like it's calculating and moving slider up to result
-
-// LATER
-
-// Apply scores to a form for database
-// Fetch data from DB and apply to new sliders that can be moved
 
 let bubble;
 const allRanges = document.querySelectorAll(".range-wrap");
@@ -46,20 +38,25 @@ const NumberSuffix = {
 let numSuffix;
 const divider = 100;
 document.addEventListener("DOMContentLoaded", () => {
+  //getting all the sliders
   let sliders = document.getElementsByClassName("range");
   console.log(sliders[0]);
   let changedvalue;
-
+//adding "change" eventlistener to each slides
   for (let i = 0; i < sliders.length; i++) {
     let elem = sliders[i];
     elem.addEventListener("change", () => {
       let sliderValue = elem.value;
       let toChangeDiv = elem.parentNode.parentNode;
       let pElems = toChangeDiv.getElementsByTagName("p");
+      //grtting all ta para from the parentNode of the sliders
       for (let j = 0; j < pElems.length; j++) {
         let pelem = pElems[j];
         if (pelem.hasAttribute("data-field")) {
+         
+          //extracting Attribute Data_field from each of the para element
           let changedAttribute = pelem.getAttribute("data-field");
+          //removing "change"
           let originalAttribute = changedAttribute.replace("Change", "");
           console.log("Original Attribute is", originalAttribute);
           let originalElem = document.querySelectorAll(
@@ -67,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
           )[0];
           let value = originalElem.innerText;
 
-          //let originalValue = value.split(":")[1].split(" ")[1];
+ //let originalValue = value.split(":")[1].split(" ")[1];
           let originalValue = window.SiteInfo[originalAttribute];
           let changedvalue = (originalValue / 100) * sliderValue;
           console.log(pelem.innerText);
@@ -91,27 +88,22 @@ document.addEventListener("DOMContentLoaded", () => {
     let toggleElement = checkBoxes[j];
     toggleElement.addEventListener("change", () => {
       let elem = toggleElement;
+      //getting the paragraphs from parentNode
       let toChangeDiv = elem.parentNode.parentNode.parentNode;
       let pElems = toChangeDiv.getElementsByTagName("p");
       console.log(pElems, toChangeDiv);
       for (let k = 0; k < pElems.length; k++) {
         let pelem = pElems[k];
+        //extracting Attribute Data-filed from each of the para element
 
         if (pelem.hasAttribute("data-field")) {
           let text = pelem.innerText;
           let attributeKey = pelem.getAttribute("data-field");
+          //removing "change" from the Attribute so that we can query original value from SiteInfo
           attributeKey = attributeKey.replace("Change", "");
-          // console.log("attribute is ", attributeKey);
-          // if (text.includes("0")) {
-          //   // pelem.innerText = pelem.innerText.replace(
-          //   //   "0",
-          //   //   window.SiteInfo[attributeKey]
-          //   // );
-          // } else {
-          //   let toReplace = pelem.innerText.split(": ")[1].replace(" ")[0];
-          //   console.log(toReplace, pelem.innerText);
-          //   pelem.innerText = pelem.innerText.replace(toReplace, "0");
-          // }
+
+
+          //if toggle checked replace the data with 0 else with original siteInfo value
           if (toggleElement.checked) {
             let toReplace = pelem.innerText.split(": ")[1].split(" ")[0];
             console.log("original ", pelem.innerText);
