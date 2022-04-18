@@ -1,3 +1,4 @@
+// General css rules
 * {
     margin: 0px;
     padding: 0px;
@@ -5,6 +6,8 @@
     background-color: #212121;
 }
 
+
+//  1600px media Q --> for smaller screens. 
 @include media-lg {
 
 h2 {
@@ -66,6 +69,7 @@ label {
     
 }
 
+// 1180px media Q --> for tablet screens. 
 @include media-md {
     
     h1 {
@@ -152,7 +156,7 @@ label {
 
 }
 
-
+// 390px media Q --> for mobile screens
 @include media-mo {
 
 

@@ -1,3 +1,5 @@
+// Defining the max width for media Queries.  Desktop --> mobile.
+
 @mixin media-lg {
         @media screen and (max-width: 1600px) {
         @content;

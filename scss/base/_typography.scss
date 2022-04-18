@@ -1,3 +1,5 @@
+// General font rules
+
 h1 {
     font-family: 'Gothic A1', sans-serif;
     font-size: 2.8rem;
@@ -46,6 +48,15 @@ label {
     display: flex;
     }
 
+input {
+        font-family: 'Gothic A1', sans-serif;
+        font-size: 1rem;
+        font-weight: 400; 
+        color: #ffffff;
+}
+
+
+// Special rules for each id or class. 
 #industryfield {
     font-family: 'Gothic A1', sans-serif;
     font-size: 1rem;
@@ -61,10 +72,5 @@ label {
 }
 
 
-input {
-    font-family: 'Gothic A1', sans-serif;
-    font-size: 1rem;
-    font-weight: 400; 
-    color: #ffffff;
-}
+
 
