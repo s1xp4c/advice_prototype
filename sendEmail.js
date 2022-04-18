@@ -6,7 +6,7 @@
 // const inputForm = document.getElementById("result_form");
 // inputForm.addEventListener("submit", sendEmail())
 
-function sendEmail() {
+export function sendEmail() {
     const sendForm = document.getElementById("result_form");
 
     const mailHost = "smtp.gmail.com"
