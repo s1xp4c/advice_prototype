@@ -557,15 +557,15 @@ function checkBoxCheckedOrNot(siteInfo) {
 
     const sendFormSubmit = document.getElementById("result_form");
     sendFormSubmit.addEventListener("submit", (e) => {
-        sendEmail()
+
         e.preventDefault();
         if (document.getElementById("yes").checked === true) {
             stringifyJSON(siteInfo);
         } else {
             console.log("not checked");
         }
-
-        // Clear form on submit
+        sendEmail()
+            // Clear form on submit
         sendFormSubmit.reset();
     });
 }
