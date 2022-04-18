@@ -1,3 +1,5 @@
+
+// form on index site
 #form_test {
     display: flex;
     justify-content: center;
@@ -5,6 +7,7 @@
     min-height: 40vh;
 }
 
+// form on result site
 #result_form_section {
     display: flex;
     justify-content: space-around;
@@ -100,33 +103,8 @@ textarea {
     align-items: flex-start;
 }
 
-// Radio and checkbox styling
-// input[type=radio],
-// input[type=checkbox] {
-//     visibility: hidden;
-// }
-// .radio label:before {
-//     border-radius: 8px;
-// }
-// .checkbox label:before {
-//     border-radius: 3px;
-// }
-// input[type=radio]:checked {
-//     content: "\2022";
-//     color: #f3f3f3;
-//     font-size: 30px;
-//     text-align: center;
-//     line-height: 18px;
-// }
-// input[type=checkbox]:checked {
-//     content: "\2713";
-//     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-//     font-size: 15px;
-//     color: #f3f3f3;
-//     text-align: center;
-//     line-height: 15px;
-// }
-// Radio and checkbox hide before making it manually
+
+// Radio and checkbox hide before making it manually, in carbon result html
 input[type=radio],
 input[type=checkbox] {
     visibility: hidden;

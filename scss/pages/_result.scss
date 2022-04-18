@@ -1,7 +1,7 @@
+// css rules for result page. 
 
-
-
-  .result_header_div {
+// header rules
+.result_header_div {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -10,9 +10,9 @@
     gap: 5vw;
     min-height: 60vh;
     margin-bottom: 100px;
-  }
+}
 
-  .h1_div_result {
+.h1_div_result {
     display: flex;
     
     align-items: center;
@@ -20,21 +20,18 @@
     margin-top: 185px;
     margin-bottom: 70px;
     margin-left: 180px;;
-  }
+ }
 
-  .weburl_header {
+ .weburl_header {
     color: white;
     font-weight: 400;
-  }
-
+}
 
 #screenshot_container {
-    // position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
  .info_text{
   width: 36vw;
@@ -42,7 +39,6 @@
 }
 
 // Hover for page sustainability
-
 .hover_info_field {
   position: relative;
   display: flex;
@@ -83,8 +79,6 @@
 .hover_info_field:hover .hover_info {
   visibility: visible;
 }
-
-
 
 .hover_info_field2 {
   position: relative;
@@ -127,9 +121,6 @@
   visibility: visible;
 }
 
-
-
-
 #imgFromURL {
     object-fit: cover;
     width: 36vw;
@@ -149,7 +140,6 @@
   margin-bottom: 25px;
 }
 
-
 .grid_wrapper_for_tools {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -164,15 +154,6 @@
 }
 
 
-
-// .flex1 {
-//   // display: grid;
-//   // grid-template-columns: 1fr 1fr;
-//   // justify-content:end;
-//   // align-items: center;
-// }
-
-
 .data_space {
   margin-bottom: 50px;
 }
@@ -183,9 +164,7 @@
 }
 
 
-
 // info hover 
-
 .hover_field {
   position: relative;
   display: inline-block;
@@ -225,7 +204,6 @@
 }
 
 // hover field 2 
-
 .hover_field2 {
   position: relative;
   display: inline-block;
@@ -267,7 +245,6 @@
 
 
 // hover field 3
-
 .hover_field3 {
   position: relative;
   display: inline-block;
@@ -310,7 +287,6 @@
 
 
 // hover field 4 
-
 .hover_field4 {
   position: relative;
   display: inline-block;
@@ -350,7 +326,6 @@
 }
 
 // hover field 5
-
 .hover_field5 {
   position: relative;
   display: inline-block;
@@ -389,7 +364,6 @@
 }
 
 // hover field 6
-
 .hover_field6 {
   position: relative;
   display: inline-block;
@@ -428,7 +402,6 @@
 }
 
 // hover field 7 
-
 .hover_field7 {
   position: relative;
   display: inline-block;
