@@ -3,10 +3,10 @@
 
 // const mailPort = "2525"
 // document.getElementById("sendEmail").addEventListener("click", sendEmail())
-// const inputForm = document.getElementById("result_form");
-// inputForm.addEventListener("submit", sendEmail())
+//  const inputForm = document.getElementById("result_form");
+//  inputForm.addEventListener("submit", sendEmail())
 
-export function sendEmail() {
+function sendEmail() {
     const sendForm = document.getElementById("result_form");
 
     const mailHost = "smtp.gmail.com"
