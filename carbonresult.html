@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <script type="module" src="./rangeslider.js" defer></script>
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <title>Carbon Result</title>
 </head>
 
@@ -386,10 +386,10 @@
             <section id="form_test">
                 <div class="form_div">
                     <h2>SEND THE RESULT PAGE TO YOUR COLLEAGUES</h2>
-                    <form id="result_form" class="result_form">
+                    <form id="result_form" class="result_form" method="post">
                         <div class="link_wrapper">
                             <label for="result_page_link">LINK</label>
-                            <p>Generated link here</p>
+                            <p id="generatedlink">Generated link here</p>
                         </div>
                         <div class="email_wrapper">
                             <label for="email">E-mail</label>

@@ -1,5 +1,6 @@
 "use strict";
 import { stringifyJSON } from "./push.js";
+import { sendEmail } from "./sendme";
 
 const adviceAPIkey = "AIzaSyA3T3lU6NyXFlEjJMt739iXmn-GBT_B7qk";
 
@@ -556,12 +557,14 @@ function checkBoxCheckedOrNot(siteInfo) {
 
     const sendFormSubmit = document.getElementById("result_form");
     sendFormSubmit.addEventListener("submit", (e) => {
+        sendEmail()
         e.preventDefault();
         if (document.getElementById("yes").checked === true) {
             stringifyJSON(siteInfo);
         } else {
             console.log("not checked");
         }
+
         // Clear form on submit
         sendFormSubmit.reset();
     });
@@ -740,7 +743,7 @@ function displayInfoList(siteInfo) {
     document.querySelector(
         "[data-field=modernImageFormatWastedPercent]"
     ).textContent = "Wasted: " + siteInfo.modernImageFormatWastedPercent + " %";
-        //setting the bubble value in the slider to siteInfo value when page is loaded    
+    //setting the bubble value in the slider to siteInfo value when page is loaded    
 
     bubbles[2].setAttribute(
         "style",
@@ -770,7 +773,7 @@ function displayInfoList(siteInfo) {
     document.querySelector(
         "[data-field=responsiveImagesWastedPercent]"
     ).textContent = "Wasted: " + siteInfo.responsiveImagesWastedPercent + " %";
-        //setting the bubble value in the slider to siteInfo value when page is loaded    
+    //setting the bubble value in the slider to siteInfo value when page is loaded    
 
     bubbles[3].setAttribute(
         "style",
@@ -797,7 +800,7 @@ function displayInfoList(siteInfo) {
     document.querySelector(
         "[data-field=optimizedImagesWastedPercent]"
     ).textContent = "Wasted: " + siteInfo.optimizedImagesWastedPercent + " %";
-        //setting the bubble value in the slider to siteInfo value when page is loaded    
+    //setting the bubble value in the slider to siteInfo value when page is loaded    
 
     bubbles[4].setAttribute(
         "style",
