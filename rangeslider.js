@@ -8,6 +8,7 @@
 
 // Apply scores to a form for database
 // Fetch data from DB and apply to new sliders that can be moved
+
 let bubble;
 const allRanges = document.querySelectorAll(".range-wrap");
 allRanges.forEach((wrap) => {
@@ -36,7 +37,6 @@ function setBubble(range, bubble) {
   bubble.style.left = `calc(${offset}% - 14px)`;
 }
 
-
 const NumberSuffix = {
   b: "b",
   kB: "kB",
@@ -48,12 +48,11 @@ const divider = 100;
 document.addEventListener("DOMContentLoaded", () => {
   let sliders = document.getElementsByClassName("range");
   console.log(sliders[0]);
+  let changedvalue;
 
   for (let i = 0; i < sliders.length; i++) {
     let elem = sliders[i];
     elem.addEventListener("change", () => {
-      console.log("Changed Input");
-
       let sliderValue = elem.value;
       let toChangeDiv = elem.parentNode.parentNode;
       let pElems = toChangeDiv.getElementsByTagName("p");
@@ -62,29 +61,30 @@ document.addEventListener("DOMContentLoaded", () => {
         if (pelem.hasAttribute("data-field")) {
           let changedAttribute = pelem.getAttribute("data-field");
           let originalAttribute = changedAttribute.replace("Change", "");
+          console.log("Original Attribute is", originalAttribute);
           let originalElem = document.querySelectorAll(
             `[data-field="${originalAttribute}"]`
           )[0];
           let value = originalElem.innerText;
 
-          let originalValue = value.split(":")[1].split(" ")[1];
+          //let originalValue = value.split(":")[1].split(" ")[1];
+          let originalValue = window.SiteInfo[originalAttribute];
           let changedvalue = (originalValue / 100) * sliderValue;
-      
-          let updatedText = value.replace(
-            originalValue,
-            changedvalue.toFixed(2)
-          );
-          console.log(updatedText);
-          pelem.innerText = updatedText;
+          console.log(pelem.innerText);
+          if (!value.includes("%")) {
+            let updatedText = value.replace(
+              originalValue,
+              changedvalue.toFixed(2)
+            );
+
+            pelem.innerText = updatedText;
+          } else {
+            let updatedText = value.replace(originalValue, sliderValue);
+            pelem.innerText = updatedText;
+          }
         }
       }
-      console.log(toChangeDiv);
-      console.log("Number Change : ", sliderValue);
-    //   let bubbles=document.getElementsByClassName('bubble')
-    //   bubbles.innertext=sliderValue;
     });
-    
-   
   }
   let checkBoxes = document.querySelectorAll(".check-checkbox");
   for (let j = 0; j < checkBoxes.length; j++) {
@@ -99,11 +99,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (pelem.hasAttribute("data-field")) {
           let text = pelem.innerText;
-          if (text.includes("0")) {
-            console.log("Changing 0 to 1");
-            pelem.innerText = pelem.innerText.replace("0", "1");
+          let attributeKey = pelem.getAttribute("data-field");
+          attributeKey = attributeKey.replace("Change", "");
+          // console.log("attribute is ", attributeKey);
+          // if (text.includes("0")) {
+          //   // pelem.innerText = pelem.innerText.replace(
+          //   //   "0",
+          //   //   window.SiteInfo[attributeKey]
+          //   // );
+          // } else {
+          //   let toReplace = pelem.innerText.split(": ")[1].replace(" ")[0];
+          //   console.log(toReplace, pelem.innerText);
+          //   pelem.innerText = pelem.innerText.replace(toReplace, "0");
+          // }
+          if (toggleElement.checked) {
+            let toReplace = pelem.innerText.split(": ")[1].split(" ")[0];
+            console.log("original ", pelem.innerText);
+
+            console.log(toReplace);
+            pelem.innerText = pelem.innerText.replace(toReplace, "0");
           } else {
-            pelem.innerText = pelem.innerText.replace("1", "0");
+            let toReplace = pelem.innerText.split(": ")[1].split(" ")[0];
+            let originalValue = SiteInfo[attributeKey];
+            
+            pelem.innerText = pelem.innerText.replace(toReplace, originalValue);
           }
         }
       }
