@@ -10,6 +10,8 @@
 //  1600px media Q --> for smaller screens. 
 @include media-lg {
 
+
+// fonts
 h2 {
     font-size: 1.999rem;
 }
@@ -23,11 +25,13 @@ label {
     font-size: 1rem;
 }
 
+
+// result page
 .yes {
      margin-left: 38px;
 }
 
-
+// hover fields
 .hover_info_field .hover_info {
     left: -11%;
   }
@@ -72,6 +76,7 @@ label {
 // 1180px media Q --> for tablet screens. 
 @include media-md {
     
+    // fonts
     h1 {
         font-size: 2.5rem;
     }
@@ -81,16 +86,18 @@ label {
         font-size: 1.555rem;
     }
 
-    #numbers_from_test {
-        margin-inline: 100px;
-    }
+    
 
     // SLIDERS
     .box-minmax span ~ span {
         margin-right: -28px;
     }
 
+
     // result page
+    #numbers_from_test {
+        margin-inline: 100px;
+    } 
 
     .header_text {
         width: 52vw;
@@ -117,6 +124,8 @@ label {
         
     }
 
+
+    // hover fields
     .hover_info_field .hover_info {
         left: -16%;
       }
@@ -165,9 +174,25 @@ label {
         font-size: 2.3rem;
     }
 
+    h1 span {
+        width: 20vw;
+    }
+
+    // h2 {
+    //     font-size: 1.2rem;
+    // }
+    
     h2 {
-        font-size: 1.2rem;
-        // text-align: center;
+       font-size: 1.4rem; 
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    label {
+        font-size: 1rem;
+    
     }
     
 
@@ -183,7 +208,7 @@ label {
     #carbon_header {
         display: block;
         margin-left: 8vw;
-    margin-right: 8vw;
+        margin-right: 8vw;
     }
 
     #form_test {
@@ -232,7 +257,7 @@ label {
         width: 263px;
     }
 
-// result 
+// result page
 
 .h1_div_result {
     display: block;
@@ -243,22 +268,7 @@ label {
     text-align: center; 
 }
 
-h1 span {
-    width: 20vw;
-}
 
-h2 {
-   font-size: 1.4rem; 
-}
-
-p {
-    font-size: 1rem;
-}
-
-label {
-    font-size: 1rem;
-
-}
 
 .weburl_header {
     font-size: 1.2rem;
@@ -286,7 +296,7 @@ label {
     margin-inline: 50px;
 }
 
-
+// hover field
 .hover_info_field .hover_info {
     left: 7%;
   }
