@@ -593,9 +593,13 @@ function displayInfoList(siteInfo) {
   document.querySelector("[data-field=weburl]").textContent =
     " " + siteInfo.webURL;
 
-  // Industry Field value
-  document.querySelector("[data-field=fieldValue]").textContent =
-    "Field of industry: " + siteInfo.fieldValue;
+
+      // Industry Field value
+      document.querySelector("[data-field=fieldValue]").textContent =
+      "Field of industry: " + siteInfo.fieldValue.charAt(0).toUpperCase() + fieldValue.substring(1).toLowerCase();
+
+
+
 
   // Monthly
   document.querySelector("[data-field=monthly]").textContent =
