@@ -1,14 +1,9 @@
-@use "scss/base";
-@use "scss/components";
-@use "scss/layout";
-@use "scss/pages";
-
+@use "./base";
+@use "./components";
+@use "./layout";
+@use "./pages";
 @import "./base/config";
 @import "./base/media_q";
-
-
-
 .hide {
     display: none;
 }
-
