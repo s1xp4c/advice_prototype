@@ -23,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <script type="module" src="./rangeslider.js" defer></script>
+    <script src="./sendme.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <title>Carbon Result</title>
 </head>
@@ -408,7 +409,7 @@
                             <textarea name="message" id="message" cols="30" rows="10"></textarea>
                         </div>
                         <div class="btn_div">
-                            <button class="btn send_form_btn" value="submit" type="submit">SEND</button>
+                            <button type="submit" class="btn send_form_btn" value="submit" onclick="sendEmail()">SEND</button>
                         </div>
                     </form>
                 </div>

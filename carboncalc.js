@@ -1,6 +1,6 @@
 "use strict";
 import { stringifyJSON } from "./push.js";
-import { sendEmail } from "./sendme";
+// import { sendEmail } from "./sendme";
 
 const adviceAPIkey = "AIzaSyA3T3lU6NyXFlEjJMt739iXmn-GBT_B7qk";
 
@@ -564,8 +564,8 @@ function checkBoxCheckedOrNot(siteInfo) {
         } else {
             console.log("not checked");
         }
-        sendEmail()
-            // Clear form on submit
+
+        // Clear form on submit
         sendFormSubmit.reset();
     });
 }

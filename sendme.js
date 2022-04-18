@@ -1,19 +1,21 @@
 "use strict"
 
-const sendForm = document.getElementById("result_form");
 
-const mailHost = "smtp.gmail.com"
-const mailUser = "advicesmtp@gmail.com"
-const mailPW = "B887B3C89A5DC6C810F1FF68D65C12C624D8"
-const mailTo = sendForm.email.value
-const mailFrom = "advicesmtp@gmail.com"
-const mailSubject = "Carbon results"
-const mailMessage = sendForm.message.value
-const mailLink = "Link to result: " + sendForm.generatedlink.value
-const mailBody = mailMessage + mailLink
-    // const mailPort = "2525"
+// const mailPort = "2525"
 
-export function sendEmail() {
+
+function sendEmail() {
+    const sendForm = document.getElementById("result_form");
+
+    const mailHost = "smtp.gmail.com"
+    const mailUser = "advicesmtp@gmail.com"
+    const mailPW = "B887B3C89A5DC6C810F1FF68D65C12C624D8"
+    const mailTo = sendForm.email.value
+    const mailFrom = "advicesmtp@gmail.com"
+    const mailSubject = "Carbon results"
+    const mailMessage = sendForm.message.value
+    const mailLink = "Link to result: " + sendForm.generatedlink.value
+    const mailBody = mailMessage + mailLink
     console.log("mail form activated")
     Email.send({
             Host: mailHost,
