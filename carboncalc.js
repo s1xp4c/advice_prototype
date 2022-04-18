@@ -595,7 +595,9 @@ function displayInfoList(siteInfo) {
 
     // Industry Field value
     document.querySelector("[data-field=fieldValue]").textContent =
-        "Field of industry: " + siteInfo.fieldValue;
+        "Field of industry: " + siteInfo.fieldValue.charAt(0).toUpperCase() + fieldValue.substring(1).toLowerCase();
+
+
 
     // Monthly
     document.querySelector("[data-field=monthly]").textContent =
