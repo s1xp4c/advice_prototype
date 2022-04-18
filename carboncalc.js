@@ -670,10 +670,12 @@ function displayInfoList(siteInfo) {
     // unusedJSwastedPercent: "",
     document.querySelector("[data-field=unusedJSwastedPercent]").textContent =
         "Wasted: " + siteInfo.unusedJSwastedPercent + " %";
+    //setting the bubble value in the slider to siteInfo value when page is loaded    
     bubbles[1].setAttribute(
         "style",
         `left: calc(${siteInfo.unusedJSwastedPercent}% - 14px);`
     );
+    //the number inside the bubble is set to be wasted percentage value
     bubbles[1].innerText = siteInfo.unusedJSwastedPercent
         .toString()
         .split(".")[0];
@@ -730,10 +732,13 @@ function displayInfoList(siteInfo) {
     document.querySelector(
         "[data-field=modernImageFormatWastedPercent]"
     ).textContent = "Wasted: " + siteInfo.modernImageFormatWastedPercent + " %";
+        //setting the bubble value in the slider to siteInfo value when page is loaded    
+
     bubbles[2].setAttribute(
         "style",
         `left: calc(${siteInfo.modernImageFormatWastedPercent}% - 14px);`
     );
+    //the number inside the bubble is set to be wasted percentage value
 
     bubbles[2].innerText = siteInfo.modernImageFormatWastedPercent
         .toString()
@@ -757,11 +762,13 @@ function displayInfoList(siteInfo) {
     document.querySelector(
         "[data-field=responsiveImagesWastedPercent]"
     ).textContent = "Wasted: " + siteInfo.responsiveImagesWastedPercent + " %";
+        //setting the bubble value in the slider to siteInfo value when page is loaded    
+
     bubbles[3].setAttribute(
         "style",
         `left: calc(${siteInfo.responsiveImagesWastedPercent}% - 14px);`
     );
-
+    //the number inside the bubble is set to be wasted percentage value
     bubbles[3].innerText = siteInfo.responsiveImagesWastedPercent
         .toString()
         .split(".")[0];
@@ -782,10 +789,13 @@ function displayInfoList(siteInfo) {
     document.querySelector(
         "[data-field=optimizedImagesWastedPercent]"
     ).textContent = "Wasted: " + siteInfo.optimizedImagesWastedPercent + " %";
+        //setting the bubble value in the slider to siteInfo value when page is loaded    
+
     bubbles[4].setAttribute(
         "style",
         `left: calc(${siteInfo.optimizedImagesWastedPercent}% - 14px);`
     );
+    //the number inside the bubble is set to be wasted percentage value
 
     bubbles[4].innerText = siteInfo.optimizedImagesWastedPercent
         .toString()
