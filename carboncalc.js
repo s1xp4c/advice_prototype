@@ -1,6 +1,6 @@
 "use strict";
 import { stringifyJSON } from "./push.js";
-import { sendEmail } from "./sendme";
+import { sendEmail } from "./sendEmail";
 const inputForm = document.getElementById("result_form");
 inputForm.addEventListener("submit", sendEmail())
 
